@@ -15,7 +15,7 @@ What the application does:
 	The average consumer/traveler, anyone who is looking for an activity near their location, or where they are traveling. Similar sites that also track activities are based around large groups meeting up to partake in the activities together. This app could focus on an individual, someone who just wants to find something they may be able to do themselves on any given day. Weather information will determine which type of activities are presented. 
 
 
-Initial features:
+## Initial features:
 	Sign in
 Sign out
 	Location Tracking
@@ -24,7 +24,7 @@ Sign out
 Show local outdoors thing(parks, hikes, …etc)
 	Show weather
 
-After it works:
+## After it works:
 Reviews?
 	Connect to social media?
 	Suggest activities based on weather?
@@ -39,5 +39,6 @@ Users will be allowed to make reviews/comments on any activities they attended
 Users will be able to see a map of the area with pinpoints of the locations in that area
 Users will have the option to have their specific profiles linked to social media to post the events/activities they are attending
 Users will have events/activities suggested to them based off their profile preferences, location, and weather of the day 
+Users will have the option of locating a restaurant with reviews
 ## Design
 * [API Design](docs/apis.md)
