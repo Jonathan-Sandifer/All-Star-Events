@@ -30,6 +30,3 @@ Reviews?
 	Connect to social media?
 	Suggest activities based on weather?
 Map?
-Map?
-
-git
