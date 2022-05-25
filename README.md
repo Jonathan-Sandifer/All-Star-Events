@@ -18,7 +18,7 @@ What the application does:
 	The application shows the weather and connects people to events and outdoor activities in their area.
 
 ## Target market:
-	The average consumer/traveler, anyone who is looking for an activity near their location, or where they are traveling. Similar sites that also track activities are based around large groups meeting up to partake in the activities together. This app could focus on an individual, someone who just wants to find something they may be able to do themselves on any given day. Weather information will determine which type of activities are presented. 
+The average consumer/traveler, anyone who is looking for an activity near their location, or where they are traveling. Similar sites that also track activities are based around large groups meeting up to partake in the activities together. This app could focus on an individual, someone who just wants to find something they may be able to do themselves on any given day. Weather information will determine which type of activities are presented. 
 
 
 Initial features:
