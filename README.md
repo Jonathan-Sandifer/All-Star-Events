@@ -45,3 +45,8 @@ Users will be shown reviews/comments on any activities presented to them
 Users will be able to see a map of the area with pinpoints of the locations in that area
 Users will have the option to have their specific profiles linked to social media to post the events/activities they are attending
 Users will have events/activities suggested to them based off their profile preferences, location, and weather of the day 
+
+
+
+
+
