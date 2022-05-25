@@ -1,4 +1,4 @@
-# API Design
+# APIs
 
 These are the API"s providing data to the application 
 - GEO LOCATION: https://rapidapi.com/natkapral/api/ip-geo-location/
