@@ -21,7 +21,7 @@ Output:
 ```
 
 Listing an Event uses the incoming city and state data to query 
-an image 
+an image
 
 
 
@@ -55,16 +55,6 @@ Listing a trail uses
 * **Method**: `GET`
 * **Path**: /api/events
 
-Input:
-
-```json
-{
-  "name": string,
-  "city": string,
-  "state": string
-}
-```
-
 Output:
 
 ```json
@@ -77,9 +67,22 @@ Output:
   "picture_url": string
 }
 ```
+Listing the weather 
 
-Creating a new Event uses the incoming city and state
-data to query an image API to get a URL for an image for
-the location. Then, it saves the name, city, state, and
-image URL to the database. It returns all of the data
-with the new database id.
+## Users:
+
+## Create a new user
+
+* **Method**: `POST`
+* **Path**: /api/users
+
+Input:
+
+```json
+{
+  "name": string,
+  "email": text,
+  "password":  text
+}
+```
+Creating a user asks the user to input a username, email, and password to create an account on the webpage
