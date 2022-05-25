@@ -1,35 +1,85 @@
 # APIs
 
-These are the API"s providing data to the application 
-- GEO LOCATION: https://rapidapi.com/natkapral/api/ip-geo-location/
-- TRAIlS/OUTDOORS: https://rapidapi.com/trailapi/api/trailapi/
-- EVENTS: https://rapidapi.com/AndrianaCodes/api/eventbrite-com/
+## Events:
+
+## List Event
+
+* **Method**: `GET`
+* **Path**: /api/events
+
+Output:
+
+```json
+{
+  "id": int,
+  "name": string,
+  "city": string,
+  "state": string,
+  "description": string,
+  "picture_url": string
+}
+```
+
+Listing an Event uses the incoming city and state data to query 
+an image 
 
 
-GEO LOCATION API
 
-- HTTP METHOD:
-- PATH: 
-- EXPECTED PARAMETERS: 
-- RETURN VALUES:
-- DESCRIPTION: 
+## Trails
 
+## List Trails:
 
-
-TRAILS API
-
-- HTTP METHOD:
-- PATH: 
-- EXPECTED PARAMETERS: 
-- RETURN VALUES:
-- DESCRIPTION: 
+* **Method**: `GET`
+* **Path**: /api/trails
 
 
+Output:
 
-EVENTBRITE API
+```json
+{
+  "id": int,
+  "name": string,
+  "city": string,
+  "state": string,
+  "description": string,
+  "picture_url": string
+}
+```
 
-- HTTP METHOD:
-- PATH: 
-- EXPECTED PARAMETERS: 
-- RETURN VALUES:
-- DESCRIPTION: 
+Listing a trail uses 
+
+## Weather
+
+## List Weather:
+
+* **Method**: `GET`
+* **Path**: /api/events
+
+Input:
+
+```json
+{
+  "name": string,
+  "city": string,
+  "state": string
+}
+```
+
+Output:
+
+```json
+{
+  "id": int,
+  "name": string,
+  "city": string,
+  "state": string,
+  "description": string,
+  "picture_url": string
+}
+```
+
+Creating a new Event uses the incoming city and state
+data to query an image API to get a URL for an image for
+the location. Then, it saves the name, city, state, and
+image URL to the database. It returns all of the data
+with the new database id.
