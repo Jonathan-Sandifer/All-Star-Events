@@ -29,6 +29,12 @@ This is the page that will allow users to select the activities they are interes
 
 ![Preferences Page](wireframes/preferences_page.png)
 
+## Your Events Page
+
+This is the page that will allow users to see events and activities they have chosen to save to their saved events list. Here they can remove past events as well.
+
+![Preferences Page](wireframes/your-events.png)
+
 ## Signed Out Page
 
 This is the page that people will see when they
