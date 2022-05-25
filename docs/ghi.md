@@ -28,3 +28,10 @@ This is the page that people will see when they
 want view nearby events/activities.
 
 ![Events Activities Page](wireframes/events_activities_page.png)
+
+## Signed Out Page
+
+This is the page that people will see when they
+sign out.
+
+![Signed Out Page](wireframes/signed_out_page.png)
