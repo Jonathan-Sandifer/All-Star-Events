@@ -42,3 +42,6 @@ Users will have events/activities suggested to them based off their profile pref
 Users will have the option of locating a restaurant with reviews
 ## Design
 * [API Design](docs/apis.md)
+
+
+* [Integrations](docs/integrations.md)
