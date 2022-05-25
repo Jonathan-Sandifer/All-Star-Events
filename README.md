@@ -50,6 +50,10 @@ Users will have events/activities suggested to them based off their profile pref
 * [API Design](docs/apis.md)
 
 
+<<<<<<< HEAD
 
 * [Integrations](docs/integrations.md)
 
+=======
+* [Integrations](docs/integrations.md)
+>>>>>>> fd48f18ebbf72db2d4caa0fe9360ee12dd8fdab1
