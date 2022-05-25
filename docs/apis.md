@@ -1,2 +1,2 @@
-# API Design
+# APIs
 
