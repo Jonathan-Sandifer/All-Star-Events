@@ -46,3 +46,13 @@ Users will be able to see a map of the area with pinpoints of the locations in t
 Users will have the option to have their specific profiles linked to social media to post the events/activities they are attending
 Users will have events/activities suggested to them based off their profile preferences, location, and weather of the day 
 
+
+## Design
+* [API Design](docs/apis.md)
+
+
+
+
+* [Integrations](docs/integrations.md)
+
+
