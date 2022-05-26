@@ -20,8 +20,8 @@ Output:
 }
 ```
 
-Listing an Event uses the incoming city and state data to query 
-an image
+Listing an Event uses the city and state data that has queried
+an image url, with a description and a unipue id. 
 
 
 
@@ -46,14 +46,16 @@ Output:
 }
 ```
 
-Listing a trail uses 
+Listing a trail uses the city and state data that has queryied
+an image url, with a description and a unipue id. 
+
 
 ## Weather
 
 ## List Weather:
 
 * **Method**: `GET`
-* **Path**: /api/events
+* **Path**: /api/weather
 
 Output:
 
@@ -67,7 +69,8 @@ Output:
   "picture_url": string
 }
 ```
-Listing the weather 
+Listing the weather uses the city and state data that has queryied
+an image url, with a descriptionand a unipue id. 
 
 ## Users:
 
@@ -85,4 +88,14 @@ Input:
   "password":  text
 }
 ```
-Creating a user asks the user to input a username, email, and password to create an account on the webpage
+Output:
+
+```json
+{
+  "id": int,
+  "name": string,
+  "email": text,
+  "password":  text
+}
+```
+Creating a user asks the user to input a username, email, and password to create an account on the webpage, with a unique id in the database.
