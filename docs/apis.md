@@ -25,9 +25,9 @@ an image url, with a description and a unipue id.
 
 
 
-## Trails
+## Trails:
 
-## List Trails:
+## List Trails
 
 * **Method**: `GET`
 * **Path**: /api/trails
@@ -50,9 +50,9 @@ Listing a trail uses the city and state data that has queryied
 an image url, with a description and a unipue id. 
 
 
-## Weather
+## Weather:
 
-## List Weather:
+## List Weather
 
 * **Method**: `GET`
 * **Path**: /api/weather
@@ -70,7 +70,7 @@ Output:
 }
 ```
 Listing the weather uses the city and state data that has queryied
-an image url, with a descriptionand a unipue id. 
+an image url, with a description and a unipue id. 
 
 ## Users:
 
@@ -98,4 +98,6 @@ Output:
   "password":  text
 }
 ```
-Creating a user asks the user to input a username, email, and password to create an account on the webpage, with a unique id in the database.
+Creating a user asks the user to input a username, email, 
+and password to create an account on the webpage, 
+with a unique id in the database.
