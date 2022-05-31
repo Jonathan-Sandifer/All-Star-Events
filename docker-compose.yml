@@ -1,13 +1,14 @@
 version: '3.8'
 services:
-  react:
-    image: node:latest
-    command: npm start
+ react:
+    image: node:lts-bullseye
+    command: /bin/bash run.sh
     working_dir: /app
     volumes:
       - ./ghi/app:/app
-    environment:
-      - HOST=0.0.0.0
-      - PORT=3001
     ports:
-      - "3001:3001"
+      - "3000:3000"
+    environment:
+      HOST_OS: ${OS}
+      NODE_ENV: development
+      HOST: "0.0.0.0"
