@@ -1,2 +1,4 @@
 .env
 venv
+database/data/
+__pycache__
