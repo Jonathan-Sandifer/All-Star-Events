@@ -1,0 +1,143 @@
+/* li {
+    display: inline;
+} */
+
+* {
+    font-family: 'Oswald', sans-serif;
+}
+
+nav{
+    margin-top: -10px;
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+
+ul {
+    background-color: #34a4eb;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+  }
+
+.spacer {
+    display: inline;
+    padding: 8px;
+    float: right;
+    text-decoration: none;
+    color: white;
+    /* border-right: 2px solid white; */
+
+}
+
+li {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+
+}
+.active:hover {
+    border-radius: 10px;
+    color: white;
+    text-decoration: underline white;
+    
+  }
+
+.icon {
+    float: left;
+    width: 40px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: -6px;
+    object-fit: contain;
+    margin: 0px;
+    
+}
+
+.header {
+    padding: 10px;
+    text-align: center;
+    background: #34a4eb;
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+
+  .wrapper {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    background-color:#34a4eb;
+    padding: 1em;
+    color: white;
+    text-align: center;
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-top: 20px;
+    font-size: 20px;
+
+  }
+
+  .border {
+      border: 1.5px solid white;
+      padding: 5px;
+  }
+
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    
+  }
+
+.pref-button {
+    background-color: transparent;
+    font-size: 20px;
+    color:#34a4eb;
+    
+}
+
+.pref-button:hover {
+    background-color: #34a4eb;
+    color: white;
+}
+
+.register {
+    text-align: center;
+    width: 100%;
+    padding: 200px 50px;
+    margin: 100px 0;
+    font-size: xx-large;
+    
+    border: 3px solid rgb(189, 37, 37);
+    border-radius: 40px;
+    box-sizing: border-box;
+    
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    display: inline-block;
+    vertical-align: top;
+    
+    
+}
+
+.mainpage {
+    padding: 10px;
+    text-align: center;
+    background: #34a4eb;
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+
+  

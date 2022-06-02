@@ -1,0 +1,52 @@
+version: '3.8'
+services:
+  react:
+    image: node:lts-bullseye
+    command: /bin/bash run.sh
+    working_dir: /app
+    volumes:
+      - ./ghi:/app
+    ports:
+      - "3000:3000"
+    environment:
+      HOST_OS: ${OS}
+      NODE_ENV: development
+      HOST: "0.0.0.0"
+  database:
+    image: postgres:14-bullseye
+    volumes:
+      - ./database/data:/var/lib/postgresql/data
+      - ./database/setup:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_MULTIPLE_DATABASES=events,parks
+      - POSTGRES_PASSWORD=test-databases
+    ports:
+      - 15432:5432
+  events-api:
+    build:
+      context: ./events/api
+      dockerfile: ./Dockerfile.dev
+    ports:
+      - "8080:8000"
+    volumes:
+      - ./events/api:/app
+    depends_on:
+      - database
+    environment:
+      DATABASE_URL: postgres://events:password@database:5432/service
+      WAIT_HOSTS: database:5432
+      WAIT_TIMEOUT: 240
+  parks-api:
+    build:
+      context: ./parks/api
+      dockerfile: ./Dockerfile.dev
+    ports:
+      - "8090:8000"
+    volumes:
+      - ./parks/api:/app
+    depends_on:
+      - database
+    environment:
+      DATABASE_URL: postgres://parks:password@database:5432/service
+      WAIT_HOSTS: database:5432
+      WAIT_TIMEOUT: 240
