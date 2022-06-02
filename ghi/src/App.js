@@ -1,7 +1,7 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import MainPage from './MainPage';
+import MainPage from './components/MainPage';
 import CreateAccountForm from './components/SignUp';
 import LoginForm from './components/Login';
 
