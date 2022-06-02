@@ -20,15 +20,13 @@ class LoginForm extends React.Component {
   return (
     <section>
       <div className="register">
-        <div className="col-1">
+        <div>
           <h2>Log in</h2>
           
-          <form id ='form' className='flex flex-col'>
-           
-            <input type="text" placeholder='username or email'/>
-            <input type="text" placeholder='password'/>
-            <button className="btn">Log In</button>
-            
+          <form id ='form' className='form'>
+          <li><input type="text" placeholder='username or email'/></li>
+          <li><input type="text" placeholder='password'/></li>
+          <li> <button className="btn">  Log In  </button></li>
           </form>
         </div>
       </div>

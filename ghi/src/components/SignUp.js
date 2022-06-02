@@ -22,14 +22,14 @@ class CreateAccountForm extends React.Component {
   return (
     <section>
       <div className="register">
-        <div className="col-1">
+        <div>
           <h2>Create Account</h2>
           
-          <form id ='form' className='newAccount'>
-            <input type="text" placeholder='username'/>
-            <input type="text" placeholder='email'/>
-            <input type="text" placeholder='password'/>
-            <button className="btn">Create New Account</button>
+          <form id ='form' className='form'>
+            <li><input type="text" placeholder='username'/></li>
+            <li><input type="text" placeholder='email'/></li>
+            <li><input type="text" placeholder='password'/></li>
+            <li><button className="btn">Create New Account</button></li>
           </form>
         </div>
       </div>

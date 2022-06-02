@@ -61,8 +61,9 @@ li {
 .register {
     text-align: center;
     width: 100%;
-    padding: 80px 20px;
+    padding: 200px 50px;
     margin: 100px 0;
+    font-size: xx-large;
     
     border: 3px solid rgb(189, 37, 37);
     border-radius: 40px;
@@ -70,8 +71,11 @@ li {
     
 }
 
-.newAccount {
+.form {
     display: flex;
     justify-content: center;
+    display: inline-block;
+    vertical-align: top;
+    
     
 }
