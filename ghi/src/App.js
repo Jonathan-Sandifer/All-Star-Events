@@ -2,7 +2,8 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import MainPage from './MainPage';
-import SignUp from './components/SignUp';
+import CreateAccountForm from './components/SignUp';
+
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Navbar />
       <Routes>
       <Route path="/" element={<MainPage />} />
-      <Route path="/signup" element={<SignUp />} />
+      <Route path="/signup" element={<CreateAccountForm />} />
       </Routes>
       
      

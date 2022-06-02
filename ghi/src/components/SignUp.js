@@ -1,14 +1,43 @@
-function SignUp() {
+import React from 'react'
+
+
+class CreateAccountForm extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      user_name: "",
+      email: "",
+      password:""
+    };
+    // may need state with empty list after password ?
+
+    // this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleChangeUserName = this.handleUserName.bind(this);
+    // this.handleChangeEmail = this.handleUserName.bind(this);
+    // this.handleChangePassword = this.handleChangePassword.bind(this);
+  }
+
+
+  render(){
   return (
-    <div className="px-4 py-5 my-5 text-center">
-      <h1 className="display-5 fw-bold">LETS F ing GOOOOOO</h1>
-      <div className="col-lg-6 mx-auto">
-        <p className="lead mb-4">
-          Sign Up
-        </p>
+    <section>
+      <div className="register">
+        <div className="col-1">
+          <h2>Create Account</h2>
+          
+          <form id ='form' className='flex flex-col'>
+            <input type="text" placeholder='username'/>
+            <input type="text" placeholder='email'/>
+            <input type="text" placeholder='password'/>
+            <button className="btn">Create New Account</button>
+          </form>
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
+}
 
-export default SignUp;
+export default CreateAccountForm; 
+
+
