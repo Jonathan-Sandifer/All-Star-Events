@@ -128,3 +128,16 @@ li {
     
     
 }
+
+.mainpage {
+    padding: 10px;
+    text-align: center;
+    background: #34a4eb;
+    color: white;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: -8px;
+    margin-right: -8px;
+  }
+
+  
