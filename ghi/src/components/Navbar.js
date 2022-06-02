@@ -12,7 +12,7 @@ function Navbar() {
                     <NavLink  className='spacer active' to="/signup">Sign Up</NavLink>
                 </li>
                 <li >
-                    <NavLink className='spacer active' to="/">Login</NavLink>
+                    <NavLink className='spacer active' to="/login">Login</NavLink>
                 </li>
             </ul>
         </nav>
