@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import icon from '../images/Icon.png'
 import transparent from '../images/transparent.png'
 
 function Navbar() {
@@ -10,7 +9,7 @@ function Navbar() {
                     <img  className='icon' src={transparent}></img>
                 </li>
                 <li >
-                    <NavLink  className='spacer active' to="/">Sign Up</NavLink>
+                    <NavLink  className='spacer active' to="/signup">Sign Up</NavLink>
                 </li>
                 <li >
                     <NavLink className='spacer active' to="/">Login</NavLink>
