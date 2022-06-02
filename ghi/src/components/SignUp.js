@@ -25,7 +25,7 @@ class CreateAccountForm extends React.Component {
         <div className="col-1">
           <h2>Create Account</h2>
           
-          <form id ='form' className='flex flex-col'>
+          <form id ='form' className='newAccount'>
             <input type="text" placeholder='username'/>
             <input type="text" placeholder='email'/>
             <input type="text" placeholder='password'/>

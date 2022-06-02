@@ -12,7 +12,6 @@ class LoginForm extends React.Component {
 
     // this.handleSubmit = this.handleSubmit.bind(this);
     // this.handleChangeUserName = this.handleUserName.bind(this);
-    // this.handleChangeEmail = this.handleUserName.bind(this);
     // this.handleChangePassword = this.handleChangePassword.bind(this);
   }
 
@@ -25,9 +24,11 @@ class LoginForm extends React.Component {
           <h2>Log in</h2>
           
           <form id ='form' className='flex flex-col'>
-            <input type="text" placeholder='username'/>
+           
+            <input type="text" placeholder='username or email'/>
             <input type="text" placeholder='password'/>
             <button className="btn">Log In</button>
+            
           </form>
         </div>
       </div>

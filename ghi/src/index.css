@@ -56,3 +56,22 @@ li {
     margin: 0px;
     
 }
+
+
+.register {
+    text-align: center;
+    width: 100%;
+    padding: 80px 20px;
+    margin: 100px 0;
+    
+    border: 3px solid rgb(189, 37, 37);
+    border-radius: 40px;
+    box-sizing: border-box;
+    
+}
+
+.newAccount {
+    display: flex;
+    justify-content: center;
+    
+}
