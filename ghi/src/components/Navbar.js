@@ -9,10 +9,13 @@ function Navbar() {
                     <img  className='icon' src={transparent}></img>
                 </li>
                 <li >
+                    <NavLink  className='spacer active' to="/">Home</NavLink>
+                </li>
+                <li >
                     <NavLink  className='spacer active' to="/signup">Sign Up</NavLink>
                 </li>
                 <li >
-                    <NavLink className='spacer active' to="/">Login</NavLink>
+                    <NavLink className='spacer active' to="/login">Login</NavLink>
                 </li>
             </ul>
         </nav>
