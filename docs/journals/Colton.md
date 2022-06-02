@@ -15,3 +15,9 @@ Today, I worked on:
 Building a couple models in the parks_rest directory and used the National Parks API in Insomnia to find the different information I can pull.
 
 Found it pretty easy to navigate the information listed by the National Parks.
+
+## 6/1/22
+
+Today did not go well.
+
+We spent a lot of time as a group trying to get through git issues. I managed to put together basics for a main page in our app page. Most of the day was spent trying to get through blockers around git.
