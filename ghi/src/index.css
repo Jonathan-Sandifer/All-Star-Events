@@ -121,7 +121,8 @@ li {
 }
 
 .register {
-    text-align: center;
+    text-align: left;
+    display: flex;
     width: 100%;
     padding: 200px 50px;
     margin: 100px 0;
@@ -134,12 +135,21 @@ li {
 }
 
 .form {
+    /* background-image: url('./images/img-9.jpg'); */
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     display: inline-block;
-    vertical-align: top;
+    /* vertical-align: top; */
     
     
+}
+
+.form-image {
+  background-image: url('./images/img-9.jpg');
+  display: flex;
+  justify-content: right;
+  /* display: inline-block;
+  vertical-align: top; */
 }
 
 .mainpage {

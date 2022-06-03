@@ -23,7 +23,7 @@ class CreateAccountForm extends React.Component {
   return (
     <section>
       <div className="register">
-        <div>
+        <div className="form-image">
           <h2>Create Account</h2>
           
           <form id ='form' className='form'>
