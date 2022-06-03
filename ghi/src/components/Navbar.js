@@ -15,6 +15,9 @@ function Navbar() {
                     <NavLink className='spacer active' to="/login">Login</NavLink>
                 </li>
                 <li >
+                    <NavLink className='spacer active' to="/logout">Logout</NavLink>
+                </li>
+                <li >
                     <NavLink className='spacer active' to="/preferences">Preferences</NavLink>
                 </li>
             </ul>
