@@ -1,4 +1,5 @@
 import React from 'react'
+import Footer from './Footer';
 
 
 class LoginForm extends React.Component {
@@ -30,6 +31,7 @@ class LoginForm extends React.Component {
           </form>
         </div>
       </div>
+      <Footer />
     </section>
   );
 }
