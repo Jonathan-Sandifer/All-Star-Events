@@ -19,20 +19,19 @@ class LoginForm extends React.Component {
 
   render(){
   return (
-    <section>
-      <div className="register">
-        <div>
+    <main className="login-main">&nbsp;
+      <div >
+        <div className="log-in-form">
           <h2>Log in</h2>
-          
-          <form id ='form' className='form'>
-          <li><input type="text" placeholder='username or email'/></li>
-          <li><input type="text" placeholder='password'/></li>
-          <li> <button className="btn">  Log In  </button></li>
+          <form>
+          <li><input className="form-inputs" type="text" placeholder='username or email'/></li>
+          <li><input className="form-inputs" type="text" placeholder='password'/></li>
+          <li> <button className="form-button">  Log In  </button></li>
           </form>
         </div>
       </div>
       <Footer />
-    </section>
+    </main>
   );
 }
 }
