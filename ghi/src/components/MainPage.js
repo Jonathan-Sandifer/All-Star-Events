@@ -4,7 +4,7 @@ import Footer from './Footer';
 
 function MainPage() {
     return (
-      <main className='welcome'>
+      <main className='welcome'>&nbsp;
         <div className="mainpage">
           <div>
             <h1 className="mainheader">Welcome to All Star Events</h1>
@@ -16,7 +16,7 @@ function MainPage() {
           </div>
         </div>
         <br />
-        <Search />
+        {/* <Search /> */}
         <Footer />
       </main>
     );
