@@ -4,14 +4,21 @@ import Footer from './Footer';
 
 function MainPage() {
     return (
-      <div className="mainpage">
-        <div>
-          <h1 className="mainheader">Welcome to All Star Events</h1>
+      <main className='welcome'>&nbsp;
+        <div className="mainpage">
+          <div>
+            <h1 className="mainheader">Welcome to All Star Events</h1>
+          </div>
+          <br />
+          <Search />
+          <div className="footer">
+            <p>Just four dudes missing sunlight</p>
+          </div>
         </div>
         <br />
-        <Search />
+        {/* <Search /> */}
         <Footer />
-      </div>
+      </main>
     );
   }
   
