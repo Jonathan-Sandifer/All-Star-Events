@@ -22,8 +22,15 @@ ul {
 
   }
 
-body {
+.welcome {
   background-image: url('./images/img-home.jpg');
+  background-size: cover;
+  height: 100vh;
+  margin-left: -8px;
+  margin-right: -8px;
+
+	
+  
 }
 
 .spacer {
@@ -197,7 +204,7 @@ li {
   transition: 0.4s ease;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder { 
   color: black;
-  opacity: 1; /* Firefox */
+  opacity: 1; 
 }
