@@ -31,7 +31,6 @@ class LoginForm extends React.Component {
           </form>
         </div>
       </div>
-      <Footer />
     </section>
   );
 }

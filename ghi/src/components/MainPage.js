@@ -11,13 +11,7 @@ function MainPage() {
           </div>
           <br />
           <Search />
-          <div className="footer">
-            <p>Just four dudes missing sunlight</p>
-          </div>
         </div>
-        <br />
-        {/* <Search /> */}
-        <Footer />
       </main>
     );
   }
