@@ -6,7 +6,7 @@ class PreferenceSelect extends React.Component {
 
     render() {
         return (
-            <main>
+            <main className="preference-main">&nbsp;
                 <div className="header">
                     <h1>What do you like to do?</h1>
                 </div>
