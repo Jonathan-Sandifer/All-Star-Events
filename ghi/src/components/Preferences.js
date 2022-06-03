@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 
 class PreferenceSelect extends React.Component {
 
@@ -61,6 +62,7 @@ class PreferenceSelect extends React.Component {
                 </div>
                 <div className="center">
                     <button className="pref-button">Save Preferences</button>
+                    <Footer />
                 </div>
             </main>
         )
