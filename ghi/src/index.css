@@ -36,10 +36,16 @@ ul {
 .goodbye {
   background-image: url('./images/img-logout.jpg');
   background-size: cover;
-  height: 100vh;
+  height: 400vh;
   margin-left: -8px;
   margin-right: -8px;
+  margin-top: -22px;
+  margin-bottom: -50px;
 
+}
+
+.put-text-in-center {
+  
 }
 
 .spacer {
