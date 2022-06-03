@@ -3,7 +3,7 @@ import transparent from '../images/transparent.png'
 
 function Navbar() {
     return (
-        <nav>
+        <nav className='my-nav'>
             <ul>
                 <li >
                     <NavLink  className='icon' to="/"> <img  className='icon' src={transparent}></img> </NavLink>

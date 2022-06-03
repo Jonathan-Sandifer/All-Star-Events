@@ -14,3 +14,7 @@ I went through at least 10 Event based API's that were shut down, out of date, o
 
 <p>Wow, what a day! Sooooo many bugs. I think the Docker-compose.yml file is causing us issues
 especially the database service. After battling divergent branches and overall team frustration, I was able to complete the initial NavBar. We decided fo begin in the front-end and move to the back-end. We also discovered that a monolith would better suit our project, but we are continuing with the micro-service to build upon our knowledge. </p>
+
+## 06/02/2022
+
+<p> Today was another battle. We did fix our database Issue with the help of curtis. I added accounts service to the yml file, began the preferences page and basically completed the styling. I also added some dummy data and am setting up for beginning some back-end work to get that going. We gotta appreciate the small wins, because it feels like we have been getting whooped so far. </p>
