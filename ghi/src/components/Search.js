@@ -2,13 +2,20 @@ const SearchBar = () => (
     <form action="/" method="get">
         
         <br />
-        <input
+        {/* <input
             type="text"
             id="header-search"
             placeholder="Enter your city"
             name="s" 
         />
-        <button type="submit">Search</button>
+        <button type="submit">Search</button> */}
+        <div className="search-box">
+          <input type="text"
+          className="search-bar"
+          placeholder="Enter a city..."
+          />
+           
+        </div>
     </form>
 );
 
