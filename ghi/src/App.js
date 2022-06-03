@@ -7,6 +7,7 @@ import MainPage from './components/MainPage';
 import CreateAccountForm from './components/SignUp';
 import Logout from './components/Logout';
 import LoginForm from './components/Login';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
       <Route path="/login" element={<LoginForm />} />
       </Routes>
       
-     
+      <Footer />
     </BrowserRouter>
   );
 }

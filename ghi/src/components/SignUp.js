@@ -41,4 +41,3 @@ class CreateAccountForm extends React.Component {
 
 export default CreateAccountForm; 
 
-
