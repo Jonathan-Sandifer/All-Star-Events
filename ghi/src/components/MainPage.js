@@ -1,5 +1,6 @@
 import React from 'react'
 import Search from './Search';
+import Footer from './Footer';
 
 function MainPage() {
     return (
@@ -9,10 +10,7 @@ function MainPage() {
         </div>
         <br />
         <Search />
-        <div className="footer">
-          <p>Just four dudes missing sunlight</p>
-        </div>
-          
+        <Footer />
       </div>
     );
   }
