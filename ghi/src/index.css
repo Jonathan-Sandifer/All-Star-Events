@@ -2,14 +2,15 @@
     display: inline;
 } */
 
-* {
+/* * {
     font-family: 'Oswald', sans-serif;
-}
+} */
 
-nav{
+.my-nav{
     margin-top: -10px;
     margin-left: -8px;
     margin-right: -8px;
+    font-family: 'Oswald', sans-serif;
   }
 
 ul {
