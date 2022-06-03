@@ -62,7 +62,6 @@ class PreferenceSelect extends React.Component {
                 </div>
                 <div className="center">
                     <button className="pref-button">Save Preferences</button>
-                    <Footer />
                 </div>
             </main>
         )

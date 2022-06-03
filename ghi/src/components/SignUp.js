@@ -34,7 +34,6 @@ class CreateAccountForm extends React.Component {
           </form>
         </div>
       </div>
-      <Footer />
     </section>
   );
 }
