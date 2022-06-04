@@ -21,24 +21,23 @@ class CreateAccountForm extends React.Component {
 
   render(){
   return (
-    <section>
-      <div className="register">
-        <div>
+    <main className="sign-up-main">&nbsp;
+      <div>
+        <div className="sign-up-form">
           <h2>Create Account</h2>
-          
-          <form id ='form' className='form'>
-            <li><input type="text" placeholder='username'/></li>
-            <li><input type="text" placeholder='email'/></li>
-            <li><input type="text" placeholder='password'/></li>
-            <li><button className="btn">Create New Account</button></li>
+          <form>
+            <li><input className="form-inputs" type="text" placeholder='username'/></li>
+            <li><input className="form-inputs" type="text" placeholder='email'/></li>
+            <li><input className="form-inputs" type="text" placeholder='password'/></li>
+            <li><button className="form-button">Create New Account</button></li>
           </form>
         </div>
       </div>
-    </section>
+      <Footer />
+    </main>
   );
 }
 }
 
 export default CreateAccountForm; 
-
 

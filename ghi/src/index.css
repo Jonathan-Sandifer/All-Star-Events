@@ -134,27 +134,93 @@ li {
     color: black;
 }
 
-.register {
-    text-align: center;
-    width: 100%;
-    padding: 200px 50px;
-    margin: 100px 0;
-    font-size: xx-large;
-    
-    border: 3px solid rgb(189, 37, 37);
-    border-radius: 40px;
-    box-sizing: border-box;
+.sign-up-main {
+    background-image: url('./images/img-9.jpg');
+    background-size: cover;
+    height: 100vh;
+    margin-left: -8px;
+    margin-right: -8px;
     
 }
 
-.form {
-    display: flex;
-    justify-content: center;
-    display: inline-block;
-    vertical-align: top;
-    
-    
+.login-main {
+  background-image: url('./images/img-4.jpg');
+  background-size: cover;
+  height: 100vh;
+  margin-left: -8px;
+  margin-right: -8px;
+ 
 }
+
+.sign-up-form {
+    display: grid;
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    font-size: 40px;
+    margin-top: 50px;
+    margin-left: 300px;
+}
+
+.log-in-form {
+  display: grid;
+  display: inline-block;
+  padding: 110px;
+  text-align: center;
+  color: white;
+  font-size: 40px;
+  margin-top: 50px;
+  margin-left: 0px;
+}
+
+.form-inputs {
+  display: inline-block;
+  width: 90%;
+  padding: 15px;
+
+  background-color: rgba(255, 255, 255, 0.801);
+  border-radius: 16px 16px 16px 16px;
+  border: 2px solid rgba(134, 10, 10, 0.774);
+  margin-top: -25px;
+
+  box-shadow: 0px 5px rgba(6, 103, 168, 0.2);
+  color: rgb(0, 0, 0);
+  font-size: 25px;
+  transition: 0.4s ease;
+}
+
+.form-button {
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
+
 
 .mainpage {
     padding-bottom: 5px;
