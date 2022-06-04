@@ -6,9 +6,9 @@ function Logout() {
         <h1 className="display-5 fw-bold header">
           You Are Now Logged Out
         </h1>
-        <h1 className="display-5 fw-bold header">
+        <h2 className="display-5 fw-bold header">
           
-          Catch you on the Flipside...</h1>
+          Catch you on the Flipside...</h2>
         <div className="col-lg-6 mx-auto">
         </div>
       </div>
