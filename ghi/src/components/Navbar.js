@@ -20,6 +20,9 @@ function Navbar() {
                 <li >
                     <NavLink className='spacer active' to="/preferences">Preferences</NavLink>
                 </li>
+                <li >
+                    <NavLink className='spacer active' to="/userEventsParks">Your Events/Parks</NavLink>
+                </li>
             </ul>
         </nav>
     )

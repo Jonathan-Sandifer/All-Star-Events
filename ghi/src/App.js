@@ -8,6 +8,7 @@ import CreateAccountForm from './components/SignUp';
 import Logout from './components/Logout';
 import LoginForm from './components/Login';
 import Footer from './components/Footer';
+import UserEventsParks from './components/userEventsParks';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
       <Route path="/signup" element={<CreateAccountForm />} />
       <Route path="/logout" element={<Logout />} />
       <Route path="/login" element={<LoginForm />} />
+      <Route path="/userEventsParks" element={<UserEventsParks />} />
       </Routes>
       
       <Footer />
