@@ -5,7 +5,7 @@ import React from 'react'
 
 function UserEventsParks() {
     return (
-      <div className="px-4 py-5 my-5">
+      <div className="px-4 user-events-parks py-5 my-5">
         <h1 className="display-5 fw-bold">
             Your Events
         </h1>

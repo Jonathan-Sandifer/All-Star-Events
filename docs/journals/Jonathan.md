@@ -18,5 +18,12 @@ able to fix the problem(I hope).
 ## 6/03/2022
 * Finally finished off the Logout page, struggled with the CSS for this page longer than I thought I would. But it looks good, could possibly be made to look better.
 * Started on working on the user centric events and parks page, wont be tied to the user yet as we havent learned how to do that yet...
-* Its been a real stickler for the prject but I know as soon as we get something working the progress for the app will go even faster on our backend
+* Its been a real stickler for the project but I know as soon as we get something working the progress for the app will go even faster on our backend
+
+## 6/05/2022
+* Today I had some spare time to work on the project. So taking a look at the work I did for the Users events/parks page I noticed I didn't have a picture for that,
+and a funny thing happened, I realized that while Colton had put in the pictures that we have been using, I didn't know how to do it myself. 
+* I quickly learned that it was just a simple drag and drop from the where the file is located to the location I needed it to be in easy peasy.
+* I am also making a note, that the data for that page will be displayed as cards either horizontal or vertically, but we need to do some work on the
+backend before I can fully see this page realized.
 
