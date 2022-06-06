@@ -23,6 +23,9 @@ function Navbar() {
                 <li >
                     <NavLink className='spacer active' to="/userEventsParks">Your Events/Parks</NavLink>
                 </li>
+                <li >
+                    <NavLink className='spacer active' to="/EventsParks">Events/Parks</NavLink>
+                </li>
             </ul>
         </nav>
     )
