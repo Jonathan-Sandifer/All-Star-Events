@@ -12,6 +12,8 @@ services:
       HOST_OS: ${OS}
       NODE_ENV: development
       HOST: "0.0.0.0"
+      REACT_APP_ACCOUNTS_HOST: http://localhost:8030
+      REACT_APP_EVENTS_HOST: http://localhost:8080
   database:
     image: postgres:14-bullseye
     volumes:
@@ -36,6 +38,7 @@ services:
       DATABASE_URL: postgres://events:password@database:5432/service
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
+      DJWTO_SIGNING_KEY: 1adfe79e8c8dd6f17a656faffa0e39baff1f56f7b2c79577d0e1c7cc23076e4d
   parks-api:
     build:
       context: ./parks/api
@@ -64,3 +67,4 @@ services:
       DATABASE_URL: postgres://parks:password@database:5432/service
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
+      DJWTO_SIGNING_KEY: 1adfe79e8c8dd6f17a656faffa0e39baff1f56f7b2c79577d0e1c7cc23076e4d

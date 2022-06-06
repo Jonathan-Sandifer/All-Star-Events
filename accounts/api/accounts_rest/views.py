@@ -1,10 +1,8 @@
-from pyexpat import model
-import re
-from django.shortcuts import render
 from .models import Preferences, User
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from common.json import ModelEncoder
+import json
 # Create your views here.
 
 
@@ -16,9 +14,13 @@ class PreferenceListEncoder(ModelEncoder):
     #     "Users": UserListEncoder
     # }
 
+class UserEncoder(ModelEncoder):
+    model = User
+    properties = ["id", "username", "email", "first_name", "last_name"]
+
 class UserListEncoder(ModelEncoder):
     model = User
-    properties = ["id", "user_name", "email", "password"]
+    properties = ["id", "username", "email", "password"]
     encoders = {
         "preferences": PreferenceListEncoder
     }
@@ -33,7 +35,7 @@ def api_list_preferences(request):
             safe=False
         )
 
-@require_http_methods(["GET"])
+@require_http_methods(["GET", "POST"])
 def api_list_users(request):
     if request.method == "GET":
         users = User.objects.all()
@@ -42,3 +44,22 @@ def api_list_users(request):
             encoder=UserListEncoder,
             safe=False
         )
+    elif request.method == "POST":
+        content = json.loads(request.body)
+        user = User.objects.create_user(**content)
+        return JsonResponse(
+            user,
+            encoder=UserEncoder,
+            safe=False,
+        )
+
+@require_http_methods(["GET"])
+def api_user_token(request):
+    if "jwt_access_token" in request.COOKIES:
+        token = request.COOKIES["jwt_access_token"]
+        return JsonResponse(
+            {"token": token,},
+        )
+    response = JsonResponse({"detail": "no session"})
+    response.status_code = 404
+    return response

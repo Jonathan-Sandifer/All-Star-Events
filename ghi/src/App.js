@@ -9,22 +9,24 @@ import Logout from './components/Logout';
 import LoginForm from './components/Login';
 import Footer from './components/Footer';
 import UserEventsParks from './components/userEventsParks';
+import { useToken } from './api';
 
 
 function App() {
+  const [token, logout, login] = useToken();
   return (
     <BrowserRouter>
-      <Navbar />
+      <Navbar token={token} />
       <Routes>
       <Route path="/" element={<MainPage />} />
       <Route path="/signup" element={<SignUp />} />
       <Route path="/preferences" element={<PreferenceSelect />} />
       <Route path="/signup" element={<CreateAccountForm />} />
-      <Route path="/logout" element={<Logout />} />
-      <Route path="/login" element={<LoginForm />} />
+      <Route path="/logout" element={<Logout logout={logout} />} />
+      <Route path="/login" element={<LoginForm login={login} />} />
       <Route path="/userEventsParks" element={<UserEventsParks />} />
       </Routes>
-      
+
       <Footer />
     </BrowserRouter>
   );
