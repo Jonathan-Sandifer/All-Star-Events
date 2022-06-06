@@ -54,6 +54,16 @@ ul {
 
 }
 
+.events-parks {
+  background-image: url('./images/img-6.jpg');
+  background-size: cover;
+  height: 100vh;
+  margin-left: -8px;
+  margin-right: -8px;
+  margin-top: -22px;
+
+}
+
 .spacer {
     display: inline;
     padding: 8px;

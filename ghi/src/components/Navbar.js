@@ -9,19 +9,22 @@ function Navbar() {
                     <NavLink  className='icon' to="/"> <img  className='icon' src={transparent}></img> </NavLink>
                 </li>
                 <li >
-                    <NavLink  className='spacer active' to="/signup">Sign Up</NavLink>
+                    <NavLink className='spacer active' to="/logout">Logout</NavLink>
                 </li>
                 <li >
                     <NavLink className='spacer active' to="/login">Login</NavLink>
                 </li>
                 <li >
-                    <NavLink className='spacer active' to="/logout">Logout</NavLink>
+                    <NavLink  className='spacer active' to="/signup">Sign Up</NavLink>
                 </li>
                 <li >
                     <NavLink className='spacer active' to="/preferences">Preferences</NavLink>
                 </li>
                 <li >
                     <NavLink className='spacer active' to="/userEventsParks">Your Events/Parks</NavLink>
+                </li>
+                <li >
+                    <NavLink className='spacer active' to="/EventsParks">Events/Parks</NavLink>
                 </li>
             </ul>
         </nav>
