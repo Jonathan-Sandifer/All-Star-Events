@@ -26,9 +26,9 @@ class CreateAccountForm extends React.Component {
         <div className="sign-up-form">
           <h2>Create Account</h2>
           <form>
-            <li><input className="form-inputs" type="text" placeholder='username'/></li>
-            <li><input className="form-inputs" type="text" placeholder='email'/></li>
-            <li><input className="form-inputs" type="text" placeholder='password'/></li>
+            <li><input className="form-inputs-sign-up" type="text" placeholder='username'/></li>
+            <li><input className="form-inputs-sign-up" type="text" placeholder='email'/></li>
+            <li><input className="form-inputs-sign-up" type="text" placeholder='password'/></li>
             <li><button className="form-button">Create New Account</button></li>
           </form>
         </div>

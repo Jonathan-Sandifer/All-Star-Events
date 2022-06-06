@@ -24,8 +24,8 @@ class LoginForm extends React.Component {
         <div className="log-in-form">
           <h2>Log in</h2>
           <form>
-          <li><input className="form-inputs" type="text" placeholder='username or email'/></li>
-          <li><input className="form-inputs" type="text" placeholder='password'/></li>
+          <li><input className="form-inputs-login" type="text" placeholder='username or email'/></li>
+          <li><input className="form-inputs-login" type="text" placeholder='password'/></li>
           <li> <button className="form-button">  Log In  </button></li>
           </form>
         </div>
