@@ -43,9 +43,9 @@ class CreateAccountForm extends React.Component {
           <div className="sign-up-form">
             <h2>Create Account</h2>
             <form onSubmit={this.signup}>
-            <li><input name="username" value={this.state.username} onChange={this.handleInput} className="form-inputs" type="text" placeholder='username'/></li>
-            <li><input name="email" value={this.state.email} onChange={this.handleInput} className="form-inputs" type="email" placeholder='email'/></li>
-            <li><input name="password" value={this.state.password} onChange={this.handleInput} className="form-inputs" type="password" placeholder='password'/></li>
+            <li><input name="username" value={this.state.username} onChange={this.handleInput} className="form-inputs-sign-up" type="text" placeholder='username'/></li>
+            <li><input name="email" value={this.state.email} onChange={this.handleInput} className="form-inputs-sign-up" type="email" placeholder='email'/></li>
+            <li><input name="password" value={this.state.password} onChange={this.handleInput} className="form-inputs-sign-up" type="password" placeholder='password'/></li>
             <li> <button className="form-button">  SIGN UP  </button></li>
             </form>
           </div>
