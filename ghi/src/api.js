@@ -62,6 +62,22 @@ export function useToken() {
     }
   }
 
+  async function signup(username, email, password) {
+    const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/users/`;
+    const response = await fetch(url, {
+      method: 'post',
+      credentials: 'include',
+      body: JSON.stringify({username, email, password, first_name: '', last_name: ''}),
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    });
+    if (response.ok) {
+      return await login(username, password);
+    }
+    return false;
+  }
+
   async function login(username, password) {
     const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/login/`;
     const form = new FormData();
@@ -79,5 +95,5 @@ export function useToken() {
     return false;
   }
 
-  return [token, logout, login];
+  return [token, logout, signup, login];
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from './Footer';
+import { Navigate } from 'react-router-dom';
 
 
 class LoginForm extends React.Component {
@@ -30,6 +31,9 @@ class LoginForm extends React.Component {
   }
 
   render(){
+    if (this.props.token) {
+      return <Navigate to="/" />;
+    }
   return (
     <main className="login-main">&nbsp;
       <div >
