@@ -1,31 +1,36 @@
 import { NavLink } from 'react-router-dom';
 import transparent from '../images/transparent.png'
 
-function Navbar() {
+function Navbar(props) {
+    const token = props.token;
     return (
         <nav className='my-nav'>
             <ul>
                 <li >
                     <NavLink  className='icon' to="/"> <img  className='icon' src={transparent}></img> </NavLink>
                 </li>
-                <li >
-                    <NavLink className='spacer active' to="/logout">Logout</NavLink>
-                </li>
-                <li >
-                    <NavLink className='spacer active' to="/login">Login</NavLink>
-                </li>
-                <li >
-                    <NavLink  className='spacer active' to="/signup">Sign Up</NavLink>
-                </li>
-                <li >
-                    <NavLink className='spacer active' to="/preferences">Preferences</NavLink>
-                </li>
-                <li >
-                    <NavLink className='spacer active' to="/userEventsParks">Your Events/Parks</NavLink>
-                </li>
-                <li >
-                    <NavLink className='spacer active' to="/EventsParks">Events/Parks</NavLink>
-                </li>
+                { token ?
+                <>
+                    <li >
+                        <NavLink className='spacer active' to="/userEventsParks">Your Events/Parks</NavLink>
+                    </li>
+                    <li >
+                        <NavLink className='spacer active' to="/preferences">Preferences</NavLink>
+                    </li>
+                    <li >
+                        <NavLink className='spacer active' to="/logout">Logout</NavLink>
+                    </li>
+                </>
+                :
+                <>
+                    <li >
+                        <NavLink className='spacer active' to="/login">Login</NavLink>
+                    </li>
+                    <li >
+                        <NavLink  className='spacer active' to="/signup">Sign Up</NavLink>
+                    </li>
+                </>
+                }
             </ul>
         </nav>
     )
