@@ -20,11 +20,6 @@ const SearchBar = () => (
 
             </div>
         </form>
-        <div style={{backgroundColor: 'rgba(255, 255, 255, .8)', padding: '1em'}}>
-            <p>Look in the console for results</p>
-            <button onClick={getProtectedView}>Get protected view (requires login)</button>
-            <button onClick={getPublicView}>Get public view</button>
-        </div>
     </>
 );
 
