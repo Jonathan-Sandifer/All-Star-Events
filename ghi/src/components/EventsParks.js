@@ -1,16 +1,13 @@
 import React from 'react'
+import Search from './Search';
 
 function EventsParks() {
     return (
-      <div className="px-4 user-events-parks py-5 my-5">
-        <h1 className="display-5 fw-bold">
-            Events
-        </h1>
-        <h1 className="display-5 fw-bold">
-            Parks
-        </h1>
-        <div className="col-lg-6 mx-auto">
-        </div>
+      <div className="events-parks">
+          <div>
+            <h1>Events</h1>
+            <h1>Parks</h1>
+          </div>
       </div>
     );
   }
