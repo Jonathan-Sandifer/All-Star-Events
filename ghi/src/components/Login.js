@@ -12,11 +12,8 @@ class LoginForm extends React.Component {
     };
     this.handleInput = this.handleInput.bind(this);
     this.login = this.login.bind(this);
-    // may need state with empty list after password ?
-
-    // this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleChangeUserName = this.handleUserName.bind(this);
-    // this.handleChangePassword = this.handleChangePassword.bind(this);
+    this.handleChangeUserName = this.handleChangeUserName.bind(this);
+    this.handleChangePassword = this.handleChangePassword.bind(this);
   }
 
   async login(e) {
@@ -28,6 +25,16 @@ class LoginForm extends React.Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
+  }
+
+  handleChangeUserName(event) {
+    const value = event.target.value;
+    this.setState({ username: value });
+  }
+
+  handleChangePassword(event) {
+    const value = event.target.value;
+    this.setState({ password: value });
   }
 
   render(){

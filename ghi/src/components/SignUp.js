@@ -13,12 +13,10 @@ class CreateAccountForm extends React.Component {
     };
     this.handleInput = this.handleInput.bind(this);
     this.signup = this.signup.bind(this);
-    // may need state with empty list after password ?
+    this.handleChangeUserName = this.handleChangeUserName.bind(this);
+    this.handleChangeEmail = this.handleChangeEmail.bind(this);
+    this.handleChangePassword = this.handleChangePassword.bind(this);
 
-    // this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleChangeUserName = this.handleUserName.bind(this);
-    // this.handleChangeEmail = this.handleUserName.bind(this);
-    // this.handleChangePassword = this.handleChangePassword.bind(this);
   }
 
   async signup(e) {
@@ -30,6 +28,21 @@ class CreateAccountForm extends React.Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
+  }
+
+  handleChangeUserName(event) {
+    const value = event.target.value;
+    this.setState({ username: value });
+  }
+
+  handleChangeEmail(event) {
+    const value = event.target.value;
+    this.setState({ email: value });
+  }
+
+  handleChangePassword(event) {
+    const value = event.target.value;
+    this.setState({ password: value });
   }
 
 
