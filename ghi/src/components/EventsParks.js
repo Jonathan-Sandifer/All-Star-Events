@@ -3,7 +3,7 @@ import Search from './Search';
 
 function EventsParks() {
     return (
-      <div className="events-parks">;
+      <div className="events-parks">
         <div className="row">
             <div className="column">
               <h1>Events</h1>
