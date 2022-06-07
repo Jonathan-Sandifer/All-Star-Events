@@ -13,12 +13,10 @@ class CreateAccountForm extends React.Component {
     };
     this.handleInput = this.handleInput.bind(this);
     this.signup = this.signup.bind(this);
-    // may need state with empty list after password ?
+    this.handleChangeUserName = this.handleChangeUserName.bind(this);
+    this.handleChangeEmail = this.handleChangeEmail.bind(this);
+    this.handleChangePassword = this.handleChangePassword.bind(this);
 
-    // this.handleSubmit = this.handleSubmit.bind(this);
-    // this.handleChangeUserName = this.handleUserName.bind(this);
-    // this.handleChangeEmail = this.handleUserName.bind(this);
-    // this.handleChangePassword = this.handleChangePassword.bind(this);
   }
 
   async signup(e) {
@@ -32,6 +30,21 @@ class CreateAccountForm extends React.Component {
     });
   }
 
+  handleChangeUserName(event) {
+    const value = event.target.value;
+    this.setState({ username: value });
+  }
+
+  handleChangeEmail(event) {
+    const value = event.target.value;
+    this.setState({ email: value });
+  }
+
+  handleChangePassword(event) {
+    const value = event.target.value;
+    this.setState({ password: value });
+  }
+
 
   render(){
     if (this.props.token) {
@@ -43,9 +56,9 @@ class CreateAccountForm extends React.Component {
           <div className="sign-up-form">
             <h2>Create Account</h2>
             <form onSubmit={this.signup}>
-            <li><input name="username" value={this.state.username} onChange={this.handleInput} className="form-inputs" type="text" placeholder='username'/></li>
-            <li><input name="email" value={this.state.email} onChange={this.handleInput} className="form-inputs" type="email" placeholder='email'/></li>
-            <li><input name="password" value={this.state.password} onChange={this.handleInput} className="form-inputs" type="password" placeholder='password'/></li>
+            <li><input name="username" value={this.state.username} onChange={this.handleInput} className="form-inputs-sign-up" type="text" placeholder='username'/></li>
+            <li><input name="email" value={this.state.email} onChange={this.handleInput} className="form-inputs-sign-up" type="email" placeholder='email'/></li>
+            <li><input name="password" value={this.state.password} onChange={this.handleInput} className="form-inputs-sign-up" type="password" placeholder='password'/></li>
             <li> <button className="form-button">  SIGN UP  </button></li>
             </form>
           </div>
