@@ -9,7 +9,7 @@ class User(AbstractUser):
   email = models.EmailField(max_length=100, unique=True)
 
   def __str__(self):
-    return self.user_name
+    return self.username
 
 
 class Preferences(models.Model):
