@@ -15,7 +15,7 @@ class Event(models.Model):
 class User(models.Model):
     # user = models.ManyToManyField(User, related_name="events")
 
-    def __str__(self):
-     return self.user
+#     def __str__(self):
+#      return self.user
 #event VO possibly 
 #poller or pub sub 

@@ -21,4 +21,5 @@ especially the database service. After battling divergent branches and overall t
 
 ## 06/06/2022
 
-<P> Today started off waiting for user authentication workshop so we could successfully create our users. After that, we had some more bug fixes, and towards the end of the day I was able to create a user. Now we can also list preferences that are attached to each specific user. Insomnia is working nicely, and tomorrow I will have to begin the component on the front end that takes in the selected values.  </p>
+<P> Today started off waiting for user authentication workshop so we could successfully create our users. After that, we had some more bug fixes, and towards the end of the day I was able to create a user. Now we can also list preferences that are attached to each specific user. Insomnia is working nicely, and tomorrow I will have to begin the component on the front end that takes in the selected values. Stayed on a bit later and found a tutorial on how to update state with checkboxes in react. Made progress and indeed can save the state of the selected checkboxes in the preference component. Now i need to figure out how to send that value to the preference model and create those selected preferences as objects on the signed in user. I also finished the insomnia endpoint to create a preference.  </p>
+
