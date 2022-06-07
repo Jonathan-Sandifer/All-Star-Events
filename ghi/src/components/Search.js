@@ -1,4 +1,6 @@
 import { getProtectedView, getPublicView } from '../api';
+import { Route, Routes } from 'react-router-dom';
+
 
 const SearchBar = () => (
     <>
@@ -17,8 +19,13 @@ const SearchBar = () => (
             className="search-bar"
             placeholder="Enter a city..."
             />
-
             </div>
+            <li >
+            <button>GO</button>
+                <Routes>
+                    <Route className='spacer active' to="/EventsParks">Your Events/Parks</Route>
+                </Routes>
+            </li>
         </form>
     </>
 );

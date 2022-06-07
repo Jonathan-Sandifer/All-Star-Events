@@ -35,3 +35,9 @@ I learned how to use some CSS but I still need to learn how to make our backgrou
 Today I spent most of my time working on the main page and the footer. We now have a photo in the background of our main page and a footer on every page. Wondering how things are going to break when we bring in bootstrap...
 
 Ready for the weekend after a long short week.
+
+## 6/7/22
+
+Today I fixed the homepage to make it sit higher on the page, I also built an EventsParks page. I only have dummy data hard coded in for now but I spent time learning about pulling data from APIs. I want to have it so when we enter a city in the search bar on the mainpage and search it, we are redirected to the EventsParks page with data for the corresponding city from the search.
+
+I want to get the search bar to redirect me to the EventsParks page then I will work on pulling in the API data.
