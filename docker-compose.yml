@@ -20,7 +20,7 @@ services:
       - ./database/data:/var/lib/postgresql/data
       - ./database/setup:/docker-entrypoint-initdb.d
     environment:
-      - POSTGRES_MULTIPLE_DATABASES=events,parks
+      - POSTGRES_MULTIPLE_DATABASES=events,parks,accounts
       - POSTGRES_PASSWORD=test-databases
     ports:
       - 15432:5432

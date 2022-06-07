@@ -46,6 +46,7 @@ def api_list_users(request):
         )
     elif request.method == "POST":
         content = json.loads(request.body)
+        print("@@@@@@@@@", content)
         user = User.objects.create_user(**content)
         return JsonResponse(
             user,
@@ -63,3 +64,8 @@ def api_user_token(request):
     response = JsonResponse({"detail": "no session"})
     response.status_code = 404
     return response
+
+
+
+#  @@@@@@@@@ {'username': 'user', 'email': '123@gmail.com',
+#  'password': '2843', 'first_name': '', 'last_name': ''}
