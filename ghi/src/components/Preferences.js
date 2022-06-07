@@ -24,7 +24,7 @@ class PreferenceSelect extends React.Component {
     }
 
     handleCheckbox(event) {
-        console.log(event.target.value);
+        // console.log(event.target.value);
         let state = this.state;
         state.preferences[event.target.value] = event.target.checked;
         this.setState(state);
@@ -33,7 +33,7 @@ class PreferenceSelect extends React.Component {
 
     handleSave(event) {
         let state = this.state
-        console.log(state)
+        console.log("test", state)
     }
 
     render() {
@@ -94,7 +94,7 @@ class PreferenceSelect extends React.Component {
                         </div>
                     </div>
                     <div className="center">
-                        <button onClick={this.handleSave()} className="pref-button">Save Preferences</button>
+                        <button onClick={this.handleSave()} type="submit" className="pref-button">Save Preferences</button>
                     </div>
                 </form>
             </main>
