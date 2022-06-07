@@ -21,3 +21,17 @@ Found it pretty easy to navigate the information listed by the National Parks.
 Today did not go well.
 
 We spent a lot of time as a group trying to get through git issues. I managed to put together basics for a main page in our app page. Most of the day was spent trying to get through blockers around git.
+
+## 6/2/22
+
+Today, I worked on:
+
+I spent the better part of the day trying to use a template for react but I was unable to yield any results. It was difficult for me to use portions of someone's code because the languages would never match up the way I wanted. I ended up adding some color and of non-working search box for a city on the main page.
+
+I learned how to use some CSS but I still need to learn how to make our background a picture for the main page.
+
+## 6/3/22
+
+Today I spent most of my time working on the main page and the footer. We now have a photo in the background of our main page and a footer on every page. Wondering how things are going to break when we bring in bootstrap...
+
+Ready for the weekend after a long short week.
