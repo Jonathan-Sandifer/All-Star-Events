@@ -1,7 +1,40 @@
 import React from "react";
 
 class PreferenceSelect extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            preferences: {
+                parks: false,
+                sports: false,
+                concerts: false,
+                waterActivities: false,
+                theater: false,
+                trails: false,
+                art: false,
+                museums: false,
+                camping: false,
+                sailing: false,
+                kayaking: false,
+                hiking: false
+                
+            }
+        }
+        this.handleCheckbox = this.handleCheckbox.bind(this);
+    }
 
+    handleCheckbox(event) {
+        console.log(event.target.value);
+        let state = this.state;
+        state.preferences[event.target.value] = event.target.checked;
+        this.setState(state);
+        
+    }
+
+    handleSave(event) {
+        let state = this.state
+        console.log(state)
+    }
 
     render() {
         return (
@@ -9,59 +42,61 @@ class PreferenceSelect extends React.Component {
                 <div className="header">
                     <h1>What do you like to do?</h1>
                 </div>
-                <div className="wrapper">
-                    <div className="border">
-                        <input type="checkbox" id="parks" name="parks" value="Parks"/>
-                        <label for="parks">Parks</label>
+                <form>
+                    <div className="wrapper">
+                        <div className="border">
+                            <input onChange={this.handleCheckbox} type="checkbox" id="parks" name="parks" value="parks" checked={this.state.preferences.parks}/>
+                            <label htmlFor="parks">Parks</label>
+                        </div>
+                        <div className="border">
+                            <label htmlFor="concert">Concerts</label>
+                            <input onChange={this.handleCheckbox} type="checkbox" id="concert" name="concert" value="concerts" checked={this.state.preferences.concerts}/>
+                        </div>
+                        <div className="border">
+                            <input onChange={this.handleCheckbox} type="checkbox" id="Sports" name="Sports" value="sports" checked={this.state.preferences.sports}/>
+                            <label htmlFor="Sports">Sports</label>
+                        </div>
+                        <div className="border">
+                            <label htmlFor="Water Activities">Water Activities</label>
+                            <input onChange={this.handleCheckbox} type="checkbox" id="Water Activities" name="Water Activities" value="waterActivities" checked={this.state.preferences.waterActivities}/>
+                        </div>
+                        <div className="border">
+                            <input onChange={this.handleCheckbox} type="checkbox" id="Theater" name="Theater" value="theater" checked={this.state.preferences.theater}/>
+                            <label htmlFor="Theater">Theater</label>
+                        </div>
+                        <div className="border">
+                            <label htmlFor="Trails"> Trails</label>
+                            <input onChange={this.handleCheckbox} type="checkbox" id="Trails" name="Trails" value="trails" checked={this.state.preferences.trails}/>
+                        </div>
+                        <div className="border">
+                            <input onChange={this.handleCheckbox} type="checkbox" id="Art" name="Art" value="art" checked={this.state.preferences.art}/>
+                            <label htmlFor="Art"> Art</label>
+                        </div>
+                        <div className="border">
+                            <label htmlFor="Museums"> Museums</label>
+                            <input onChange={this.handleCheckbox} type="checkbox" id="Museums" name="Museums" value="museums" checked={this.state.preferences.museums}/>
+                        </div>
+                        <div className="border">
+                            <input onChange={this.handleCheckbox} type="checkbox" id="Camping" name="Camping" value="camping" checked={this.state.preferences.camping}/>
+                            <label htmlFor="Camping">Camping</label>
+                        </div>
+                        <div className="border">
+                            <label htmlFor="Sailing"> Sailing</label>
+                            <input  onChange={this.handleCheckbox} type="checkbox" id="Sailing" name="Sailing" value="sailing" checked={this.state.preferences.sailing}/>
+                        </div>
+                        <div className="border">
+                            <input onChange={this.handleCheckbox} type="checkbox" id="Kayaking" name="Kayaking" value="kayaking" checked={this.state.preferences.kayaking}/>
+                            <label htmlFor="Kayaking"> Kayaking</label>
+                        </div>
+                        <div className="border">
+                            <label htmlFor="hiking"> Hiking</label>
+                            <input onChange={this.handleCheckbox} type="checkbox" id="hiking" name="hiking" value="hiking" checked={this.state.preferences.hiking}/>
+                        </div>
                     </div>
-                    <div className="border">
-                        <label for="concert">Concerts</label>
-                        <input type="checkbox" id="concert" name="concert" value="Concerts"/>
+                    <div className="center">
+                        <button onClick={this.handleSave()} className="pref-button">Save Preferences</button>
                     </div>
-                    <div className="border">
-                        <input type="checkbox" id="Sports" name="Sports" value="Sports"/>
-                        <label for="Sports">Sports</label>
-                    </div>
-                    <div className="border">
-                        <label for="Water Activities">Water Activities</label>
-                        <input type="checkbox" id="Water Activities" name="Water Activities" value="Water Activities"/>
-                    </div>
-                    <div className="border">
-                        <input type="checkbox" id="Theater" name="Theater" value="Theater"/>
-                        <label for="Theater">Theater</label>
-                    </div>
-                    <div className="border">
-                        <label for="Trails"> Trails</label>
-                        <input type="checkbox" id="Trails" name="Trails" value="Trails"/>
-                    </div>
-                    <div className="border">
-                        <input type="checkbox" id="Art" name="Art" value="Art"/>
-                        <label for="Art"> Art</label>
-                    </div>
-                    <div className="border">
-                        <label for="Museums"> Museums</label>
-                        <input type="checkbox" id="Museums" name="Museums" value="Museums"/>
-                    </div>
-                    <div className="border">
-                        <input type="checkbox" id="Camping" name="Camping" value="Camping"/>
-                        <label for="Camping">Camping</label>
-                    </div>
-                    <div className="border">
-                        <label for="Sailing"> Sailing</label>
-                        <input type="checkbox" id="Sailing" name="Sailing" value="Sailing"/>
-                    </div>
-                    <div className="border">
-                        <input type="checkbox" id="Kayaking" name="Kayaking" value="Kayaking"/>
-                        <label for="Kayaking"> Kayaking</label>
-                    </div>
-                    <div className="border">
-                        <label for="vehicle1"> Hiking</label>
-                        <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike"/>
-                    </div>
-                </div>
-                <div className="center">
-                    <button className="pref-button">Save Preferences</button>
-                </div>
+                </form>
             </main>
         )
     }

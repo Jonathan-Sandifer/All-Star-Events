@@ -18,3 +18,7 @@ especially the database service. After battling divergent branches and overall t
 ## 06/02/2022
 
 <p> Today was another battle. We did fix our database Issue with the help of curtis. I added accounts service to the yml file, began the preferences page and basically completed the styling. I also added some dummy data and am setting up for beginning some back-end work to get that going. We gotta appreciate the small wins, because it feels like we have been getting whooped so far. </p>
+
+## 06/06/2022
+
+<P> Today started off waiting for user authentication workshop so we could successfully create our users. After that, we had some more bug fixes, and towards the end of the day I was able to create a user. Now we can also list preferences that are attached to each specific user. Insomnia is working nicely, and tomorrow I will have to begin the component on the front end that takes in the selected values.  </p>

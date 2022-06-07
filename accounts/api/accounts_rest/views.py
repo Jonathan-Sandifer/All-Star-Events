@@ -27,7 +27,7 @@ class UserDetailEncoder(ModelEncoder):
         "preferences": PreferenceListEncoder(),
     }
 
-@require_http_methods(["GET"])
+@require_http_methods(["GET", "POST"])
 def api_list_preferences(request):
     if request.method == "GET":
         preferences = Preferences.objects.all()
@@ -35,6 +35,14 @@ def api_list_preferences(request):
             {"preferences": preferences},
             encoder=PreferenceListEncoder,
             safe=False
+        )
+    else:
+        content = json.loads(request.body)
+        preference = Preferences.objects.create(**content)
+        return JsonResponse(
+            preference,
+            encoder=PreferenceListEncoder,
+            safe=False,
         )
 
 @require_http_methods(["GET", "POST"])
