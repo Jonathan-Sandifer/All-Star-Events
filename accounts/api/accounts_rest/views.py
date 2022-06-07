@@ -1,3 +1,4 @@
+from stat import SF_APPEND
 from .models import Preferences, User
 from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
@@ -76,12 +77,34 @@ def api_user_token(request):
 
 
 
-@require_http_methods(["GET"])
+@require_http_methods(["GET", 'PUT'])
 def api_show_user(request, pk):
     user = User.objects.get(id=pk)
-    print("!!!!", user)
     return JsonResponse(
         user,
         encoder=UserDetailEncoder,
         safe=False
     )
+
+
+@require_http_methods(["PUT"])
+def api_update_user(request, pk):
+    if request.method == "PUT":
+        content = json.loads(request.body)
+        try:
+            if "name" in content:
+                preference = Preferences.objects.get(name=content["name"])
+                content["name"] = preference 
+        except Preferences.DoesNotExist:
+            return JsonResponse(
+                {"message": "Invalid preference"},
+                status=400,
+            )
+        User.objects.get(id=pk).preferences.add(preference)
+        user = User.objects.get(id=pk)
+        return JsonResponse(
+            user,
+            encoder=UserDetailEncoder,
+            safe=False,
+        )
+        

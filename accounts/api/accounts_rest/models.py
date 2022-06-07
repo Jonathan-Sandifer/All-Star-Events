@@ -14,7 +14,7 @@ class User(AbstractUser):
 
 class Preferences(models.Model):
   name = models.CharField(max_length= 50, unique=True)
-  user = models.ManyToManyField(User, related_name="preferences")
+  user = models.ManyToManyField(User, related_name="preferences", null=True, blank=True)
 
   def __str__(self):
     return self.name
