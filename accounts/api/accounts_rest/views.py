@@ -7,12 +7,6 @@ import json
 
 
 
-class PreferenceListEncoder(ModelEncoder):
-    model = Preferences
-    properties = ["name"]
-    # encoders = {
-    #     "Users": UserListEncoder
-    # }
 
 class UserEncoder(ModelEncoder):
     model = User
@@ -21,8 +15,16 @@ class UserEncoder(ModelEncoder):
 class UserListEncoder(ModelEncoder):
     model = User
     properties = ["id", "username", "email", "password"]
+   
+class PreferenceListEncoder(ModelEncoder):
+    model = Preferences
+    properties = ["name"]
+
+class UserDetailEncoder(ModelEncoder):
+    model = User
+    properties = ["id", "username", "email", "password", "preferences"]
     encoders = {
-        "preferences": PreferenceListEncoder
+        "preferences": PreferenceListEncoder(),
     }
 
 @require_http_methods(["GET"])
@@ -46,7 +48,6 @@ def api_list_users(request):
         )
     elif request.method == "POST":
         content = json.loads(request.body)
-        print("@@@@@@@@@", content)
         user = User.objects.create_user(**content)
         return JsonResponse(
             user,
@@ -67,5 +68,12 @@ def api_user_token(request):
 
 
 
-#  @@@@@@@@@ {'username': 'user', 'email': '123@gmail.com',
-#  'password': '2843', 'first_name': '', 'last_name': ''}
+@require_http_methods(["GET"])
+def api_show_user(request, pk):
+    user = User.objects.get(id=pk)
+    print("!!!!", user)
+    return JsonResponse(
+        user,
+        encoder=UserDetailEncoder,
+        safe=False
+    )
