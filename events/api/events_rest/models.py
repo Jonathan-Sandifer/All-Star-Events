@@ -13,7 +13,7 @@ class Event(models.Model):
       return self.username
 
 class User(models.Model):
-    user = models.ManyToManyField(User, related_name="events")
+    # user = models.ManyToManyField(User, related_name="events")
 
     def __str__(self):
      return self.user
