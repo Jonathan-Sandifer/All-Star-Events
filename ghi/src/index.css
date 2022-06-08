@@ -53,6 +53,26 @@ ul {
 
 }
 
+.user-card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* this adds the "card" effect */
+  padding: 16px;
+  text-align: center;
+  background-color: #3b3737;
+
+}
+
+.user-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.user-column {
+  float: left;
+  width: 50%;
+  text-align: center
+}
+
 .events-parks {
   background-image: url('./images/img-66.jpg');
   background-size: cover;
