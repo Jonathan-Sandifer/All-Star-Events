@@ -7,7 +7,7 @@ function Navbar(props) {
         <nav className='my-nav'>
             <ul>
                 <li >
-                    <NavLink  className='icon' to="/"> <img  className='icon' src={transparent}></img> </NavLink>
+                    <NavLink  className='icon' to="/"> <img  alt='' className='icon' src={transparent}></img> </NavLink>
                 </li>
                 { token ?
                 <>
