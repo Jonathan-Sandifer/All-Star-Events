@@ -31,8 +31,8 @@ class PreferenceSelect extends React.Component {
         
     }
 
-    async setPreferences(preference) {
-        const url = `http://localhost:8030/api/update/2/`;
+    async setPreferences(preference, user_id) {
+        const url = `http://localhost:8030/api/update/${user_id}/`;
         console.log(JSON.stringify(preference));
         const response = await fetch(url, {
             method: 'put',
@@ -58,7 +58,7 @@ class PreferenceSelect extends React.Component {
                 // this.setPreferences(key); [p,a,r,k,s]
                 container['name'] = key[0].toUpperCase() + key.slice(1, key.length);
                 // console.log(container);
-                this.setPreferences(container)
+                this.setPreferences(container, 2)
             }
         }
         // for (const [key, value] of Object.entries(state)) {
