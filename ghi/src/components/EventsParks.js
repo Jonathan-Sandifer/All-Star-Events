@@ -1,6 +1,7 @@
 import React from 'react'
 
 
+
 function EventsParks() {
     return (
       <div className="events-parks">
