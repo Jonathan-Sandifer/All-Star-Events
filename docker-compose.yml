@@ -69,3 +69,4 @@ services:
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
       DJWTO_SIGNING_KEY: 1adfe79e8c8dd6f17a656faffa0e39baff1f56f7b2c79577d0e1c7cc23076e4d
+      GEOCODING_API_KEY: ${GEOCODING_API_KEY}
