@@ -1,6 +1,39 @@
-import { getProtectedView, getPublicView } from '../api';
 
-const SearchBar = () => (
+import { Route, Routes } from 'react-router-dom';
+import React from 'react';
+let weatherKey = process.env.REACT_APP_GEOCODING_API_KEY
+
+class SearchBar extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            search: ''
+        }
+        this.handleSearch = this.handleSearch.bind(this);
+        this.getLatLon = this.getLatLon.bind(this);
+    }
+
+    async handleSearch(event) {
+        let value = event.target.value;
+        await this.setState({search: value});
+        
+        
+    }
+    
+    async getLatLon(event) {
+        event.preventDefault()
+        const url = `http://api.openweathermap.org/geo/1.0/direct?q=${this.state.search}&limit=1&appid=${weatherKey}`
+        console.log(url);
+        const response = await fetch(url);
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data);
+        }
+    }
+
+
+    render() {
+        return (
     <>
         <form action="/" method="get">
 
@@ -13,14 +46,21 @@ const SearchBar = () => (
             />
             <button type="submit">Search</button> */}
             <div className="search-box">
-            <input type="text"
+            <input onChange={this.handleSearch} type="text"
             className="search-bar"
-            placeholder="Enter a city..."
+            placeholder="Enter a city..." 
             />
-
             </div>
+            <li >
+            <button onClick={this.getLatLon} className="pref-button">GO</button>
+                <Routes>
+                    <Route className='spacer active' to="/EventsParks">Your Events/Parks</Route>
+                </Routes>
+            </li>
         </form>
     </>
 );
+ }
+}
 
 export default SearchBar;

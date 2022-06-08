@@ -14,6 +14,7 @@ services:
       HOST: "0.0.0.0"
       REACT_APP_ACCOUNTS_HOST: http://localhost:8030
       REACT_APP_EVENTS_HOST: http://localhost:8080
+      GEOCODING_API_KEY: ${GEOCODING_API_KEY}
   database:
     image: postgres:14-bullseye
     volumes:

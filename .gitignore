@@ -4,6 +4,7 @@ database/data/
 __pycache__
 db.sqlite3
 .venv
+./ghi/.env
 
 events/keys.py
 # Byte-compiled / optimized / DLL files
