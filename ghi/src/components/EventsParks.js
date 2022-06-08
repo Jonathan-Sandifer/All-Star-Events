@@ -5,6 +5,14 @@ function EventsParks() {
     return (
       <div className="events-parks">
         <br />
+        <div className="weather">
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </div>
         <br />
         <div className="row">
             <div className="column">
