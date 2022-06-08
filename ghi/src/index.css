@@ -352,3 +352,13 @@ li {
   border: 3px solid rgb(0, 0, 0);
   background-color: #34a5eb5b;
 }
+
+.weather {
+  background-image: url("./images/weather.jpg");
+  border-image-width: auto;
+  border-radius: 16px 16px 16px 16px;
+  border: 3px solid rgb(0, 0, 0);
+  margin-left: 20%;
+  margin-right: 20%;
+  
+}
