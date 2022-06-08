@@ -95,14 +95,11 @@ def api_update_user(request, pk):
         content = content['preference']
         print("changing", content)
         try:
-            print("something")
             if "name" in content:
                 preference = Preferences.objects.get(name=content["name"])
-                print("this is in the views!!!!!", preference)
                 content["name"] = preference 
                 User.objects.get(id=pk).preferences.add(preference)
         except Preferences.DoesNotExist:
-            print("this is in the views!!!!!????")
             return JsonResponse(
                 {"message": "Invalid preference"},
                 status=400,
