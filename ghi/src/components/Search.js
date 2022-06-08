@@ -1,8 +1,26 @@
 import { getProtectedView, getPublicView } from '../api';
 import { Route, Routes } from 'react-router-dom';
+import React from 'react';
 
 
-const SearchBar = () => (
+class SearchBar extends React.Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            search: ''
+        }
+        this.handleSearch = this.handleSearch.bind(this);
+    }
+
+    handleSearch(event) {
+        let value = event.target.value;
+        value = value.split(" ").join("");
+        this.setState({search: value});
+    }
+
+
+    render() {
+        return (
     <>
         <form action="/" method="get">
 
@@ -15,7 +33,7 @@ const SearchBar = () => (
             />
             <button type="submit">Search</button> */}
             <div className="search-box">
-            <input type="text"
+            <input onChange={this.handleSearch} type="text"
             className="search-bar"
             placeholder="Enter a city..."
             />
@@ -29,5 +47,7 @@ const SearchBar = () => (
         </form>
     </>
 );
+ }
+}
 
 export default SearchBar;
