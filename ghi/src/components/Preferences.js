@@ -31,9 +31,40 @@ class PreferenceSelect extends React.Component {
         
     }
 
+    async setPreferences(preference) {
+        const url = `http://localhost:8030/api/update/2/`;
+        console.log(JSON.stringify(preference));
+        const response = await fetch(url, {
+            method: 'put',
+            // credentials: 'include',
+            body: JSON.stringify({preference}),
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        });
+        if (response.ok) {
+            return {"message": 'Your Preferences have been saved'};
+        }
+    }
+
     handleSave(event) {
         let state = this.state
-        console.log("test", state)
+        console.log(typeof(state));
+        let container = {}
+        for (let key of Object.keys(state['preferences'])) {
+            // console.log(key);
+            // console.log(state['preferences'][key])
+            if (state['preferences'][key] === true) {
+                // this.setPreferences(key); [p,a,r,k,s]
+                container['name'] = key[0].toUpperCase() + key.slice(1, key.length);
+                // console.log(container);
+                this.setPreferences(container)
+            }
+        }
+        // for (const [key, value] of Object.entries(state)) {
+        //     console.log(key["art"]);
+        // }
+       
     }
 
     render() {
@@ -58,7 +89,7 @@ class PreferenceSelect extends React.Component {
                         </div>
                         <div className="border">
                             <label htmlFor="Water Activities">Water Activities</label>
-                            <input onChange={this.handleCheckbox} type="checkbox" id="Water Activities" name="Water Activities" value="waterActivities" checked={this.state.preferences.waterActivities}/>
+                            <input onChange={this.handleCheckbox} type="checkbox" id="Water Activities" name="Water Activities" value="water Activities" checked={this.state.preferences.waterActivities}/>
                         </div>
                         <div className="border">
                             <input onChange={this.handleCheckbox} type="checkbox" id="Theater" name="Theater" value="theater" checked={this.state.preferences.theater}/>
