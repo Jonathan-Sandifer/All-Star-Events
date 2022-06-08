@@ -1,13 +1,15 @@
 
 import { Route, Routes } from 'react-router-dom';
 import React from 'react';
-let weatherKey = process.env.REACT_APP_GEOCODING_API_KEY
+
 
 class SearchBar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            search: ''
+            search: '',
+            lat: '',
+            lon: ''
         }
         this.handleSearch = this.handleSearch.bind(this);
         this.getLatLon = this.getLatLon.bind(this);
@@ -22,13 +24,13 @@ class SearchBar extends React.Component {
     
     async getLatLon(event) {
         event.preventDefault()
-        const url = `http://api.openweathermap.org/geo/1.0/direct?q=${this.state.search}&limit=1&appid=${weatherKey}`
-        console.log(url);
+        const url = `http://localhost:8030/api/geocoding/${this.state.search}`
         const response = await fetch(url);
         if (response.ok) {
             const data = await response.json();
             console.log(data);
         }
+
     }
 
 
