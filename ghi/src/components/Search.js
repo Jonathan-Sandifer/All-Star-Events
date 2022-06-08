@@ -1,12 +1,14 @@
 import { Route, Routes, Link } from 'react-router-dom';
 import React from 'react';
-let weatherKey = process.env.REACT_APP_GEOCODING_API_KEY
+
 
 class SearchBar extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            search: ''
+            search: '',
+            latitude: '',
+            longitude: ''
         }
         this.handleSearch = this.handleSearch.bind(this);
         this.getLatLon = this.getLatLon.bind(this);
@@ -21,13 +23,20 @@ class SearchBar extends React.Component {
     
     async getLatLon(event) {
         event.preventDefault()
-        const url = `http://api.openweathermap.org/geo/1.0/direct?q=${this.state.search}&limit=1&appid=${weatherKey}`
-        console.log(url);
+        const url = `http://localhost:8030/api/geocoding/${this.state.search}`
         const response = await fetch(url);
         if (response.ok) {
             const data = await response.json();
             console.log(data);
+            let lat = data[0]['lat'].toFixed(4)
+            let lon = data[0]['lon'].toFixed(4)
+            console.log(lat, lon);
+            delete data[0]['lat']
+            delete data[0]['lon']
+            this.setState({latitude: lat, longitude: lon})
+            
         }
+
     }
 
 
@@ -37,13 +46,6 @@ class SearchBar extends React.Component {
         <form action="/" method="get">
 
             <br />
-            {/* <input
-                type="text"
-                id="header-search"
-                placeholder="Enter your city"
-                name="s"
-            />
-            <button type="submit">Search</button> */}
             <div className="search-box">
             <input onChange={this.handleSearch} type="text"
             className="search-bar"
