@@ -3,10 +3,18 @@ from django.db import models
 # Create your models here.
 class Park(models.Model):
     name = models.CharField(max_length=250)
-    description = models.CharField(max_length=600)
+    state = models.CharField(max_length=2, null=True, blank=True)
+    description = models.TextField()
     picture_url = models.URLField(null=True)
 
-class User(models.Model):
-    # id = models. PositiveSmallIntegerField()
-    name = models.CharField(max_length=50)
+    def __str__(self):
+      return self.name
+
+class BookmarkedPark(models.Model):
+  user_id = models.IntegerField(unique=True)
+  park = models.ForeignKey(
+    Park, 
+    related_name = "park",
+    on_delete=models.PROTECT,
+  )
     

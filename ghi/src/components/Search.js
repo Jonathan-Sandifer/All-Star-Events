@@ -1,5 +1,4 @@
-
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, Link } from 'react-router-dom';
 import React from 'react';
 
 
@@ -54,10 +53,7 @@ class SearchBar extends React.Component {
             />
             </div>
             <li >
-            <button onClick={this.getLatLon} className="pref-button">GO</button>
-                <Routes>
-                    <Route className='spacer active' to="/EventsParks">Your Events/Parks</Route>
-                </Routes>
+                <button onClick={this.getLatLon} to="/EventsParks" className="pref-button"><Link to="/EventsParks">GO</Link></button>
             </li>
         </form>
     </>
