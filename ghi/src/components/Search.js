@@ -35,6 +35,7 @@ class SearchBar extends React.Component {
             // this.setState({latitude: lat, longitude: lon})
             
         }
+        
 
     }
 
