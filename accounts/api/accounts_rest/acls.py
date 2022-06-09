@@ -2,6 +2,7 @@ import json
 from django.http import JsonResponse
 import requests
 import os
+from .models import User
 
 GEOCODING_API_KEY = os.environ["GEOCODING_API_KEY"]
 SEAT_GEEK_CLIENT_ID = os.environ["SEAT_GEEK_CLIENT_ID"]
