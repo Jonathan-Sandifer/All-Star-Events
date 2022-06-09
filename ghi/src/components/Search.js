@@ -7,9 +7,10 @@ class SearchBar extends React.Component {
         super(props)
         this.state = {
             search: '',
+            state: []
         }
         this.handleSearch = this.handleSearch.bind(this);
-        this.getEvents = this.getEvents.bind(this);
+        this.getMultipleEvents = this.getMultipleEvents.bind(this);
     }
 
     async handleSearch(event) {
@@ -19,23 +20,22 @@ class SearchBar extends React.Component {
         
     }
     
-    async getEvents(event) {
+    async getMultipleEvents(event) {
         event.preventDefault()
         const url = `http://localhost:8030/api/events/${this.state.search}/`
         const response = await fetch(url);
         if (response.ok) {
-            console.log("wtf")
             const data = await response.json();
-            console.log(data);
+            
+            await this.setState({state:data})
+            console.log(this.state);
             // let lat = data[0]['lat'].toFixed(4)
             // let lon = data[0]['lon'].toFixed(4)
             // console.log(lat, lon);
             // delete data[0]['lat']
             // delete data[0]['lon']
-            // this.setState({latitude: lat, longitude: lon})
-            
+            // this.setState({latitude: lat, longitude: lon}) 
         }
-
     }
 
 
@@ -51,8 +51,11 @@ class SearchBar extends React.Component {
             placeholder="Enter a city..." 
             />
             </div>
+            <select placeholder="" id="" className="t">
+            <option value="">Choose a State</option>
+            </select>
             <li >
-                <button onClick={this.getEvents} to="/EventsParks" className="pref-button"><Link className='redirect' to="/EventsParks">GO</Link></button>
+                <button onClick={this.getMultipleEvents} to="/EventsParks" className="pref-button"><Link to="/EventsParks">GO</Link></button>
             </li>
         </form>
     </>
