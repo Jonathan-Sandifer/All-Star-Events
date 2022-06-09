@@ -362,3 +362,7 @@ li {
   margin-right: 20%;
   
 }
+
+.redirect {
+  text-decoration: none;
+}

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import React from "react";
 
 class PreferenceSelect extends React.Component {
@@ -125,7 +126,7 @@ class PreferenceSelect extends React.Component {
                         </div>
                     </div>
                     <div className="center">
-                        <button onClick={this.handleSave()} type="submit" className="pref-button">Save Preferences</button>
+                        <button onClick={this.handleSave()} type="submit" className="pref-button"> <Link className='redirect' to="/">Save Preferences</Link></button>
                     </div>
                 </form>
             </main>

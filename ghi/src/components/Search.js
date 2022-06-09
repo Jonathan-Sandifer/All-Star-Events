@@ -52,7 +52,7 @@ class SearchBar extends React.Component {
             />
             </div>
             <li >
-                <button onClick={this.getEvents} to="/EventsParks" className="pref-button"><Link to="/EventsParks">GO</Link></button>
+                <button onClick={this.getEvents} to="/EventsParks" className="pref-button"><Link className='redirect' to="/EventsParks">GO</Link></button>
             </li>
         </form>
     </>
