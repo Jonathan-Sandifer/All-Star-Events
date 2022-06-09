@@ -7,10 +7,13 @@ class SearchBar extends React.Component {
         super(props)
         this.state = {
             search: '',
-            state: []
+            states: [],
+            selected_area: {}
         }
         this.handleSearch = this.handleSearch.bind(this);
         this.getMultipleEvents = this.getMultipleEvents.bind(this);
+        this.saveValues = this.saveValues.bind(this);
+
     }
 
     async handleSearch(event) {
@@ -19,16 +22,33 @@ class SearchBar extends React.Component {
         
         
     }
+
+    async saveValues(event) {
+        let selected_state = event.target.value
+        for (let state of this.state.states) {
+            console.log(state);
+            if (selected_state === state["state"]) {
+                selected_state = state
+            }
+        }
+        await this.setState({selected_area: selected_state})
+        
+        
+    }
+   
     
     async getMultipleEvents(event) {
         event.preventDefault()
         const url = `http://localhost:8030/api/events/${this.state.search}/`
         const response = await fetch(url);
         if (response.ok) {
-            const data = await response.json();
+            const five_locations = await response.json();
+            console.log("this is data", five_locations)
             
-            await this.setState({state:data})
-            console.log(this.state);
+            this.setState({states:five_locations}, () => {
+                console.log("this is state", this.state);
+            })
+            // console.log(this.state.state);
             // let lat = data[0]['lat'].toFixed(4)
             // let lon = data[0]['lon'].toFixed(4)
             // console.log(lat, lon);
@@ -51,8 +71,14 @@ class SearchBar extends React.Component {
             placeholder="Enter a city..." 
             />
             </div>
-            <select placeholder="" id="" className="t">
+            <select onChange={this.saveValues} placeholder="state" id="state" className="t">
             <option value="">Choose a State</option>
+                {this.state.states.map((area, i) => {
+                    return (
+                    <option key={i} value={area.state}>
+                    {area.state}
+                    </option>
+                )}) }
             </select>
             <li >
                 <button onClick={this.getMultipleEvents} to="/EventsParks" className="pref-button"><Link to="/EventsParks">GO</Link></button>

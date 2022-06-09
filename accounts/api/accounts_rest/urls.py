@@ -14,6 +14,7 @@ urlpatterns = [
     path("update/<int:pk>/", api_update_user, name="api_update"),
     path("events/<str:city>/", get_multiple_events, name="api_events"),
     # path("events/", get_events, name = "api_events" )
+    
     # path("parks/", get_parks, name = "api_parks" )
     
 ]
