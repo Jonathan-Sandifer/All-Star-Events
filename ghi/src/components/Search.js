@@ -1,4 +1,4 @@
-import { Route, Routes, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import React from 'react';
 
 
@@ -7,11 +7,9 @@ class SearchBar extends React.Component {
         super(props)
         this.state = {
             search: '',
-            latitude: '',
-            longitude: ''
         }
         this.handleSearch = this.handleSearch.bind(this);
-        this.getLatLon = this.getLatLon.bind(this);
+        this.getEvents = this.getEvents.bind(this);
     }
 
     async handleSearch(event) {
@@ -21,19 +19,20 @@ class SearchBar extends React.Component {
         
     }
     
-    async getLatLon(event) {
+    async getEvents(event) {
         event.preventDefault()
-        const url = `http://localhost:8030/api/geocoding/${this.state.search}`
+        const url = `http://localhost:8030/api/events/${this.state.search}/`
         const response = await fetch(url);
         if (response.ok) {
+            console.log("wtf")
             const data = await response.json();
             console.log(data);
-            let lat = data[0]['lat'].toFixed(4)
-            let lon = data[0]['lon'].toFixed(4)
-            console.log(lat, lon);
-            delete data[0]['lat']
-            delete data[0]['lon']
-            this.setState({latitude: lat, longitude: lon})
+            // let lat = data[0]['lat'].toFixed(4)
+            // let lon = data[0]['lon'].toFixed(4)
+            // console.log(lat, lon);
+            // delete data[0]['lat']
+            // delete data[0]['lon']
+            // this.setState({latitude: lat, longitude: lon})
             
         }
 
@@ -53,7 +52,7 @@ class SearchBar extends React.Component {
             />
             </div>
             <li >
-                <button onClick={this.getLatLon} to="/EventsParks" className="pref-button"><Link to="/EventsParks">GO</Link></button>
+                <button onClick={this.getEvents} to="/EventsParks" className="pref-button"><Link className='redirect' to="/EventsParks">GO</Link></button>
             </li>
         </form>
     </>

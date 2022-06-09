@@ -41,3 +41,9 @@ Ready for the weekend after a long short week.
 Today I fixed the homepage to make it sit higher on the page, I also built an EventsParks page. I only have dummy data hard coded in for now but I spent time learning about pulling data from APIs. I want to have it so when we enter a city in the search bar on the mainpage and search it, we are redirected to the EventsParks page with data for the corresponding city from the search.
 
 I want to get the search bar to redirect me to the EventsParks page then I will work on pulling in the API data.
+
+## 6/8/22
+
+Today we worked as a team to get our APIs to work for our events and our geolocator. It felt good to make some progress today. I also made a button on the home page that redirects you to the eventsparks page. 
+
+Overall we got a good amount done today.

@@ -26,3 +26,7 @@ especially the database service. After battling divergent branches and overall t
 ## 06/07/2022
 
 <p> Spent the day today still trying to attach a preference to a user. It can be handled properly on the back end, but now to figure out how to integrate the logged in users preference to be attached to the user model. A lot of back end work was done today. I finished the put request function to handle updating a user models preference. I began work on the search bar component as well, the input state is now able to be saved, and I will use that to make a call for the latitude and longitude hopefully tomorrow. I also stored an api key into a .env file on the front end. I know that is not the correct way to do it, so i will fix it later on. For now, It will have to make do as I am feeling pretty behind and overwhelmed. I got back online and now the search bar takes the city input and will return a geocoding response! thats enough for the day.</p>
+
+## 06/08/2022
+
+<p>Today was a great team day! a lot of pair programming and communication of ideas between the team. We had to set up an acls file in the back-end to properly handle our API calls and make sure our api keys/secrets were safe, and no longer in the front-end. I navigated as shane drove through the process of creating a new function to get our event data. We also messed around with the seat geek api to see how many results we could get, nd discussed how preferences will be included in the call. </p>
