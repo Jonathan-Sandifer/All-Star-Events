@@ -9,36 +9,32 @@ SEAT_GEEK_SECRET = os.environ["SEAT_GEEK_SECRET"]
 
 
 
-def get_events(request):
+def get_events(request, city ):
     if request.method == "GET":
-
-        # params = {
-        #     "lat": 32.2228,
-        #     "lon": -110.9748,
-        #     "client_id": SEAT_GEEK_CLIENT_ID,
-        #     "client_secret": SEAT_GEEK_SECRET,    
-        # }
-        # url = "https://api.seatgeek.com/2/events?lat=32.2228&lon=-110.9748&client_id=MjcxNzgxODN8MTY1MzY4MTI3NC40MDUwOTQ0&client_secret=d56ce5ca2677c7be91cb49c3cb7ff5b362bd16a12b8307b2866378c7000e24ad"
-        url = f"https://api.seatgeek.com/2/events?lat=32.2228&lon=-110.9748&client_id={SEAT_GEEK_CLIENT_ID}"
-        # print("ID???????????", url)
-
-        response = requests.get(url)
-        print("response!!!!!!!!!", response)
-        content = json.loads(response.content)
-        print("content!!!!!!!", content)
-        # return JsonResponse()
-
+        lat = get_lat_lon(city)[0]
+        lon = get_lat_lon(city)[1]
         
-
-
-def get_lat_lon(request, city):
-    if request.method == "GET":
-        params = {
-            "q": f"{city}",
-            "limit": 1,
-            "appid": GEOCODING_API_KEY,
-        }
-        url = 'http://api.openweathermap.org/geo/1.0/direct'
-        response = requests.get(url, params=params)
+        url = f"https://api.seatgeek.com/2/events?lat={lat}&lon={lon}&client_id={SEAT_GEEK_CLIENT_ID}"
+        
+        response = requests.get(url)
+        # print("response!!!!!!!!!", response)
         content = json.loads(response.content)
-        return JsonResponse(content, safe=False)
+        # print("content!!!!!!!", content)
+        return JsonResponse(content)
+   
+
+def get_lat_lon(city):
+    params = {
+        "q": f"{city}",
+        "limit": 1,
+        "appid": GEOCODING_API_KEY,
+    }
+    url = 'http://api.openweathermap.org/geo/1.0/direct'
+    response = requests.get(url, params=params)
+    content = json.loads(response.content)
+    
+    lat = round(content[0]["lat"], 4)
+    lon = round(content[0]["lon"], 4)
+    return [lat, lon]
+
+    # we know lat and long are correct but not sure how the return statement gets formatted 

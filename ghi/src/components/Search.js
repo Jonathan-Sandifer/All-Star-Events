@@ -23,17 +23,17 @@ class SearchBar extends React.Component {
     
     async getLatLon(event) {
         event.preventDefault()
-        const url = `http://localhost:8030/api/geocoding/${this.state.search}`
+        const url = `http://localhost:8030/api/events/${this.state.search}/`
         const response = await fetch(url);
         if (response.ok) {
             const data = await response.json();
-            console.log(data);
-            let lat = data[0]['lat'].toFixed(4)
-            let lon = data[0]['lon'].toFixed(4)
-            console.log(lat, lon);
-            delete data[0]['lat']
-            delete data[0]['lon']
-            this.setState({latitude: lat, longitude: lon})
+            // console.log(data);
+            // let lat = data[0]['lat'].toFixed(4)
+            // let lon = data[0]['lon'].toFixed(4)
+            // console.log(lat, lon);
+            // delete data[0]['lat']
+            // delete data[0]['lon']
+            // this.setState({latitude: lat, longitude: lon})
             
         }
 
