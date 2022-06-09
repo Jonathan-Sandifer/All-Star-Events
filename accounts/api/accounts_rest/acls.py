@@ -11,7 +11,7 @@ SEAT_GEEK_SECRET = os.environ["SEAT_GEEK_SECRET"]
 
 def get_multiple_events(request, city): # captures request response cycle 
     if request.method == "GET":
-        print("!!!!!!!!!", get_location_details(city))
+       return get_location_details(city)
         # lat = get_location_details(city)[0]
         # lon = get_location_details(city)[1]
         # state = get_location_details(city)[2]
@@ -19,11 +19,11 @@ def get_multiple_events(request, city): # captures request response cycle
         # call get location details to get the 5 options 
         # returns a response an array of objects to the front end 
         
-        response = requests.get(url)
+        # response = requests.get(url)
         # print("response!!!!!!!!!", response)
-        content = json.loads(response.content)
+        # content = json.loads(response.content)
         # print("content!!!!!!!", content)
-        return JsonResponse(content)
+        # return JsonResponse(content)
  
 # def get_events(request, city ):
 #     if request.method == "GET":
@@ -74,4 +74,4 @@ def get_location_details(city):
             "lon":location["lon"], 
             "state":location["state"]})
     # print("!!!!!", location_results)
-    return location_results
+    return JsonResponse(location_results,safe=False)
