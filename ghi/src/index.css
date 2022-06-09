@@ -145,13 +145,15 @@ li {
 .pref-button {
     background-color: white;
     font-size: 20px;
-    color: black
+    color: black;
+    text-decoration: none;
     
 }
 
 .pref-button:hover {
     background-color: #34a4eb;
     color: black;
+    text-decoration: none;
 }
 
 .sign-up-main {

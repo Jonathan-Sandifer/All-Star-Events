@@ -7,28 +7,53 @@ class SearchBar extends React.Component {
         super(props)
         this.state = {
             search: '',
-            state: []
+            states: [],
+            selected_area: {}
         }
         this.handleSearch = this.handleSearch.bind(this);
-        this.getMultipleEvents = this.getMultipleEvents.bind(this);
+        this.getMultipleLocations = this.getMultipleLocations.bind(this);
+        this.saveValues = this.saveValues.bind(this);
+
     }
 
     async handleSearch(event) {
         let value = event.target.value;
-        await this.setState({search: value});
-        
+        await this.setState({search: value});  
+    
+    }
+
+    async saveValues(event) {
+        let selected_state = event.target.value
+        for (let state of this.state.states) {
+            console.log(state);
+            if (selected_state === state["state"]) {
+                selected_state = state
+            }
+        }
+        // selected location includes lat lon state
+        await this.setState({selected_area: selected_state})
         
     }
     
-    async getMultipleEvents(event) {
+    // async getEvents(event) {
+    //     event.preventDefault()
+    //     const url = `http://localhost:8030/api/events/${this.state.selected_area.lat}/${this.state.selected_area.lon}/`
+    //     console.log("?!?!?!?!?!", url)
+    // }
+
+    //1st step someone types in city on front end, goes to get_multiple_locations in acls.py on the backend
+    async getMultipleLocations(event) {
         event.preventDefault()
         const url = `http://localhost:8030/api/events/${this.state.search}/`
-        const response = await fetch(url);
+        const response = await fetch(url); //4th step data response from backend sends 5 specific cities 
         if (response.ok) {
-            const data = await response.json();
+            const five_locations = await response.json();
+            console.log("this is data", five_locations)
             
-            await this.setState({state:data})
-            console.log(this.state);
+            this.setState({states:five_locations}, () => {
+                console.log("this is state", this.state);
+            })
+            // console.log(this.state.state);
             // let lat = data[0]['lat'].toFixed(4)
             // let lon = data[0]['lon'].toFixed(4)
             // console.log(lat, lon);
@@ -51,11 +76,17 @@ class SearchBar extends React.Component {
             placeholder="Enter a city..." 
             />
             </div>
-            <select placeholder="" id="" className="t">
+            <select onChange={this.saveValues} placeholder="state" id="state" className="t">
             <option value="">Choose a State</option>
+                {this.state.states.map((area, i) => {
+                    return (
+                    <option key={i} value={area.state}>
+                    {area.state}
+                    </option>
+                )}) }
             </select>
             <li >
-                <button onClick={this.getMultipleEvents} to="/EventsParks" className="pref-button"><Link to="/EventsParks">GO</Link></button>
+                <button onClick={this.getMultipleLocations} to="/EventsParks" className="pref-button"><Link to="/EventsParks">GO</Link></button>
             </li>
         </form>
     </>

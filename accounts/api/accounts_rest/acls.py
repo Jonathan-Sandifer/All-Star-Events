@@ -10,8 +10,8 @@ NATIONAL_PARKS_API_KEY = os.environ["NATIONAL_PARKS_API_KEY"]
 SEAT_GEEK_CLIENT_ID = os.environ["SEAT_GEEK_CLIENT_ID"]
 SEAT_GEEK_SECRET = os.environ["SEAT_GEEK_SECRET"]
 
-
-def get_multiple_events(request, city): # captures request response cycle 
+# 2nd this function takes in the city information the user typed in on the fron end 
+def get_multiple_locations(request, city): 
     if request.method == "GET":
        return get_location_details(city)
         # lat = get_location_details(city)[0]
@@ -27,18 +27,18 @@ def get_multiple_events(request, city): # captures request response cycle
         # print("content!!!!!!!", content)
         # return JsonResponse(content)
  
-# def get_events(request, city ):
-#     if request.method == "GET":
-#         # lat = get_lat_lon(city)[0]
-#         # lon = get_lat_lon(city)[1]
+def get_events(request, lat, lon):
+    if request.method == "GET":
+        # lat = get_lat_lon(city)[0]
+        # lon = get_lat_lon(city)[1]
 
-#         url = f"https://api.seatgeek.com/2/events?lat={lat}&lon={lon}&client_id={SEAT_GEEK_CLIENT_ID}"
+        url = f"https://api.seatgeek.com/2/events?lat={lat}&lon={lon}&client_id={SEAT_GEEK_CLIENT_ID}"
         
-#         response = requests.get(url)
-#         # print("response!!!!!!!!!", response)
-#         content = json.loads(response.content)
-#         # print("content!!!!!!!", content)
-#         return JsonResponse(content)
+        response = requests.get(url)
+        # print("response!!!!!!!!!", response)
+        content = json.loads(response.content)
+        # print("content!!!!!!!", content)
+        return JsonResponse(content)
    
 
 # def get_lat_lon(city):
@@ -58,6 +58,7 @@ def get_multiple_events(request, city): # captures request response cycle
 
     # we know lat and long are correct but not sure how the return statement gets formatted 
 
+# 3rd this function gets the city information from get_multiple_locations above and calls open weather api and gets the lat, lon, and state information associated with that city  
 def get_location_details(city):
     params = {
         "q": f"{city}",
