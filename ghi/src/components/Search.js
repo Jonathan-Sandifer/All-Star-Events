@@ -9,7 +9,7 @@ class SearchBar extends React.Component {
             search: '',
         }
         this.handleSearch = this.handleSearch.bind(this);
-        this.getEvents = this.getEvents.bind(this);
+        this.getMultipleEvents = this.getMultipleEvents.bind(this);
     }
 
     async handleSearch(event) {
@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
         
     }
     
-    async getEvents(event) {
+    async getMultipleEvents(event) {
         event.preventDefault()
         const url = `http://localhost:8030/api/events/${this.state.search}/`
         const response = await fetch(url);
@@ -52,7 +52,7 @@ class SearchBar extends React.Component {
             />
             </div>
             <li >
-                <button onClick={this.getEvents} to="/EventsParks" className="pref-button"><Link to="/EventsParks">GO</Link></button>
+                <button onClick={this.getMultipleEvents} to="/EventsParks" className="pref-button"><Link to="/EventsParks">GO</Link></button>
             </li>
         </form>
     </>
