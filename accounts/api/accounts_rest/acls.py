@@ -5,6 +5,8 @@ import os
 from .models import User
 
 GEOCODING_API_KEY = os.environ["GEOCODING_API_KEY"]
+NATIONAL_PARKS_API_KEY = os.environ["NATIONAL_PARKS_API_KEY"]
+
 SEAT_GEEK_CLIENT_ID = os.environ["SEAT_GEEK_CLIENT_ID"]
 SEAT_GEEK_SECRET = os.environ["SEAT_GEEK_SECRET"]
 
@@ -20,6 +22,20 @@ def get_events(request, city ):
         response = requests.get(url)
         # print("response!!!!!!!!!", response)
         content = json.loads(response.content)
+        return JsonResponse(content, safe=False)
+
+def get_parks(request):
+    if request.method == "GET":
+
+        params = {
+            "latitude": 44.409286,
+            "longitude": -68.247501,
+            "api_key": NATIONAL_PARKS_API_KEY
+        }
+        url = 'https://developer.nps.gov/api/v1/parks?&api_key=p3q9GlbuoX6XdzRV5RjIIpcXrAicTCAufXROHjIJ'
+        response = requests.get(url, params=params)
+        content = json.loads(response.content)
+        return JsonResponse(content, safe=False)
         # print("content!!!!!!!", content)
         return JsonResponse(content)
    

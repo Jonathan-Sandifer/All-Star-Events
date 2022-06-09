@@ -2,7 +2,7 @@ from .views import (
     api_list_preferences, api_list_users, api_user_token, 
     api_show_user, api_update_user, 
 )
-from .acls import get_events
+from .acls import get_lat_lon, get_parks, get_events
 from django.urls import path
 
 
@@ -14,5 +14,7 @@ urlpatterns = [
     path("update/<int:pk>/", api_update_user, name="api_update"),
     path("events/<str:city>/", get_events, name="api_events"),
     # path("events/", get_events, name = "api_events" )
+    
+    path("parks/", get_parks, name = "api_parks" )
     
 ]
