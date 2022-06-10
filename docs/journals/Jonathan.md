@@ -27,3 +27,7 @@ and a funny thing happened, I realized that while Colton had put in the pictures
 * I am also making a note, that the data for that page will be displayed as cards either horizontal or vertically, but we need to do some work on the
 backend before I can fully see this page realized.
 
+## 6/10/2022
+* Ouch it seems I have forgotton to update my journal entries for a few days, I have been working with the rest of my teammates to get a better understanding of how our backend will
+be structured and a bunch of paired programming with the guys to make sure I understand how to make it all work for the portion I have to do. I have had a few hiccups though like 
+this past week, being unable to really code effectively as I had technical issues with my internet stopping me from working on anything for about a day, and any extra work I could have been doing after the day was over for the cohort, but today I am back at it and will need to catch up.
