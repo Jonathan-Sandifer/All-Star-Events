@@ -37,8 +37,9 @@ class SearchBar extends React.Component {
         console.log(url);
         const response = await fetch(url);
         if (response.ok) {
-            let event_data = await response.json();
-            console.log(event_data);
+            let eventsAndParks = await response.json();
+            console.log("events & parks", eventsAndParks);
+            this.props.sSData(eventsAndParks)
         } 
 
         

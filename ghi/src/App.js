@@ -11,21 +11,28 @@ import Footer from './components/Footer';
 import UserEventsParks from './components/userEventsParks';
 import EventsParks from './components/EventsParks';
 import { useToken } from './api';
+import { useState } from 'react';
 
 
 function App() {
   const [token, logout, signup, login] = useToken();
+  const [searchData, setSearchData] = useState({});
+
+  let getSearchData = function(data) {
+    setSearchData(data)
+  }
+
   return (
     <BrowserRouter>
       <Navbar token={token} />
       <Routes>
-      <Route path="/*" element={<MainPage />} />
+      <Route path="/*" element={<MainPage sSearchData={getSearchData}/>} />
       <Route path="/preferences" element={<PreferenceSelect />} />
       <Route path="/signup" element={<CreateAccountForm signup={signup} token={token} />} />
       <Route path="/logout" element={<Logout logout={logout} />} />
       <Route path="/login" element={<LoginForm login={login} token={token} />} />
       <Route path="/userEventsParks" element={<UserEventsParks />} />
-      <Route path="/EventsParks" element={<EventsParks />} />
+      <Route path="/EventsParks" element={<EventsParks sData={searchData} />}  />
       </Routes>
 
       <Footer />
