@@ -47,3 +47,9 @@ I want to get the search bar to redirect me to the EventsParks page then I will 
 Today we worked as a team to get our APIs to work for our events and our geolocator. It felt good to make some progress today. I also made a button on the home page that redirects you to the eventsparks page. 
 
 Overall we got a good amount done today.
+
+## 6/9/22
+
+Today we worked as a team pair programming to add a drop down menu of state for the city searched then pulled that data so we can use it to find events and parks. We are currently stuck on bringing the state, lat, and lon that we have put together on the front end to the back end. Once we have it on the backend, we can pull the lat and lon from the selected location to search events. We can also use the state, convert it to state initials and use our NPS API to return national parks in that state.
+
+Felt like a good day.
