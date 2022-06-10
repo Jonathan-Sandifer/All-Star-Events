@@ -3,6 +3,7 @@ from django.http import JsonResponse
 import requests
 import os
 from .models import User
+from .states import convert_state_to_abbr
 
 GEOCODING_API_KEY = os.environ["GEOCODING_API_KEY"]
 NATIONAL_PARKS_API_KEY = os.environ["NATIONAL_PARKS_API_KEY"]
