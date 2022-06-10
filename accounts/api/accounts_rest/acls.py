@@ -3,6 +3,7 @@ from django.http import JsonResponse
 import requests
 import os
 from .models import User
+from .states import convert_state_to_abbr
 
 GEOCODING_API_KEY = os.environ["GEOCODING_API_KEY"]
 NATIONAL_PARKS_API_KEY = os.environ["NATIONAL_PARKS_API_KEY"]
@@ -27,18 +28,21 @@ def get_multiple_locations(request, city):
         # print("content!!!!!!!", content)
         # return JsonResponse(content)
  
+ # Include a state parameter
 def get_events(request, lat, lon):
     if request.method == "GET":
         # lat = get_lat_lon(city)[0]
         # lon = get_lat_lon(city)[1]
 
-        url = f"https://api.seatgeek.com/2/events?lat={lat}&lon={lon}&client_id={SEAT_GEEK_CLIENT_ID}"
-        
-        response = requests.get(url)
-        # print("response!!!!!!!!!", response)
-        content = json.loads(response.content)
-        # print("content!!!!!!!", content)
-        return JsonResponse(content)
+        event_url = f"https://api.seatgeek.com/2/events?lat={lat}&lon={lon}&client_id={SEAT_GEEK_CLIENT_ID}"
+        event_response = requests.get(event_url)
+        event_content = json.loads(event_response.content)
+
+        # abbr = convert_state_to_abbr(state)
+        # parks_url = f"https://developer.nps.gov/api/v1/parks?stateCode={abbr}&api_key={NATIONAL_PARKS_API_KEY}"
+        # parks_response = requests.get(parks_url)
+        # parks_content = json.loads(parks_response)
+        return JsonResponse(event_content, safe=False)
    
 
 # def get_lat_lon(city):
