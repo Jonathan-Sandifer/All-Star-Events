@@ -32,7 +32,9 @@ class SearchBar extends React.Component {
         // selected location includes lat lon state
         await this.setState({selected_area: selected_state})
         console.log(this.state.selected_area);
+        // include ${this.state.selected_area.state} at the end
         const url = `http://localhost:8030/api/events/${this.state.selected_area.lat}/${this.state.selected_area.lon}/`
+        console.log(url);
         const response = await fetch(url);
         if (response.ok) {
             let event_data = await response.json();

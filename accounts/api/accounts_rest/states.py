@@ -65,4 +65,3 @@ def convert_state_to_abbr(full_state_name):
         
 
 
-print(convert_state_to_abbr("United States Minor Outlying Islands"))
