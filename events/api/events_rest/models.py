@@ -7,7 +7,7 @@ class Event(models.Model):
     event_type = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
     venue_name = models.CharField(max_length=100)
-    picture_url = models.URLField(null=True, blank =True)
+    picture_url = models.URLField(null=True, blank=True)
 
     def __str__(self):
       return self.name

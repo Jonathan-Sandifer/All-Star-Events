@@ -34,3 +34,10 @@ Spent a large portion of the day trying to figure out how to best model the even
 
 ## June 8th, 2022
 Still really struggling on where to go/what to do, but was finallly able to get into a bit of a rythmn and figure a couple things out. I modeled the parks rest model based off of the national parks api data coming in to start. LAter we finally peer programmed as a group and it was the best. All 4 of us at one point were trying different things to solve a problem with getting the seet geek api to work and give us any information at all. After a ton of timeJonathan spotted something with the URL that saved the day for us after that Kieran and I were able to create a helper function to allow the user inputted data from our search bar to convert the city to a lat and lon then we passed it into another function that added it to the seet geek api and got us all of the data from the users inputted location!!!!
+
+## June 9th, 2022
+Today was easily the best day of the entire project for me I was hands on coding again for the paired programming. we worked on our search page again and the multiple functions we have to create in order to get the correct data to populate, we had to refactor a good amount from yesterday. But after everything today when a user type a city into a search bar that state is saved and sent to the back end into the open weather api which converts the city to latitude, longitude , and state info we then pass that back to populate the state dropdown bar we made so people can get teh correct city/state combination then once selected we captured that data and sent to to the backend . Next step is to get it to pass into both the seet geek and parks api. 
+
+## June 10th, 2022
+
+paired programming again today! Kieran got the data connected to the to the seat geek api last night. Today we got the get events fully functioning to get the state data into the parks api. So after today we finally have all the data we need. 

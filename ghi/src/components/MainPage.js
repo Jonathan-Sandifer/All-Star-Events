@@ -1,7 +1,7 @@
 import React from 'react'
 import Search from './Search';
 
-function MainPage() {
+function MainPage(props) {
     return (
       <main className='welcome'>&nbsp;
         <div className="mainpage">
@@ -9,7 +9,7 @@ function MainPage() {
             <h1 className="mainheader">Welcome to All Star Events</h1>
           </div>
           <br />
-          <Search />
+          <Search sSData={props.sSearchData}/>
         </div>
       </main>
     );

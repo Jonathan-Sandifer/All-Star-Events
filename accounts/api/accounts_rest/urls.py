@@ -14,7 +14,7 @@ urlpatterns = [
     path("users/<int:pk>/", api_show_user, name="api_user"),
     path("update/<int:pk>/", api_update_user, name="api_update"),
     path("events/<str:city>/", get_multiple_locations, name="api_multiple_locations"),
-    path("events/<str:lat>/<str:lon>/", get_events, name="api_events" )
+    path("events/<str:lat>/<str:lon>/<str:state>/", get_events, name="api_events" )
     # include /<str:state> in the above path
     
     

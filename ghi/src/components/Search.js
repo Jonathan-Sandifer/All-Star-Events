@@ -33,12 +33,13 @@ class SearchBar extends React.Component {
         await this.setState({selected_area: selected_state})
         // console.log(this.state.selected_area);
         // include ${this.state.selected_area.state} at the end
-        const url = `http://localhost:8030/api/events/${this.state.selected_area.lat}/${this.state.selected_area.lon}/`
-        // console.log(url);
+        const url = `http://localhost:8030/api/events/${this.state.selected_area.lat}/${this.state.selected_area.lon}/${this.state.selected_area.state}/`
+        console.log(url);
         const response = await fetch(url);
         if (response.ok) {
-            let event_data = await response.json();
-            console.log("!!!!!!", event_data);
+            let eventsAndParks = await response.json();
+            console.log("events & parks", eventsAndParks);
+            this.props.sSData(eventsAndParks)
         } 
 
         
@@ -60,13 +61,6 @@ class SearchBar extends React.Component {
             this.setState({states:five_locations}, () => {
                 console.log("this is state", this.state);
             })
-            // console.log(this.state.state);
-            // let lat = data[0]['lat'].toFixed(4)
-            // let lon = data[0]['lon'].toFixed(4)
-            // console.log(lat, lon);
-            // delete data[0]['lat']
-            // delete data[0]['lon']
-            // this.setState({latitude: lat, longitude: lon}) 
         }
     }
 
