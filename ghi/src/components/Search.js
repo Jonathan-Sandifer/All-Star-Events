@@ -47,6 +47,19 @@ class SearchBar extends React.Component {
         
         
     }
+
+    async saveValues(event) {
+        let selected_state = event.target.value
+        for (let state of this.state.states) {
+            console.log(state);
+            if (selected_state === state["state"]) {
+                selected_state = state
+            }
+        }
+        await this.setState({selected_area: selected_state})
+        
+        
+    }
    
     
     // async getEvents(event) {
