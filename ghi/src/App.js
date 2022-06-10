@@ -20,7 +20,6 @@ function App() {
       <Navbar token={token} />
       <Routes>
       <Route path="/*" element={<MainPage />} />
-      {/* <Route path="/signup" element={<SignUp signup={signup} />} /> */}
       <Route path="/preferences" element={<PreferenceSelect />} />
       <Route path="/signup" element={<CreateAccountForm signup={signup} token={token} />} />
       <Route path="/logout" element={<Logout logout={logout} />} />
