@@ -30,3 +30,7 @@ especially the database service. After battling divergent branches and overall t
 ## 06/08/2022
 
 <p>Today was a great team day! a lot of pair programming and communication of ideas between the team. We had to set up an acls file in the back-end to properly handle our API calls and make sure our api keys/secrets were safe, and no longer in the front-end. I navigated as shane drove through the process of creating a new function to get our event data. We also messed around with the seat geek api to see how many results we could get, nd discussed how preferences will be included in the call. </p>
+
+## 06/08/2022
+
+<p> Today was very confusing. A lot more pair programming swapping between shane and I driving. We decided to re-arrange our back-end to account for the cities that have the same name, but are in different states. It took all day setting everything up and we got lost with how many back and forth API calls we were making. Im sure this was not best practice. I stayed on a bit to add a new onBlur event to our component, and I created a function that switches an input states name to the state code.  </p>

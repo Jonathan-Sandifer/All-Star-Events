@@ -60,13 +60,6 @@ class SearchBar extends React.Component {
             this.setState({states:five_locations}, () => {
                 console.log("this is state", this.state);
             })
-            // console.log(this.state.state);
-            // let lat = data[0]['lat'].toFixed(4)
-            // let lon = data[0]['lon'].toFixed(4)
-            // console.log(lat, lon);
-            // delete data[0]['lat']
-            // delete data[0]['lon']
-            // this.setState({latitude: lat, longitude: lon}) 
         }
     }
 
