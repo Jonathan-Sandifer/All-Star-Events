@@ -38,7 +38,7 @@ def get_events(request, lat, lon):
         # print("response!!!!!!!!!", response)
         content = json.loads(response.content)
         # print("content!!!!!!!", content)
-        return JsonResponse(content)
+        return JsonResponse(content, safe=False)
    
 
 # def get_lat_lon(city):

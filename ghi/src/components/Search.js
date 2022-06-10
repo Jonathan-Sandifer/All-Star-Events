@@ -25,49 +25,26 @@ class SearchBar extends React.Component {
     async saveValues(event) {
         let selected_state = event.target.value
         for (let state of this.state.states) {
-            console.log(state);
             if (selected_state === state["state"]) {
                 selected_state = state
             }
         }
         // selected location includes lat lon state
         await this.setState({selected_area: selected_state})
-        
-    }
-
-    async saveValues(event) {
-        let selected_state = event.target.value
-        for (let state of this.state.states) {
-            console.log(state);
-            if (selected_state === state["state"]) {
-                selected_state = state
-            }
-        }
-        await this.setState({selected_area: selected_state})
-        
-        
-    }
-
-    async saveValues(event) {
-        let selected_state = event.target.value
-        for (let state of this.state.states) {
-            console.log(state);
-            if (selected_state === state["state"]) {
-                selected_state = state
-            }
-        }
-        await this.setState({selected_area: selected_state})
         console.log(this.state.selected_area);
-        
+        const url = `http://localhost:8030/api/events/${this.state.selected_area.lat}/${this.state.selected_area.lon}/`
+        const response = await fetch(url);
+        if (response.ok) {
+            let event_data = await response.json();
+            console.log(event_data);
+        } 
+
         
     }
+
+
    
     
-    // async getEvents(event) {
-    //     event.preventDefault()
-    //     const url = `http://localhost:8030/api/events/${this.state.selected_area.lat}/${this.state.selected_area.lon}/`
-    //     console.log("?!?!?!?!?!", url)
-    // }
 
     //1st step someone types in city on front end, goes to get_multiple_locations in acls.py on the backend
     async getMultipleLocations(event) {
@@ -99,7 +76,7 @@ class SearchBar extends React.Component {
 
             <br />
             <div className="search-box">
-            <input onChange={this.handleSearch} type="text"
+            <input  onChange={this.handleSearch} onBlur={this.getMultipleLocations} type="text"
             className="search-bar"
             placeholder="Enter a city..." 
             />
@@ -114,7 +91,9 @@ class SearchBar extends React.Component {
                 )}) }
             </select>
             <li >
-                <button onClick={this.getMultipleLocations} to="/EventsParks" className="pref-button"><Link to="/EventsParks">GO</Link></button>
+                <button to="/EventsParks" className="pref-button">
+                <Link className='pref-button' to="/EventsParks">GO</Link>
+                </button>
             </li>
         </form>
     </>
