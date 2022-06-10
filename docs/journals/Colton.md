@@ -53,3 +53,7 @@ Overall we got a good amount done today.
 Today we worked as a team pair programming to add a drop down menu of state for the city searched then pulled that data so we can use it to find events and parks. We are currently stuck on bringing the state, lat, and lon that we have put together on the front end to the back end. Once we have it on the backend, we can pull the lat and lon from the selected location to search events. We can also use the state, convert it to state initials and use our NPS API to return national parks in that state.
 
 Felt like a good day.
+
+## 6/10/22
+
+Today we pair programmed and made some progress. We are now able to see our events and parks based on the lat lon and state. We now need to put that info on to cads so that we can show everything to the user. We didn't have much time today but still a successful day.
