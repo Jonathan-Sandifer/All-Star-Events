@@ -32,6 +32,7 @@ class SearchBar extends React.Component {
             }
         }
         await this.setState({selected_area: selected_state})
+        console.log(this.state.selected_area);
         
         
     }
