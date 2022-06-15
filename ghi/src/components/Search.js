@@ -34,20 +34,17 @@ class SearchBar extends React.Component {
         // console.log(this.state.selected_area);
         // include ${this.state.selected_area.state} at the end
         const url = `http://localhost:8030/api/events/${this.state.selected_area.lat}/${this.state.selected_area.lon}/${this.state.selected_area.state}/`
-        console.log(url);
+        // console.log(url);
         const response = await fetch(url);
         if (response.ok) {
             let eventsAndParks = await response.json();
-            console.log("events & parks", eventsAndParks);
+            // console.log("events & parks", eventsAndParks);
             this.props.sSData(eventsAndParks)
         } 
 
         
     }
 
-
-   
-    
 
     //1st step someone types in city on front end, goes to get_multiple_locations in acls.py on the backend
     async getMultipleLocations(event) {
@@ -56,10 +53,10 @@ class SearchBar extends React.Component {
         const response = await fetch(url); //4th step data response from backend sends 5 specific cities 
         if (response.ok) {
             const five_locations = await response.json();
-            console.log("this is data", five_locations)
+            // console.log("this is data", five_locations)
             
             this.setState({states:five_locations}, () => {
-                console.log("this is state", this.state);
+                // console.log("this is state", this.state);
             })
         }
     }
@@ -77,8 +74,8 @@ class SearchBar extends React.Component {
             placeholder="Enter a city..." 
             />
             </div>
-            <select onChange={this.saveValues} placeholder="state" id="state" className="t">
-            <option value="">Choose a State</option>
+            <select onChange={this.saveValues} placeholder="state" id="state" className="state-select">
+            <option className="drop-down" value="">Choose a State</option>
                 {this.state.states.map((area, i) => {
                     return (
                     <option key={i} value={area.state}>
@@ -87,8 +84,8 @@ class SearchBar extends React.Component {
                 )}) }
             </select>
             <li >
-                <button to="/EventsParks" className="pref-button">
-                <Link className='pref-button' to="/EventsParks">GO</Link>
+                <button className="pref-button" to="/EventsParks">
+                <Link className='pref-button:hover' to="/EventsParks">GO</Link>
                 </button>
             </li>
         </form>
