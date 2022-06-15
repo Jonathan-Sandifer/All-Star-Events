@@ -38,8 +38,13 @@ class SearchBar extends React.Component {
         const response = await fetch(url);
         if (response.ok) {
             let eventsAndParks = await response.json();
-            console.log("events & parks", eventsAndParks);
-            this.props.sSData(eventsAndParks)
+            let selected_lat_lon = {
+                "lat": this.state.selected_area.lat,
+                "lon": this.state.selected_area.lon,
+            }
+            eventsAndParks['lat_lon'] = selected_lat_lon
+            console.log("events & parks", eventsAndParks, selected_lat_lon);
+            this.props.sSData(eventsAndParks, selected_lat_lon)
         } 
 
         
