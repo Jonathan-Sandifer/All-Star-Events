@@ -5,8 +5,6 @@ import React from 'react'
 function EventsParks(props) {
   let searchData = props.sData
   console.log("events and parks", searchData)
-  localStorage.setItem('data',JSON.stringify(searchData))
-  
   const itemData = JSON.parse(localStorage.getItem('data'));
   console.log("data", itemData)
     return (
