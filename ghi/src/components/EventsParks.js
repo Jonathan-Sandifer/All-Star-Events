@@ -4,7 +4,9 @@ import React from 'react'
 
 function EventsParks(props) {
   let searchData = props.sData
-  console.log("events and parks::", searchData)
+  console.log("events and parks", searchData)
+  const itemData = JSON.parse(localStorage.getItem('data'));
+  console.log("data", itemData)
     return (
       <div className="events-parks">
         <br />
