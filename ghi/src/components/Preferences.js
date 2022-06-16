@@ -62,9 +62,7 @@ class PreferenceSelect extends React.Component {
                 this.setPreferences(container, 2)
             }
         }
-        // for (const [key, value] of Object.entries(state)) {
-        //     console.log(key["art"]);
-        // }
+    
        
     }
 

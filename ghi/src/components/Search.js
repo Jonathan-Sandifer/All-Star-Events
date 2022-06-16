@@ -31,16 +31,20 @@ class SearchBar extends React.Component {
         }
         // selected location includes lat lon state
         await this.setState({selected_area: selected_state})
-        // console.log(this.state.selected_area);
-        // include ${this.state.selected_area.state} at the end
         const url = `http://localhost:8030/api/events/${this.state.selected_area.lat}/${this.state.selected_area.lon}/${this.state.selected_area.state}/`
-        // console.log(url);
         const response = await fetch(url);
+        console.log("area", this.state.selected_area);
         if (response.ok) {
             let eventsAndParks = await response.json();
-            // console.log("events & parks", eventsAndParks);
+            let selected_lat_lon = {
+                "lat": this.state.selected_area.lat,
+                "lon": this.state.selected_area.lon,
+            }
+            eventsAndParks['lat_lon'] = selected_lat_lon
             this.props.sSData(eventsAndParks)
+            localStorage.setItem('data',JSON.stringify(eventsAndParks))
         } 
+
 
         
     }
@@ -53,8 +57,6 @@ class SearchBar extends React.Component {
         const response = await fetch(url); //4th step data response from backend sends 5 specific cities 
         if (response.ok) {
             const five_locations = await response.json();
-            // console.log("this is data", five_locations)
-            
             this.setState({states:five_locations}, () => {
                 // console.log("this is state", this.state);
             })

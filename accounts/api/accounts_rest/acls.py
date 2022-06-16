@@ -30,7 +30,6 @@ def get_events(request, lat, lon, state):
         parks_url = f"https://developer.nps.gov/api/v1/parks?stateCode={abbr}&limit=5&api_key={NATIONAL_PARKS_API_KEY}"
         parks_response = requests.get(parks_url)
         parks_content = json.loads(parks_response.content)
-        print("i am a response!!!", parks_content)
         return JsonResponse({
             "events": event_content,
             "parks": parks_content,
