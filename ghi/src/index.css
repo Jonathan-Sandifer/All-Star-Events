@@ -211,11 +211,43 @@ li {
     
   }
 
+.state-select {
+  padding:0.8em 4em;
+
+}
+.drop-down {
+    background-color: rgb(31, 1, 165);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding:10px;
+    margin-top:20px;
+}
+
 .pref-button {
-    background-color: white;
+    appearance: button;
+    background-color: #34a4eb;
+    border: solid transparent;
+    border-radius: 16px;
+    border-width: 0 0 4px;
+    box-sizing: border-box;
+    cursor: pointer;
+    display: inline-block;
     font-size: 20px;
+    font-weight: 700;
+    letter-spacing: .8px;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    overflow: visible;
+    padding: 5px 80px;
+    text-align: center;
+    text-transform: uppercase;
+    touch-action: manipulation;
+    font-family: din-round,sans-serif;
     color: black;
     text-decoration: none;
+    
     
 }
 
@@ -225,6 +257,36 @@ li {
     text-decoration: none;
 }
 
+.form-button {
+  appearance: button;
+  background-color: #1899D6;
+  border: solid transparent;
+  border-radius: 16px;
+  border-width: 0 0 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: din-round,sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .8px;
+  line-height: 20px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  touch-action: manipulation;
+  transform: translateZ(0);
+  transition: filter .2s;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 100%;
+}
 .sign-up-main {
     background-image: url('./images/img-9.jpg');
     background-size: cover;
@@ -297,36 +359,7 @@ li {
   transition: 0.4s ease;
 }
 
-.form-button {
-  appearance: button;
-  background-color: #1899D6;
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  box-sizing: border-box;
-  color: #FFFFFF;
-  cursor: pointer;
-  display: inline-block;
-  font-family: din-round,sans-serif;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: .8px;
-  line-height: 20px;
-  margin: 0;
-  outline: none;
-  overflow: visible;
-  padding: 13px 16px;
-  text-align: center;
-  text-transform: uppercase;
-  touch-action: manipulation;
-  transform: translateZ(0);
-  transition: filter .2s;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-  width: 100%;
-}
+
 
 
 .mainpage {
@@ -358,7 +391,7 @@ li {
 }
 
 .search-box {
-  width: 90%;
+  width: 40%;
   /* margin: 0 0 75px; */
   margin-left: auto;
   margin-right: auto;

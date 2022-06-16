@@ -50,9 +50,6 @@ class SearchBar extends React.Component {
     }
 
 
-   
-    
-
     //1st step someone types in city on front end, goes to get_multiple_locations in acls.py on the backend
     async getMultipleLocations(event) {
         event.preventDefault()
@@ -61,7 +58,7 @@ class SearchBar extends React.Component {
         if (response.ok) {
             const five_locations = await response.json();
             this.setState({states:five_locations}, () => {
-                console.log("this is state", this.state);
+                // console.log("this is state", this.state);
             })
         }
     }
@@ -79,8 +76,8 @@ class SearchBar extends React.Component {
             placeholder="Enter a city..." 
             />
             </div>
-            <select onChange={this.saveValues} placeholder="state" id="state" className="t">
-            <option value="">Choose a State</option>
+            <select onChange={this.saveValues} placeholder="state" id="state" className="state-select">
+            <option className="drop-down" value="">Choose a State</option>
                 {this.state.states.map((area, i) => {
                     return (
                     <option key={i} value={area.state}>
@@ -89,8 +86,8 @@ class SearchBar extends React.Component {
                 )}) }
             </select>
             <li >
-                <button to="/EventsParks" className="pref-button">
-                <Link className='pref-button' to="/EventsParks">GO</Link>
+                <button className="pref-button" to="/EventsParks">
+                <Link className='pref-button:hover' to="/EventsParks">GO</Link>
                 </button>
             </li>
         </form>
