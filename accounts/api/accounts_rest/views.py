@@ -88,25 +88,23 @@ def api_show_user(request, pk):
 
 
 @require_http_methods(["PUT"])
-def api_update_user(request, pk):
+def api_update_user(request):
     # print("hey im at the top", request.method)
     if request.method == "PUT":
         content = json.loads(request.body)
         content = content['preference']
-        print("changing", content)
         try:
             if "name" in content:
                 preference = Preferences.objects.get(name=content["name"])
                 content["name"] = preference 
-                User.objects.get(id=pk).preferences.add(preference)
+                request.user.preferences.add(preference)
         except Preferences.DoesNotExist:
             return JsonResponse(
                 {"message": "Invalid preference"},
                 status=400,
             )
-        user = User.objects.get(id=pk)
         return JsonResponse(
-            user,
+            request.user,
             encoder=UserDetailEncoder,
             safe=False,
         )
