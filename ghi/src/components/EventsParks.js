@@ -20,7 +20,7 @@ function EventsParks(props) {
         <div className="row">
             <div className="column">
               <h1>Events</h1>
-              <tbody>
+              {/* <tbody>
           {props.searchData.map(searchData => {
             return (
               <tr key={searchData.id}>
@@ -28,7 +28,7 @@ function EventsParks(props) {
               </tr>
             );
           })}
-        </tbody>
+        </tbody> */}
             </div>
             <div className="column">
               <h1>Parks</h1>

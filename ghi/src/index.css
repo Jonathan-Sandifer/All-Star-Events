@@ -162,15 +162,15 @@ li {
   }
 
 .state-select {
-  padding:1em 4em;
+  padding:0.8em 4em;
 
 }
 .drop-down {
-    background-color: rgb(44, 4, 219);
+    background-color: rgb(31, 1, 165);
     color: white;
     border: none;
     cursor: pointer;
-    padding:20px;
+    padding:10px;
     margin-top:20px;
 }
 
