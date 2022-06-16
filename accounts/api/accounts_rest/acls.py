@@ -30,15 +30,12 @@ def get_events(request, lat, lon, state):
         parks_url = f"https://developer.nps.gov/api/v1/parks?stateCode={abbr}&limit=5&api_key={NATIONAL_PARKS_API_KEY}"
         parks_response = requests.get(parks_url)
         parks_content = json.loads(parks_response.content)
-        print("i am a response!!!", parks_content)
         return JsonResponse({
             "events": event_content,
             "parks": parks_content,
         }, safe=False)
    
 
-
- 
 # 3rd this function gets the city information from get_multiple_locations above
 # and calls open weather api and gets the lat, lon, and state 
 # information associated with that city  
