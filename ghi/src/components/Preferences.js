@@ -33,11 +33,11 @@ class PreferenceSelect extends React.Component {
     }
 
     async setPreferences(preference) {
-        const url = `http://localhost:8030/api/update/2/`; // We need to add preferences
+        const url = `http://localhost:8030/api/update/`; // We need to add preferences
         console.log(JSON.stringify(preference));                    // to the currently signed in user
         const response = await fetch(url, {                         // it is hard coded for now
             method: 'put',
-            // credentials: 'include',
+            credentials: 'include',
             body: JSON.stringify({preference}),
             headers: {
                 'Content-Type': 'application/json',
