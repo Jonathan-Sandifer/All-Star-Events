@@ -28,10 +28,9 @@ ul {
   height: 100vh;
   margin-left: -8px;
   margin-right: -8px;
-
-	
-  
 }
+
+
 
 .goodbye {
   background-image: url('./images/img-logout.jpg');
@@ -212,7 +211,11 @@ li {
   }
 
 .state-select {
+  color: black;
+  margin-top: 5px;
+  margin-bottom: 5px;
   padding:0.8em 4em;
+  box-shadow: 0px 5px rgba(0, 0, 0, 0.3);
 
 }
 .drop-down {
@@ -225,8 +228,9 @@ li {
 }
 
 .pref-button {
+    text-decoration: none;
+    color: black;
     appearance: button;
-    background-color: #34a4eb;
     border: solid transparent;
     border-radius: 16px;
     border-width: 0 0 4px;
@@ -243,18 +247,22 @@ li {
     padding: 5px 80px;
     text-align: center;
     text-transform: uppercase;
-    touch-action: manipulation;
     font-family: din-round,sans-serif;
-    color: black;
-    text-decoration: none;
     
     
 }
 
 .pref-button:hover {
+    text-decoration: none;
     background-color: #34a4eb;
     color: black;
+    
+}
+
+.new {
     text-decoration: none;
+    color: black;
+    
 }
 
 .form-button {
@@ -391,7 +399,7 @@ li {
 }
 
 .search-box {
-  width: 40%;
+  width: 85%;
   /* margin: 0 0 75px; */
   margin-left: auto;
   margin-right: auto;
