@@ -41,3 +41,9 @@ Today was easily the best day of the entire project for me I was hands on coding
 ## June 10th, 2022
 
 paired programming again today! Kieran got the data connected to the to the seat geek api last night. Today we got the get events fully functioning to get the state data into the parks api. So after today we finally have all the data we need. 
+
+## June 15th, 2022
+struggled to figure out a bit today. Especially when it came to getting our data to populate across pages. Pairing with Colton he was able to figure out that we could save it as local storage. Since that was a slog for us and took quite a while i decided to mess around with a few of the styling elements of the search page and made the button and dropdown menu look slightly more presentable. During that research I learned that CSS has a very difficult time with the select and option tags so that will be something to look into later once we get the rest up and running. 
+
+## June 16th, 2022
+It was nice to get a decent amount of production today by myself. Since the data was saved in local storage for the events and parks information. It was difficult to figure out since they were both multiple nested arrays inside of multiple objects. I was able to map both the events and parks information to the event/parks page based of the input data. The picture urls from the parks api gave me a lot of trouble when it came to sizing. But all th information we need is present and on screen. It is just going to need some more styling to make it look more presentable. I was looking into bootstrap cards but apparently importing bootstrap messes with the rest of the css we already have so I will have a lot of tinkering to do with it to get it into a presentable state.
