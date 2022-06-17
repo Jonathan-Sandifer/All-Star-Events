@@ -7,6 +7,7 @@ function EventsParks(props) {
   console.log("events and parks", searchData)
   const itemData = JSON.parse(localStorage.getItem('data'));
   console.log("data", itemData)
+  console.log("TYPE OF !!!", Array.isArray(itemData.events.events))
     return (
       <div className="events-parks">
         <br />
@@ -22,22 +23,26 @@ function EventsParks(props) {
         <div className="row">
             <div className="column">
               <h1>Events</h1>
-              {/* <tbody>
-          {props.searchData.map(searchData => {
+              <tbody>
+          {itemData.events.events.map(event => {
             return (
-              <tr key={searchData.id}>
-                <td>{searchData.events}</td>
+              <tr key={event.id}>
+                <td><img src={event.performers[0].image}/></td>
+                <td>{event.title}</td>
+                <td>{event.venue.name}</td>
+                <td>{event.venue.city}</td>
+                <td>{event.datetime_local}</td>
+                <td>{event.type}</td>
               </tr>
             );
           })}
-        </tbody> */}
+        </tbody>
             </div>
             <div className="column">
               <h1>Parks</h1>
             </div>
         </div>
-            </div>
-       
+            </div> 
     );
   }
   
