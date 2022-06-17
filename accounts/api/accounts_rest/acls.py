@@ -7,6 +7,7 @@ from .states import convert_state_to_abbr
 
 GEOCODING_API_KEY = os.environ["GEOCODING_API_KEY"]
 NATIONAL_PARKS_API_KEY = os.environ["NATIONAL_PARKS_API_KEY"]
+OPEN_WEATHER_API_KEY = os.environ["OPEN_WEATHER_API_KEY"]
 
 SEAT_GEEK_CLIENT_ID = os.environ["SEAT_GEEK_CLIENT_ID"]
 SEAT_GEEK_SECRET = os.environ["SEAT_GEEK_SECRET"]
@@ -56,3 +57,11 @@ def get_location_details(city):
             "lon":location["lon"], 
             "state":location["state"]})
     return JsonResponse(location_results,safe=False)
+
+
+def get_weather(request, lat, lon):
+    url = f'http://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&units=imperial&appid={OPEN_WEATHER_API_KEY}'
+    response = requests.get(url)
+    content = json.loads(response.content) 
+    return JsonResponse(content)
+
