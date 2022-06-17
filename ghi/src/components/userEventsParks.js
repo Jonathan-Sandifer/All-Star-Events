@@ -8,6 +8,7 @@ function UserEventsParks() {
       <div className="user-events-parks">
         <div class="user-cards">
           <div class="user-card">
+            <img class="user-card-image" src="https://fakeimg.pl/400x300/009578/fff/" alt="" />
             <div class= "user-card-content">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 

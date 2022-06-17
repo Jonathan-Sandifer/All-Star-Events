@@ -109,6 +109,11 @@ ul {
   border-left: 2px solid #333333;
 }
 
+.user-card-info i {
+  font-size: 0.9em;
+  margin-right: 8px;
+}
+
 
 
 /* .user-row:after {
