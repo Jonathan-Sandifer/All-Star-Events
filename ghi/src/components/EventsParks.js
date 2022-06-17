@@ -1,13 +1,26 @@
-import React from 'react'
-
+import React,{useState, useEffect} from 'react'
 
 
 function EventsParks(props) {
   let searchData = props.sData
-  // console.log("events and parks", searchData)
+  
   const itemData = JSON.parse(localStorage.getItem('data'));
-  console.log("data", itemData)
-  console.log("TYPE OF !!!", Array.isArray(itemData.parks.data))
+  const [weather, setWeather] = useState([])
+  const lat = itemData.lat_lon.lat
+  const lon = itemData.lat_lon.lon
+
+  useEffect(() => {
+    const fetchWeather = async () => {
+    const url = `http://localhost:8030/api/weather/${lat}/${lon}/`
+    const response = await fetch(url)
+    if (response.ok){
+      const weatherData = await response.json()
+      return weatherData
+    }}; setWeather(fetchWeather)
+  },[])
+  
+  console.log("weather", weather)
+  
     return (
       <div className="events-parks">
         <br />
