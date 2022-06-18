@@ -11,29 +11,32 @@ function EventsParks(props) {
 
   useEffect(() => {
     const fetchWeather = async () => {
+    
     const url = `http://localhost:8030/api/weather/${lat}/${lon}/`
     const response = await fetch(url)
     if (response.ok){
       const weatherData = await response.json()
-      return weatherData
-    }}; setWeather(fetchWeather)
+      setWeather(weatherData.list)
+    }}; 
+    fetchWeather()
   },[])
   
-  console.log("weather", weather)
+  console.log("weather" , weather)
+  // console.log("weather", weather.then((value))
+  
   
     return (
       <div className="events-parks">
-        <br />
-        <div className="weather">
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-        </div>
-        <br />
         <div className="row">
+        {/* {weather.object.list.map(weather => {
+            return (
+              <>
+              
+
+                </>
+            );
+          })} */}
+          {/* {weather.main.temp} */}
             <div className="column">
               <h1>Events</h1>
               

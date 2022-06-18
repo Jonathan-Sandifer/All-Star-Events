@@ -125,7 +125,7 @@ ul {
 .events-parks {
   background-image: url('./images/img-66.jpg');
   background-size: cover;
-  height: 100vh;
+  /* height: 100vh; */
   margin-left: -8px;
   margin-right: -8px;
   
