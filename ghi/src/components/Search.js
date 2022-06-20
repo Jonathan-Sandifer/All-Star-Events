@@ -33,7 +33,7 @@ class SearchBar extends React.Component {
         await this.setState({selected_area: selected_state})
         const url = `http://localhost:8030/api/events/${this.state.selected_area.lat}/${this.state.selected_area.lon}/${this.state.selected_area.state}/`
         const response = await fetch(url);
-        console.log("area", this.state.selected_area);
+        // console.log("area", this.state.selected_area);
         if (response.ok) {
             let eventsAndParks = await response.json();
             let selected_lat_lon = {
@@ -87,7 +87,7 @@ class SearchBar extends React.Component {
             </select>
             <li >
                 <button className="pref-button" to="/EventsParks">
-                <Link className='pref-button:hover' to="/EventsParks">GO</Link>
+                <Link className='new' to="/EventsParks">GO</Link>
                 </button>
             </li>
         </form>

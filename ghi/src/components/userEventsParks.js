@@ -18,7 +18,7 @@ function UserEventsParks() {
                 Alias itaque praesentium eum, 
                 consequatur ducimus asperiores accusantium velit minima?
               </p>
-              <div class="user-card-content"></div>
+              <div className="user-card-content"></div>
             </div>
           </div>
         </div>
