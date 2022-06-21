@@ -45,14 +45,18 @@ function EventsParks(props) {
               <div key={event.id}>
               <>
                 <div>
-                  <img src={event.performers[0].image}/>
+                  <img class="user-card-image" src={event.performers[0].image}/>
                   </div>
-                  <div>
+                  <div class="user-card-content">
                     <p>
                     {event.title}
+                    <br/>
                     {event.venue.name}
+                    <br/>
                     {event.venue.city}
+                    <br/>
                     {event.datetime_local}
+                    <br/>
                     {event.type}
                     </p>
                   </div>
@@ -69,11 +73,12 @@ function EventsParks(props) {
               <div key={park.id}>
               <>
                 <div>
-                  <img className="park-image" src={park.images[0].url}/>
+                  <img class="user-card-image" src={park.images[0].url}/>
                   </div>
-                  <div>
+                  <div class= "user-card-content">
                     <p>
                     {park.fullName}
+                    <br/>
                     {park.description}
                     {park.states}
                     </p>

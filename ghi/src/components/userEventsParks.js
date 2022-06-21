@@ -6,9 +6,10 @@ import React from 'react'
 function UserEventsParks() {
     return (
       <div className="user-events-parks">
-        <div className="user-cards">
-          <div className="user-card">
-            <div className= "user-card-content">
+        <div class="user-cards">
+          <div class="user-card">
+            <img class="user-card-image" src="https://fakeimg.pl/400x300/009578/fff/" alt="" />
+            <div class= "user-card-content">
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. 
                 Eos ducimus id ab tenetur delectus reiciendis fugit autem qui at.
