@@ -57,3 +57,19 @@ Felt like a good day.
 ## 6/10/22
 
 Today we pair programmed and made some progress. We are now able to see our events and parks based on the lat lon and state. We now need to put that info on to cads so that we can show everything to the user. We didn't have much time today but still a successful day.
+
+## 6/15/22
+
+Today I learned about Local Storage and how we can use that to hold our data. It will let us keep data on the page even after a refresh. Now we don't have to worry about our data disappearing every time we make a small change in the code. We got help from Mitch on how to implement our data so it shows up in an array instead of object, object.
+
+## 6/16/22
+
+I was unable to help my group much today as I spent a majority of the day in the hospital. Hoping I feel better and can make some progress with my team tomorrow.
+
+## 6/17/22
+
+I was able to participate in some of the pair programming today but sadly I am not feeling much better. With a long weekend I hope to be fully recovered by Tuesday. Looking forward to making some progress on the home stretch of our project.
+
+## 6/21/22
+
+I am back! Feeling about 80% which is enough for me to help again. We have been able to get our weather data to show up and now Shane and I are going to work on formatting that data so that it shows up prettier.
