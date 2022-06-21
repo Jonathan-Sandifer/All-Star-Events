@@ -53,7 +53,7 @@ ul {
 }
 
 .user-card {
-  margin: 0 auto;
+  margin: auto;
   max-width: 1000px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
@@ -68,21 +68,19 @@ ul {
 }
 
 .user-card-image {
-  
-  width: 100%;
-  height: 150px;
+  height: 350px;
   object-fit: cover;
-  display: block;
+  display: inline-block;
   border-top: 2px solid #333333;
   border-right: 2px solid #333333;
   border-left: 2px solid #333333;
 }
 
 .user-card-content {
-  line-height: 1.5;
-  font-size: 0.9em;
-  padding: 15px;
-  background: #fafafa;
+  line-height: 2;
+  font-size: 1.5em;
+  padding: px;
+  background: #2c2c2c;
   border-right: 2px solid #333333;
   border-left: 2px solid #333333;
 }
@@ -112,14 +110,6 @@ ul {
   font-size: 0.9em;
   margin-right: 8px;
 }
-
-
-
-/* .user-row:after {
-  content: "";
-  display: table;
-  clear: both;
-} */
 
 .user-column {
   float: left;
