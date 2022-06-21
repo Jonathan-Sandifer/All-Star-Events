@@ -7,6 +7,7 @@ function EventsParks(props) {
   const [weather, setWeather] = useState([])
   const lat = itemData.lat_lon.lat
   const lon = itemData.lat_lon.lon
+  const [eventID, setEventID] = useState('')
   // console.log(lat)
 
   useEffect(() => {
@@ -21,6 +22,11 @@ function EventsParks(props) {
     fetchWeather()
   },[])
 
+  function saveEvent(e) {
+    setEventID(e.target.value)
+    console.log(e.target.value)
+  }
+  
   console.log("CURRENT TEMP" ,weather.main) 
   let icon = weather.main?weather.weather[0].icon: <></>
   
@@ -54,6 +60,7 @@ function EventsParks(props) {
                     {event.venue.city}
                     {event.datetime_local}
                     {event.type}
+                    <button value={event.id} onClick = {saveEvent}>Save</button>
                     </p>
                   </div>
                 </>
@@ -73,9 +80,11 @@ function EventsParks(props) {
                   </div>
                   <div>
                     <p>
+                  
                     {park.fullName}
                     {park.description}
                     {park.states}
+                    <button>Save</button>
                     </p>
                   </div>
                 </>
