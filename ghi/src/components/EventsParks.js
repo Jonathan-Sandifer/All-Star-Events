@@ -7,35 +7,33 @@ function EventsParks(props) {
   const [weather, setWeather] = useState([])
   const lat = itemData.lat_lon.lat
   const lon = itemData.lat_lon.lon
+  console.log(lat)
 
   useEffect(() => {
     const fetchWeather = async () => {
+    
     const url = `http://localhost:8030/api/weather/${lat}/${lon}/`
     const response = await fetch(url)
     if (response.ok){
       const weatherData = await response.json()
-      return weatherData
-    }}; setWeather(fetchWeather)
+      setWeather(weatherData)
+    }}; 
+    fetchWeather()
   },[])
   
+  console.log("WEATHER description !!!!" ,weather.weather)
+
+  // console.log("WEATHER description !!!!" ,weather.weather[0].description) 
+
+  console.log("CURRENT TEMP" ,weather.main) 
+
+  // console.log("CURRENT TEMP" ,weather.main.temp)  
   
-  console.log("data", itemData)
     return (
       <div className="events-parks">
-        <br />
-        <div className="weather">
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-        </div>
-        <br />
         <div className="row">
             <div className="column">
-              <h1>Events</h1>
-              
+              <h1>Events</h1>   
           {itemData.events.events.map(event => {
             return (
               <div key={event.id}>
@@ -43,7 +41,7 @@ function EventsParks(props) {
                 <div>
                   <img src={event.performers[0].image}/>
                   </div>
-                  <div >
+                  <div>
                     <p>
                     {event.title}
                     {event.venue.name}
