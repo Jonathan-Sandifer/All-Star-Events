@@ -22,15 +22,20 @@ function EventsParks(props) {
   },[])
 
   console.log("CURRENT TEMP" ,weather.main) 
-
+  let icon = weather.main?weather.weather[0].icon: <></>
   
     return (
       <div className="events-parks">
-        <div>
-          Weather
-          {weather.main?weather.main.temp: <></>}
+        <div className="weather">
+          Current Weather
+          <br/>
+          <div className="weather2">
+          {weather.main?weather.main.temp: <></>} °F
+          <br/>
           {weather.main?weather.weather[0].description: <></>}
-          
+          <br />
+          <img  src = {`http://openweathermap.org/img/wn/${icon}@2x.png`} />
+          </div>
         </div>
         <div className="row">
             <div className="column">
