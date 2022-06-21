@@ -7,7 +7,7 @@ function EventsParks(props) {
   const [weather, setWeather] = useState([])
   const lat = itemData.lat_lon.lat
   const lon = itemData.lat_lon.lon
-  console.log(lat)
+  // console.log(lat)
 
   useEffect(() => {
     const fetchWeather = async () => {
@@ -20,17 +20,18 @@ function EventsParks(props) {
     }}; 
     fetchWeather()
   },[])
-  
-  console.log("WEATHER description !!!!" ,weather.weather)
-
-  // console.log("WEATHER description !!!!" ,weather.weather[0].description) 
 
   console.log("CURRENT TEMP" ,weather.main) 
 
-  // console.log("CURRENT TEMP" ,weather.main.temp)  
   
     return (
       <div className="events-parks">
+        <div>
+          Weather
+          {weather.main?weather.main.temp: <></>}
+          {weather.main?weather.weather[0].description: <></>}
+          
+        </div>
         <div className="row">
             <div className="column">
               <h1>Events</h1>   
