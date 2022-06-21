@@ -16,7 +16,6 @@ urlpatterns = [
     path("events/<str:city>/", get_multiple_locations, name="api_multiple_locations"),
     path("events/<str:lat>/<str:lon>/<str:state>/", get_events, name="api_events" ),
     path("weather/<str:lat>/<str:lon>/", get_weather, name="get_weather" )
-    # include /<str:state> in the above path
     
     
 ]
