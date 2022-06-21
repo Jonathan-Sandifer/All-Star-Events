@@ -9,7 +9,7 @@ function MainPage(props) {
             <h1 className="mainheader">Welcome to All Star Events</h1>
           </div>
           <br />
-          <Search sSData={props.sSearchData}/>
+          <Search sSData={props.sSearchData} token={props.token} />
         </div>
       </main>
     );

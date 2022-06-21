@@ -26,7 +26,7 @@ function App() {
     <BrowserRouter>
       <Navbar token={token} />
       <Routes>
-      <Route path="/*" element={<MainPage sSearchData={getSearchData}/>} />
+      <Route path="/*" element={<MainPage sSearchData={getSearchData} token={token}/>} />
       <Route path="/preferences" element={<PreferenceSelect token={token} />} />
       <Route path="/signup" element={<CreateAccountForm signup={signup} token={token} />} />
       <Route path="/logout" element={<Logout logout={logout} />} />

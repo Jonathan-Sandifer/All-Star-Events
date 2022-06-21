@@ -1,9 +1,11 @@
+import email
 import json
 from django.http import JsonResponse
 import requests
 import os
 from .models import User
 from .states import convert_state_to_abbr
+from common.user import get_user_information
 
 GEOCODING_API_KEY = os.environ["GEOCODING_API_KEY"]
 NATIONAL_PARKS_API_KEY = os.environ["NATIONAL_PARKS_API_KEY"]
@@ -25,10 +27,13 @@ def get_multiple_locations(request, city):
  # Include a state parameter
 def get_events(request, lat, lon, state):
     if request.method == "GET":
+        user = get_user_information(request)
+        if user:
+            user = User.objects.get(id=user['user']['id'])
+            print("!!!!!", user.preferences.all())
         event_url = f"https://api.seatgeek.com/2/events?lat={lat}&lon={lon}&client_id={SEAT_GEEK_CLIENT_ID}"
         event_response = requests.get(event_url)
         event_content = json.loads(event_response.content)
-        
         abbr = convert_state_to_abbr(state)
         parks_url = f"https://developer.nps.gov/api/v1/parks?stateCode={abbr}&limit=5&api_key={NATIONAL_PARKS_API_KEY}"
         parks_response = requests.get(parks_url)
