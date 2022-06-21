@@ -52,7 +52,7 @@ ul {
 
 }
 
-.user-card {
+/* .user-card {
   margin: auto;
   max-width: 1000px;
   display: grid;
@@ -65,9 +65,10 @@ ul {
 
 .user-card * {
   box-sizing: border-box;
-}
+} */
 
 .user-card-image {
+  width: 500px;
   height: 350px;
   object-fit: cover;
   display: inline-block;
@@ -77,6 +78,8 @@ ul {
 }
 
 .user-card-content {
+  display: inline-block;
+  width: 500px;
   line-height: 2;
   font-size: 1.5em;
   padding: px;

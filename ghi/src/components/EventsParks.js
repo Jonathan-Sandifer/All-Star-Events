@@ -47,7 +47,7 @@ function EventsParks(props) {
                 <div>
                   <img class="user-card-image" src={event.performers[0].image}/>
                   </div>
-                  <div class= "user-card-content">
+                  <div class="user-card-content">
                     <p>
                     {event.title}
                     <br/>
