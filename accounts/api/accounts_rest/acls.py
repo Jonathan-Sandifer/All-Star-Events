@@ -30,7 +30,8 @@ def get_events(request, lat, lon, state):
         user = get_user_information(request)
         if user:
             user = User.objects.get(id=user['user']['id'])
-            print("!!!!!", user.preferences.all())
+            for preference in user.preferences.all():
+                print(preference)
         event_url = f"https://api.seatgeek.com/2/events?lat={lat}&lon={lon}&client_id={SEAT_GEEK_CLIENT_ID}"
         event_response = requests.get(event_url)
         event_content = json.loads(event_response.content)

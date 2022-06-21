@@ -27,15 +27,15 @@ class PreferenceSelect extends React.Component {
     handleCheckbox(event) {
         // console.log(event.target.value);
         let state = this.state;
-        state.preferences[event.target.value] = event.target.checked;
+        state.preferences[event.target.value.replace(' ', '')] = event.target.checked;
         this.setState(state);
         
     }
 
     async setPreferences(preference) {
-        const url = `http://localhost:8030/api/update/`; // We need to add preferences
-        console.log(JSON.stringify(preference));                    // to the currently signed in user
-        const response = await fetch(url, {                         // it is hard coded for now
+        const url = `http://localhost:8030/api/update/`; 
+        console.log(JSON.stringify(preference));
+        const response = await fetch(url, {
             method: 'put',
             credentials: 'include',
             body: JSON.stringify({preference}),
@@ -50,15 +50,11 @@ class PreferenceSelect extends React.Component {
 
     handleSave(event) {
         let state = this.state
-        console.log(typeof(state));
         let container = {}
         for (let key of Object.keys(state['preferences'])) {
             // console.log(key);
-            // console.log(state['preferences'][key])
             if (state['preferences'][key] === true) {
-                // this.setPreferences(key); [p,a,r,k,s]
                 container['name'] = key[0].toUpperCase() + key.slice(1, key.length);
-                // console.log(container);
                 this.setPreferences(container, 2)
             }
         }
