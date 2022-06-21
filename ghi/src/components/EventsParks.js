@@ -30,7 +30,7 @@ function EventsParks(props) {
           Current Weather
           <br/>
           <div className="weather2">
-          {weather.main?weather.main.temp: <></>} Degrees f
+          {weather.main?weather.main.temp: <></>} °F
           <br/>
           {weather.main?weather.weather[0].description: <></>}
           <br />
