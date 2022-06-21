@@ -89,7 +89,6 @@ def api_show_user(request, pk):
 
 @require_http_methods(["PUT"])
 def api_update_user(request):
-    # print("hey im at the top", request.method)
     if request.method == "PUT":
         content = json.loads(request.body)
         content = content['preference']

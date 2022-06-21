@@ -9,6 +9,8 @@ GEOCODING_API_KEY = os.environ["GEOCODING_API_KEY"]
 NATIONAL_PARKS_API_KEY = os.environ["NATIONAL_PARKS_API_KEY"]
 OPEN_WEATHER_API_KEY = os.environ["OPEN_WEATHER_API_KEY"]
 
+CURRENT_OPEN_WEATHER_API_KEY = os.environ["CURRENT_OPEN_WEATHER_API_KEY"]
+
 SEAT_GEEK_CLIENT_ID = os.environ["SEAT_GEEK_CLIENT_ID"]
 SEAT_GEEK_SECRET = os.environ["SEAT_GEEK_SECRET"]
 
@@ -60,8 +62,14 @@ def get_location_details(city):
 
 
 def get_weather(request, lat, lon):
-    url = f'http://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&units=imperial&appid={OPEN_WEATHER_API_KEY}'
+    url = f'http://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&units=imperial&appid={CURRENT_OPEN_WEATHER_API_KEY}'
     response = requests.get(url)
     content = json.loads(response.content) 
     return JsonResponse(content)
 
+# f'http://api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt=1&appid={OPEN_WEATHER_API_KEY}'
+# f'http://api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt=1&appid={OPEN_WEATHER_API_KEY_DAILY}'
+
+
+
+# f'http://api.openweathermap.org/data/2.5/forecast?cnt=8&lat={lat}&lon={lon}&units=imperial&appid={OPEN_WEATHER_API_KEY}'
