@@ -27,7 +27,7 @@ function EventsParks(props) {
     console.log(e.target.value)
   }
   
-  console.log("CURRENT TEMP" ,weather.main) 
+  // console.log("CURRENT TEMP" ,weather.main) 
   let icon = weather.main?weather.weather[0].icon: <></>
   
     return (
