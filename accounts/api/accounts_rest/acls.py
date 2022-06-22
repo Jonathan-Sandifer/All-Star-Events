@@ -38,9 +38,6 @@ def filter_preferences_for_events(event_content, preference_list):
             if event_type in preference_name or (event_type + 's' in preference_name):
                 print("i should be selected", event)
                 events.append(event)
-        # event_type = event['taxonomies']['name'].lower()
-        # print(event_type)
-    
     return events
 
  # Include a state parameter
