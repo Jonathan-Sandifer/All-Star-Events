@@ -39,17 +39,16 @@ function EventsParks(props) {
     
   }
   
-  function postEvents() {
-    const dict = {
-      "name": "goats",
-      "event_type": "goats",
-      "city": "goats",
-      "venue_name": "goats goats",
-      "picture_url": "",  
-    }
-  }
+  // function postEvents() {
+  //   const dict = {
+  //     "name": eventName,
+  //     "event_type": eventType,
+  //     "city": eventCity,
+  //     "venue_name": eventVenueName,
+  //     "picture_url": eventPictureUrl,  
+  //   }
+  // }
 
-  // "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU4NjU4NjUsImV4cCI6MTY1NTk1MjI2NSwianRpIjoiY2JiNGY4MjUtZTkzYy00MzVkLWI0N2UtOGVhNTMxZmZiYTUyIiwidHlwZSI6ImFjY2VzcyIsInVzZXIiOnsidXNlcm5hbWUiOiJzaWVicyIsImlkIjoxLCJwZXJtcyI6W119LCJyZWZyZXNoX2lhdCI6MTY1NTg2NTg2NX0.PJm5djPjThEyVe589zPA23aRRbhwZAWaspjIiAF3wd4"
 
   let icon = weather.main?weather.weather[0].icon: <></>
   
@@ -69,7 +68,7 @@ function EventsParks(props) {
         <div className="row">
             <div className="column">
               <h1>Events</h1>   
-          {itemData.events.map(event => {
+          {itemData.events.events.map(event => {
             return (
               <div key={event.id}>
               <>
