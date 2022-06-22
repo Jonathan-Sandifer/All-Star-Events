@@ -32,7 +32,7 @@ function App() {
       <Route path="/logout" element={<Logout logout={logout} />} />
       <Route path="/login" element={<LoginForm login={login} token={token} />} />
       <Route path="/userEventsParks" element={<UserEventsParks />} />
-      <Route path="/EventsParks" element={<EventsParks sData={searchData} />}  />
+      <Route path="/EventsParks" element={<EventsParks sData={searchData} token={token} />}  />
       </Routes>
 
       <Footer />

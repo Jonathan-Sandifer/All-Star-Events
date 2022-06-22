@@ -8,8 +8,6 @@ import djwto.authentication as auth
 # Create your views here.
 
 
-
-
 class UserEncoder(ModelEncoder):
     model = User
     properties = ["id", "username", "email", "first_name", "last_name"]
