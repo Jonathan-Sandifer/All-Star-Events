@@ -62,7 +62,7 @@ function EventsParks(props) {
           <br/>
           {weather.main?weather.weather[0].description: <></>}
           <br />
-          <img  src = {`http://openweathermap.org/img/wn/${icon}@2x.png`} />
+          <img  src ={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
           </div>
         </div>
         <div className="row">
@@ -86,6 +86,7 @@ function EventsParks(props) {
                     {event.datetime_local}
                     <br/>
                     {event.type}
+                    <br/>
                     <button className="user-card-info" value={JSON.stringify(event)} onClick = {saveEvent}>Save</button>
                     </p>
                   </div>
@@ -111,6 +112,7 @@ function EventsParks(props) {
                     <br/>
                     {park.description}
                     {park.states}
+                    <br/>
                     <button className="user-card-info">Save</button>
                     </p>
                   </div>

@@ -24,16 +24,21 @@ def get_multiple_locations(request, city):
         # returns a response an array of objects to the front end 
         
  
-# def filter_preferences_for_events(event_content, preference_list):
-#     preference_name = []
-#     events = []
-#     for preference in preference_list:
-#         preference_name.append(preference.name.lower())
-#     for event in event_content['events']:
-#         event_type = event['type'].lower()
-#         if event_type in preference_name or (event_type + 's') in preference_name:
-#             events.append(event)
-#     return events
+def filter_preferences_for_events(event_content, preference_list):
+    preference_name = []
+    events = []
+    for preference in preference_list:
+        preference_name.append(preference.name.lower())
+    for event in event_content['events']:
+        # event_type = event['type'].lower()
+        # if event_type in preference_name or (event_type + 's') in preference_name:
+        for taxonomy in event['taxonomies']:
+            event_type = taxonomy['name'].lower()
+            print(event_type)
+            if event_type in preference_name or (event_type + 's' in preference_name):
+                print("i should be selected", event)
+                events.append(event)
+    return events
 
  # Include a state parameter
 def get_events(request, lat, lon, state):
