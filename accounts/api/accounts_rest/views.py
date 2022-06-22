@@ -4,6 +4,7 @@ from django.http import JsonResponse
 from django.views.decorators.http import require_http_methods
 from common.json import ModelEncoder
 import json
+import djwto.authentication as auth
 # Create your views here.
 
 
@@ -21,7 +22,7 @@ class PreferenceListEncoder(ModelEncoder):
 
 class UserDetailEncoder(ModelEncoder):
     model = User
-    properties = ["id", "username", "email", "password", "preferences"]
+    properties = ["id", "username", "email", "preferences"]
     encoders = {
         "preferences": PreferenceListEncoder(),
     }
@@ -85,6 +86,7 @@ def api_show_user(request, pk):
     )
 
 
+@auth.jwt_login_required
 @require_http_methods(["PUT"])
 def api_update_user(request):
     if request.method == "PUT":
@@ -94,14 +96,15 @@ def api_update_user(request):
             if "name" in content:
                 preference = Preferences.objects.get(name=content["name"])
                 content["name"] = preference 
-                request.user.preferences.add(preference)
+                user = User.objects.get(id=request.payload['user']['id'])
+                user.preferences.add(preference)
         except Preferences.DoesNotExist:
             return JsonResponse(
                 {"message": "Invalid preference"},
                 status=400,
             )
         return JsonResponse(
-            request.user,
+            user,
             encoder=UserDetailEncoder,
             safe=False,
         )
