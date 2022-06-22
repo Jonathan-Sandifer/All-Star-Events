@@ -88,7 +88,7 @@ function EventsParks(props) {
                     {event.datetime_local}
                     <br/>
                     {event.type}
-                    <button value={JSON.stringify(event)} onClick = {saveEvent}>Save</button>
+                    <button className="user-card-info" value={JSON.stringify(event)} onClick = {saveEvent}>Save</button>
                     </p>
                   </div>
                 </>
@@ -113,7 +113,7 @@ function EventsParks(props) {
                     <br/>
                     {park.description}
                     {park.states}
-                    <button>Save</button>
+                    <button className="user-card-info">Save</button>
                     </p>
                   </div>
                 </>
