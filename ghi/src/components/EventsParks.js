@@ -57,7 +57,7 @@ function EventsParks(props) {
           <br />
           {weather.main ? weather.weather[0].description : <></>}
           <br />
-          <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
+          {/* <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} /> */}
         </div>
         <div className="row">
             <div className="column">
