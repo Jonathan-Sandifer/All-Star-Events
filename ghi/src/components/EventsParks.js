@@ -50,7 +50,6 @@ function EventsParks(props) {
   }
 
   // "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU4NjU4NjUsImV4cCI6MTY1NTk1MjI2NSwianRpIjoiY2JiNGY4MjUtZTkzYy00MzVkLWI0N2UtOGVhNTMxZmZiYTUyIiwidHlwZSI6ImFjY2VzcyIsInVzZXIiOnsidXNlcm5hbWUiOiJzaWVicyIsImlkIjoxLCJwZXJtcyI6W119LCJyZWZyZXNoX2lhdCI6MTY1NTg2NTg2NX0.PJm5djPjThEyVe589zPA23aRRbhwZAWaspjIiAF3wd4"
-  console.log("Token" ,props.token) 
 
   let icon = weather.main?weather.weather[0].icon: <></>
   
@@ -70,7 +69,7 @@ function EventsParks(props) {
         <div className="row">
             <div className="column">
               <h1>Events</h1>   
-          {itemData.events.events.map(event => {
+          {itemData.events.map(event => {
             return (
               <div key={event.id}>
               <>

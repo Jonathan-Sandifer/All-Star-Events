@@ -24,23 +24,33 @@ def get_multiple_locations(request, city):
         # returns a response an array of objects to the front end 
         
  
+def filter_preferences_for_events(event_content, preference_list):
+    preference_name = []
+    events = []
+    for preference in preference_list:
+        preference_name.append(preference.name.lower())
+    for event in event_content['events']:
+        event_type = event['type'].lower()
+        if event_type in preference_name or (event_type + 's') in preference_name:
+            events.append(event)
+    return events
+
  # Include a state parameter
 def get_events(request, lat, lon, state):
     if request.method == "GET":
         user = get_user_information(request)
         if user:
             user = User.objects.get(id=user['user']['id'])
-            for preference in user.preferences.all():
-                print(preference)
-        event_url = f"https://api.seatgeek.com/2/events?lat={lat}&lon={lon}&client_id={SEAT_GEEK_CLIENT_ID}"
+        event_url = f"https://api.seatgeek.com/2/events?lat={lat}&lon={lon}&per_page=100&client_id={SEAT_GEEK_CLIENT_ID}"
         event_response = requests.get(event_url)
         event_content = json.loads(event_response.content)
+        filtered_events = filter_preferences_for_events(event_content, user.preferences.all())
         abbr = convert_state_to_abbr(state)
         parks_url = f"https://developer.nps.gov/api/v1/parks?stateCode={abbr}&limit=5&api_key={NATIONAL_PARKS_API_KEY}"
         parks_response = requests.get(parks_url)
         parks_content = json.loads(parks_response.content)
         return JsonResponse({
-            "events": event_content,
+            "events": filtered_events,
             "parks": parks_content,
         }, safe=False)
    
