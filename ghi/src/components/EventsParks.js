@@ -37,19 +37,15 @@ function EventsParks(props) {
 
   function postEvents() {
     const dict = {
-      name: "goats",
-      event_type: "goats",
-      city: "goats",
-      venue_name: "goats goats",
-      picture_url: "",
-      token:
-        "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU4NjU4NjUsImV4cCI6MTY1NTk1MjI2NSwianRpIjoiY2JiNGY4MjUtZTkzYy00MzVkLWI0N2UtOGVhNTMxZmZiYTUyIiwidHlwZSI6ImFjY2VzcyIsInVzZXIiOnsidXNlcm5hbWUiOiJzaWVicyIsImlkIjoxLCJwZXJtcyI6W119LCJyZWZyZXNoX2lhdCI6MTY1NTg2NTg2NX0.PJm5djPjThEyVe589zPA23aRRbhwZAWaspjIiAF3wd4",
-    };
+      "name": "goats",
+      "event_type": "goats",
+      "city": "goats",
+      "venue_name": "goats goats",
+      "picture_url": "",  
+    }
   }
 
-  console.log("Token", props.token);
-
-  let icon = weather.main ? weather.weather[0].icon : <></>;
+  // "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU4NjU4NjUsImV4cCI6MTY1NTk1MjI2NSwianRpIjoiY2JiNGY4MjUtZTkzYy00MzVkLWI0N2UtOGVhNTMxZmZiYTUyIiwidHlwZSI6ImFjY2VzcyIsInVzZXIiOnsidXNlcm5hbWUiOiJzaWVicyIsImlkIjoxLCJwZXJtcyI6W119LCJyZWZyZXNoX2lhdCI6MTY1NTg2NTg2NX0.PJm5djPjThEyVe589zPA23aRRbhwZAWaspjIiAF3wd4"
 
   return (
     <div className="events-parks">
@@ -63,11 +59,10 @@ function EventsParks(props) {
           <br />
           <img src={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
         </div>
-      </div>
-      <div className="row">
-        <div className="column">
-          <h1>Events</h1>
-          {itemData.events.events.map((event) => {
+        <div className="row">
+            <div className="column">
+              <h1>Events</h1>   
+          {itemData.events.map(event => {
             return (
               <div key={event.id}>
                 <>
@@ -105,7 +100,6 @@ function EventsParks(props) {
         </div>
         <div className="column">
           <h1>Parks</h1>
-
           {itemData.parks.data.map((park) => {
             return (
               <div key={park.id}>
@@ -130,6 +124,7 @@ function EventsParks(props) {
         </div>
       </div>
     </div>
+  </div>
   );
 }
 
