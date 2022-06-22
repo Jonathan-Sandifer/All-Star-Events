@@ -68,7 +68,7 @@ function EventsParks(props) {
         <div className="row">
             <div className="column">
               <h1>Events</h1>   
-          {itemData.events.events.map(event => {
+          {itemData.events.map(event => {
             return (
               <div key={event.id}>
               <>
