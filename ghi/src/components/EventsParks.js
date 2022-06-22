@@ -38,8 +38,21 @@ function EventsParks(props) {
     setEventPictureUrl(event.performers[0].image)
     
   }
+  
+  function postEvents() {
+    const dict = {
+      "name": "goats",
+      "event_type": "goats",
+      "city": "goats",
+      "venue_name": "goats goats",
+      "picture_url": "",
+      "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE2NTU4NjU4NjUsImV4cCI6MTY1NTk1MjI2NSwianRpIjoiY2JiNGY4MjUtZTkzYy00MzVkLWI0N2UtOGVhNTMxZmZiYTUyIiwidHlwZSI6ImFjY2VzcyIsInVzZXIiOnsidXNlcm5hbWUiOiJzaWVicyIsImlkIjoxLCJwZXJtcyI6W119LCJyZWZyZXNoX2lhdCI6MTY1NTg2NTg2NX0.PJm5djPjThEyVe589zPA23aRRbhwZAWaspjIiAF3wd4"
+    }
+  }
 
-  // console.log("CURRENT TEMP" ,weather.main) 
+
+  console.log("Token" ,props.token) 
+
   let icon = weather.main?weather.weather[0].icon: <></>
   
     return (

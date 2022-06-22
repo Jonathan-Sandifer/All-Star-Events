@@ -5,6 +5,10 @@ import json
 from .models import Event
 from common.json import ModelEncoder 
 
+import djwto.tokens as tokens
+from djwto.exceptions import JWTValidationError
+from django.core.exceptions import ImproperlyConfigured
+
 
 class EventListEncoder(ModelEncoder):
     model = Event
@@ -23,6 +27,8 @@ def public_view(request):
 @require_http_methods(["POST"])
 def save_events(request):
     content = json.loads(request.body)
+    token = content.get("token")
+    content.pop(token)
     event = Event.objects.create(**content)
     return JsonResponse(
         event,
@@ -30,3 +36,13 @@ def save_events(request):
         safe=False,
     )
 
+def get_user_information(request):
+    try:
+        token = auth.get_raw_token_from_request(request)
+        print("this is the token!!!!", token)
+        payload = tokens.decode_token(token)
+        request.payload = payload
+        return payload
+    except (JWTValidationError, ImproperlyConfigured) as err:
+        print(err)
+        return None
