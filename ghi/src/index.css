@@ -79,8 +79,7 @@ ul {
 
 .user-card-info {
   padding: 5px;
-  display: flex;
-  justify-content: space-between;
+  display: inline-block;
   align-items: center;
   color: #555555;
   background: #eeeeee;
