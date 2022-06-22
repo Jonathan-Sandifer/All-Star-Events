@@ -13,7 +13,7 @@ class Event(models.Model):
       return self.name
 
 class BookmarkedEvent(models.Model):
-  user_id = models.IntegerField(unique=True)
+  user_id = models.IntegerField(unique=False)
   event = models.ForeignKey(
     Event, 
     related_name = "event",
