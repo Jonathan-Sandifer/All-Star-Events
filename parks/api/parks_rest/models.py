@@ -11,7 +11,7 @@ class Park(models.Model):
       return self.name
 
 class BookmarkedPark(models.Model):
-  user_id = models.IntegerField(unique=True)
+  user_id = models.IntegerField(unique=False)
   park = models.ForeignKey(
     Park, 
     related_name = "park",

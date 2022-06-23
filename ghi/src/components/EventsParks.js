@@ -10,7 +10,6 @@ function EventsParks(props) {
 
   useEffect(() => {
     const fetchWeather = async () => {
-    
     const url = `http://localhost:8030/api/weather/${lat}/${lon}/`
     const response = await fetch(url)
     if (response.ok){

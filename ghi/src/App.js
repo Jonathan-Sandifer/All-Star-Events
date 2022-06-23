@@ -1,7 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-// import SignUp from './components/SignUp';
 import PreferenceSelect from "./components/Preferences";
 import MainPage from "./components/MainPage";
 import CreateAccountForm from "./components/SignUp";
@@ -42,7 +41,7 @@ function App() {
           path="/login"
           element={<LoginForm login={login} token={token} />}
         />
-        <Route path="/userEventsParks" element={<UserEventsParks />} />
+        <Route path="/userEventsParks" element={<UserEventsParks token={token}/>}  />
         <Route
           path="/EventsParks"
           element={<EventsParks sData={searchData} token={token} />}
