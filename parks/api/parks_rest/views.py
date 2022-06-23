@@ -1,6 +1,4 @@
-# from lib2to3.pgen2 import token
 import djwto.authentication as auth
-from django.views.decorators.http import require_http_methods
 from django.http import JsonResponse
 # import json
 # from .models import Event , BookmarkedEvent
@@ -26,10 +24,7 @@ def public_view(request):
     return JsonResponse({"received": request.method})
 
 
-@auth.jwt_login_required
-@require_http_methods(["POST"])
-def save_parks(request):
-    print("ANYTHING!!!!!!!!!!")
+
    
 
 

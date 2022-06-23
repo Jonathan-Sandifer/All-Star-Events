@@ -10,6 +10,7 @@ class Park(models.Model):
     def __str__(self):
       return self.name
 
+
 class BookmarkedPark(models.Model):
   user_id = models.IntegerField(unique=False)
   park = models.ForeignKey(
