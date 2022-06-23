@@ -16,8 +16,6 @@ function EventsParks(props) {
   // const [eventVenueName, setEventVenueName] = useState('')
   // const [eventPictureUrl, setEventPictureUrl] = useState('')
 
-  // console.log(lat)
-
   useEffect(() => {
     const fetchWeather = async () => {
     

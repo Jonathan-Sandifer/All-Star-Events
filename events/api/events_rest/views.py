@@ -65,9 +65,9 @@ def get_user_information(request):
 @require_http_methods(["GET"])
 def show_saved_events(request):
     user = request.payload["user"]["id"]
-    print("!!!!!!!!", user)
+    # print("!!!!!!!!", user)
     events = BookmarkedEvent.objects.filter(user_id=user)
-    print("Events??????????", events)
+    # print("Events??????????", events)
     return JsonResponse(
         events,
         encoder=BookmarkedEventListEncoder,
