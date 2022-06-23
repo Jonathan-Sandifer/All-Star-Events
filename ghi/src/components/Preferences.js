@@ -12,8 +12,8 @@ class PreferenceSelect extends React.Component {
         waterActivities: false,
         theater: false,
         trails: false,
-        art: false,
-        museums: false,
+        artsAndCulture: false,
+        museumExhibits: false,
         camping: false,
         sailing: false,
         kayaking: false,
@@ -140,20 +140,20 @@ class PreferenceSelect extends React.Component {
                 type="checkbox"
                 id="Art"
                 name="Art"
-                value="art"
-                checked={this.state.preferences.art}
+                value="arts And Culture"
+                checked={this.state.preferences.artsAndCulture}
               />
-              <label htmlFor="Art"> Art</label>
+              <label htmlFor="Art"> Arts and Culture</label>
             </div>
             <div className="border">
-              <label htmlFor="Museums"> Museums</label>
+              <label htmlFor="Museums"> Museum Exhibits</label>
               <input
                 onChange={this.handleCheckbox}
                 type="checkbox"
                 id="Museums"
                 name="Museums"
-                value="museums"
-                checked={this.state.preferences.museums}
+                value="museum Exhibits"
+                checked={this.state.preferences.museumExhibits}
               />
             </div>
             <div className="border">

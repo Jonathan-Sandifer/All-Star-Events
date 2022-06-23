@@ -34,10 +34,20 @@ def filter_preferences_for_events(event_content, preference_list):
         # if event_type in preference_name or (event_type + 's') in preference_name:
         for taxonomy in event['taxonomies']:
             event_type = taxonomy['name'].lower()
-            print(event_type)
             if event_type in preference_name or (event_type + 's' in preference_name):
                 events.append(event)
     return events
+
+def filter_preferences_for_parks(park_content, preference_list):
+    preference_name = []
+    parks = []
+    for preference in preference_list:
+        preference_name.append(preference.name.lower())
+    for park in park_content['data']:
+        for activity in park['activities']:
+            activity_type = activity['name'].lower()
+            if activity_type in preference_name:
+                parks.append(park)
 
  # Include a state parameter
 def get_events(request, lat, lon, state):
@@ -53,6 +63,7 @@ def get_events(request, lat, lon, state):
         parks_url = f"https://developer.nps.gov/api/v1/parks?stateCode={abbr}&limit=5&api_key={NATIONAL_PARKS_API_KEY}"
         parks_response = requests.get(parks_url)
         parks_content = json.loads(parks_response.content)
+        filter_preferences_for_parks(parks_content, user.preferences.all())
         return JsonResponse({
             "events": filtered_events,
             "parks": parks_content,
