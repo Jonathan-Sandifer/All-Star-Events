@@ -2,17 +2,17 @@ import React,{useState, useEffect} from 'react'
 
 
 function EventsParks(props) {
-  let searchData = props.sData
+  // let searchData = props.sData
   const itemData = JSON.parse(localStorage.getItem('data'));
   const [weather, setWeather] = useState([])
   const lat = itemData.lat_lon.lat
   const lon = itemData.lat_lon.lon
-  const [eventID, setEventID] = useState('')
-  const [eventName, setEventName] = useState('')
-  const [eventType, setEventType] = useState('')
-  const [eventCity, setEventCity] = useState('')
-  const [eventVenueName, setEventVenueName] = useState('')
-  const [eventPictureUrl, setEventPictureUrl] = useState('')
+  // const [eventID, setEventID] = useState('')
+  // const [eventName, setEventName] = useState('')
+  // const [eventType, setEventType] = useState('')
+  // const [eventCity, setEventCity] = useState('')
+  // const [eventVenueName, setEventVenueName] = useState('')
+  // const [eventPictureUrl, setEventPictureUrl] = useState('')
 
   // console.log(lat)
 
@@ -28,27 +28,38 @@ function EventsParks(props) {
     fetchWeather()
   },[])
 
+ 
   function saveEvent(e) {
-    const event = JSON.parse(e.target.value)
-    setEventID(event.id)
-    setEventName(event.title)
-    setEventType(event.type)
-    setEventCity(event.venue.city)
-    setEventVenueName(event.venue.name)
-    setEventPictureUrl(event.performers[0].image)
     
+    const event = JSON.parse(e.target.value)
+    // setEventID(event.id)
+    // setEventName(event.title)
+    // setEventType(event.type)
+    // setEventCity(event.venue.city)
+    // setEventVenueName(event.venue.name)
+    // setEventPictureUrl(event.performers[0].image)
+
+    const eventUrl = 'http://localhost:8080/api/saved_events/';
+    const fetchConfig = {
+      method: "POST",
+      body: JSON.stringify({
+        "name": event.title,
+	      "event_type": event.type,
+	      "city": event.venue.city,
+	      "venue_name": event.venue.name,
+	      "picture_url": event.performers[0].image
+      }),
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      credentials: "include"
+    };
+    const response = fetch(eventUrl, fetchConfig);
+    if (response.ok) {
+      console.log("SUCCCCESSSSSS")
+    }
   }
   
-  // function postEvents() {
-  //   const dict = {
-  //     "name": eventName,
-  //     "event_type": eventType,
-  //     "city": eventCity,
-  //     "venue_name": eventVenueName,
-  //     "picture_url": eventPictureUrl,  
-  //   }
-  // }
-
 
   let icon = weather.main?weather.weather[0].icon: <></>
   
