@@ -39,7 +39,7 @@ services:
     depends_on:
       - database
     environment:
-      DATABASE_URL: postgres://events:password@database:5432/service
+      DATABASE_URL: postgres://events:password@database:5432/events
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
       DJWTO_SIGNING_KEY: 1adfe79e8c8dd6f17a656faffa0e39baff1f56f7b2c79577d0e1c7cc23076e4d
@@ -54,7 +54,7 @@ services:
     depends_on:
       - database
     environment:
-      DATABASE_URL: postgres://parks:password@database:5432/service
+      DATABASE_URL: postgres://parks:password@database:5432/parks
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
   accounts-api:
@@ -68,7 +68,7 @@ services:
     depends_on:
       - database
     environment:
-      DATABASE_URL: postgres://parks:password@database:5432/service
+      DATABASE_URL: postgres://parks:password@database:5432/accounts
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
       DJWTO_SIGNING_KEY: 1adfe79e8c8dd6f17a656faffa0e39baff1f56f7b2c79577d0e1c7cc23076e4d
