@@ -109,7 +109,6 @@ function EventsParks(props) {
                     {park.description}
                     {park.states}
                     <br/>
-                    <button className="user-card-info">Save</button>
                     </p>
                   </div>
                 </>
