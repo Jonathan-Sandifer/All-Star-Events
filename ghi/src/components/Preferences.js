@@ -24,7 +24,6 @@ class PreferenceSelect extends React.Component {
   }
 
   handleCheckbox(event) {
-    // console.log(event.target.value);
     let state = this.state;
     state.preferences[event.target.value.replace(" ", "")] =
       event.target.checked;
@@ -33,7 +32,6 @@ class PreferenceSelect extends React.Component {
 
   async setPreferences(preference) {
     const url = `http://localhost:8030/api/update/`;
-    console.log(JSON.stringify(preference));
     const response = await fetch(url, {
       method: "put",
       credentials: "include",
@@ -51,7 +49,6 @@ class PreferenceSelect extends React.Component {
     let state = this.state;
     let container = {};
     for (let key of Object.keys(state["preferences"])) {
-      // console.log(key);
       if (state["preferences"][key] === true) {
         container["name"] = key[0].toUpperCase() + key.slice(1, key.length);
         this.setPreferences(container, 2);

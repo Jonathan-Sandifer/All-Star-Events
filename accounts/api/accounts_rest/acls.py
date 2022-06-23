@@ -30,8 +30,6 @@ def filter_preferences_for_events(event_content, preference_list):
     for preference in preference_list:
         preference_name.append(preference.name.lower())
     for event in event_content['events']:
-        # event_type = event['type'].lower()
-        # if event_type in preference_name or (event_type + 's') in preference_name:
         for taxonomy in event['taxonomies']:
             event_type = taxonomy['name'].lower()
             if event_type in preference_name or (event_type + 's' in preference_name):
@@ -64,7 +62,7 @@ def get_events(request, lat, lon, state):
             event_content = json.loads(event_response.content)
             filtered_events = filter_preferences_for_events(event_content, user.preferences.all())
             abbr = convert_state_to_abbr(state)
-            parks_url = f"https://developer.nps.gov/api/v1/parks?stateCode={abbr}&limit=5&api_key={NATIONAL_PARKS_API_KEY}"
+            parks_url = f"https://developer.nps.gov/api/v1/parks?stateCode={abbr}&limit=20&api_key={NATIONAL_PARKS_API_KEY}"
             parks_response = requests.get(parks_url)
             parks_content = json.loads(parks_response.content)
             filtered_parks = filter_preferences_for_parks(parks_content, user.preferences.all())
@@ -77,7 +75,7 @@ def get_events(request, lat, lon, state):
             event_response = requests.get(event_url)
             event_content = json.loads(event_response.content)
             abbr = convert_state_to_abbr(state)
-            parks_url = f"https://developer.nps.gov/api/v1/parks?stateCode={abbr}&limit=5&api_key={NATIONAL_PARKS_API_KEY}"
+            parks_url = f"https://developer.nps.gov/api/v1/parks?stateCode={abbr}&limit=20&api_key={NATIONAL_PARKS_API_KEY}"
             parks_response = requests.get(parks_url)
             parks_content = json.loads(parks_response.content)
             composed_response = event_content
@@ -115,9 +113,3 @@ def get_weather(request, lat, lon):
     content = json.loads(response.content) 
     return JsonResponse(content)
 
-# f'http://api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt=1&appid={OPEN_WEATHER_API_KEY}'
-# f'http://api.openweathermap.org/data/2.5/forecast/daily?lat={lat}&lon={lon}&cnt=1&appid={OPEN_WEATHER_API_KEY_DAILY}'
-
-
-
-# f'http://api.openweathermap.org/data/2.5/forecast?cnt=8&lat={lat}&lon={lon}&units=imperial&appid={OPEN_WEATHER_API_KEY}'

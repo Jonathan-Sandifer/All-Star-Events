@@ -29,10 +29,8 @@ def public_view(request):
 @auth.jwt_login_required
 @require_http_methods(["POST"])
 def save_events(request):
-    print("ANYTHING!!!!!!!!!!")
     content = json.loads(request.body)
     user_id = request.payload["user"]["id"]
-    print(request.payload)
     event = Event.objects.create(**content)
     bookmarkedEvent = BookmarkedEvent.objects.create(**{
         "user_id": user_id,
@@ -47,7 +45,6 @@ def save_events(request):
 def get_user_information(request):
     try:
         token = auth.get_raw_token_from_request(request)
-        print("this is the token!!!!", token)
         payload = tokens.decode_token(token)
         request.payload = payload
         return payload
