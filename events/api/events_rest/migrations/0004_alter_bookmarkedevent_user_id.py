@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('events_rest', '0003_alter_event_picture_url'),
+        ("events_rest", "0003_alter_event_picture_url"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='bookmarkedevent',
-            name='user_id',
+            model_name="bookmarkedevent",
+            name="user_id",
             field=models.IntegerField(),
         ),
     ]

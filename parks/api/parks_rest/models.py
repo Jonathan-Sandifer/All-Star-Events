@@ -8,14 +8,15 @@ class Park(models.Model):
     picture_url = models.URLField(null=True)
 
     def __str__(self):
-      return self.name
+        return self.name
+
+
 
 
 class BookmarkedPark(models.Model):
-  user_id = models.IntegerField(unique=False)
-  park = models.ForeignKey(
-    Park, 
-    related_name = "park",
-    on_delete=models.PROTECT,
-  )
-    
+    user_id = models.IntegerField(unique=False)
+    park = models.ForeignKey(
+        Park,
+        related_name="park",
+        on_delete=models.PROTECT,
+    )

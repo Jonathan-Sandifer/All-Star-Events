@@ -6,6 +6,7 @@ html {
     margin-top: -10px;
     margin-left: -8px;
     margin-right: -8px;
+    
     font-family: 'Oswald', sans-serif;
   }
 
@@ -155,6 +156,7 @@ li {
 }
 
 .header {
+  
     padding: 10px;
     text-align: center;
     color: white;

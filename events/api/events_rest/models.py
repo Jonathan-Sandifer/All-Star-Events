@@ -1,4 +1,5 @@
 from django.db import models
+
 # from account
 
 
@@ -10,12 +11,13 @@ class Event(models.Model):
     picture_url = models.URLField(null=True, blank=True)
 
     def __str__(self):
-      return self.name
+        return self.name
+
 
 class BookmarkedEvent(models.Model):
-  user_id = models.IntegerField(unique=False)
-  event = models.ForeignKey(
-    Event, 
-    related_name = "event",
-    on_delete=models.PROTECT,
-  )
+    user_id = models.IntegerField(unique=False)
+    event = models.ForeignKey(
+        Event,
+        related_name="event",
+        on_delete=models.PROTECT,
+    )
