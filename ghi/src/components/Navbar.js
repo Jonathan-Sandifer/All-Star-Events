@@ -16,12 +16,7 @@ function Navbar(props) {
           <>
             <li>
               <NavLink className="spacer active" to="/userEventsParks">
-                Your Events
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="spacer active" to="/preferences">
-                Preferences
+                Saved Events
               </NavLink>
             </li>
             <li>

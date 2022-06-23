@@ -58,7 +58,9 @@ Wanted to get a head start on the week because we are going to have to crunch fo
 Spent the day continuing to try and get the save feature up and running for specific events listed in our events parks page. 
 Figured out how to make state hooks for the first time!! added them to the events parks front end to be able to save the data associated with the events to the backend. Also was able with the help of Curtis was able to figure out the jwt login i needed to add to my save events post view. Was able to get everything working in insomnia, but currently struggling to figure out how to associate it with the front end. 
 
-## June 20nd, 2022
+## June 22nd, 2022
 Today was a big struggle for sure but was able to push through with a lot of help. Was able to finally get the save events function working with a lot of insight from mitch and jeff. Had a bug for a very long time for the front end interactions getting a 403 forbidden error when trying to save on the front end. Figured out that the headers need to have the authorization section. with the token passed through 'authorization': `Bearer ${token}`
 
+## June 23rd, 2022
+Started the day getting the parks settings ready for the save feature by hooking it up to the urls and settings page so we can be ready to get to that if we can. After that was set up I worked on getting the saved data from yesterday to populate onto the react component for the user events/parks page. I was able to make a list view on the backend. then test it with insomnia with the authorization token to make sure it worked then connected it to the front end with a react hook and mapped the event information to the page!! success 
 
