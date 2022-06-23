@@ -1,4 +1,7 @@
 version: '3.8'
+volumes:
+      allstar_data:
+        external: true
 services:
   react:
     image: node:lts-bullseye
@@ -18,8 +21,8 @@ services:
   database:
     image: postgres:14-bullseye
     volumes:
-      - ./database/data:/var/lib/postgresql/data
-      - ./database/setup:/docker-entrypoint-initdb.d
+            - allstar_data:/var/lib/postgresql/data
+            - ./database/setup:/docker-entrypoint-initdb.d
     environment:
       - POSTGRES_MULTIPLE_DATABASES=events,parks,accounts
       - POSTGRES_PASSWORD=test-databases
