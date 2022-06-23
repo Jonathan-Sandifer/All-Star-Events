@@ -1,4 +1,3 @@
-import email
 import json
 from django.http import JsonResponse
 import requests

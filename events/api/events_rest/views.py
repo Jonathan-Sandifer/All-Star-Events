@@ -1,4 +1,3 @@
-
 import djwto.authentication as auth
 from django.views.decorators.http import require_http_methods
 from django.http import JsonResponse
@@ -47,6 +46,7 @@ def save_events(request):
         }
     )
     return JsonResponse(
+        bookmarkedEvent,
         event,
         encoder=EventListEncoder,
         safe=False,
@@ -74,5 +74,3 @@ def show_saved_events(request):
         encoder=BookmarkedEventListEncoder,
         safe=False
     )
-
-
