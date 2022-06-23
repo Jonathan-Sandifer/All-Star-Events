@@ -59,19 +59,32 @@ def get_events(request, lat, lon, state):
         user = get_user_information(request)
         if user:
             user = User.objects.get(id=user['user']['id'])
-        event_url = f"https://api.seatgeek.com/2/events?lat={lat}&lon={lon}&per_page=100&client_id={SEAT_GEEK_CLIENT_ID}"
-        event_response = requests.get(event_url)
-        event_content = json.loads(event_response.content)
-        filtered_events = filter_preferences_for_events(event_content, user.preferences.all())
-        abbr = convert_state_to_abbr(state)
-        parks_url = f"https://developer.nps.gov/api/v1/parks?stateCode={abbr}&limit=5&api_key={NATIONAL_PARKS_API_KEY}"
-        parks_response = requests.get(parks_url)
-        parks_content = json.loads(parks_response.content)
-        filtered_parks = filter_preferences_for_parks(parks_content, user.preferences.all())
-        return JsonResponse({
-            "events": filtered_events,
-            "parks": filtered_parks,
-        }, safe=False)
+            event_url = f"https://api.seatgeek.com/2/events?lat={lat}&lon={lon}&per_page=100&client_id={SEAT_GEEK_CLIENT_ID}"
+            event_response = requests.get(event_url)
+            event_content = json.loads(event_response.content)
+            filtered_events = filter_preferences_for_events(event_content, user.preferences.all())
+            abbr = convert_state_to_abbr(state)
+            parks_url = f"https://developer.nps.gov/api/v1/parks?stateCode={abbr}&limit=5&api_key={NATIONAL_PARKS_API_KEY}"
+            parks_response = requests.get(parks_url)
+            parks_content = json.loads(parks_response.content)
+            filtered_parks = filter_preferences_for_parks(parks_content, user.preferences.all())
+            return JsonResponse({
+                "events": filtered_events,
+                "parks": filtered_parks,
+            }, safe=False)
+        else:
+            event_url = f"https://api.seatgeek.com/2/events?lat={lat}&lon={lon}&per_page=100&client_id={SEAT_GEEK_CLIENT_ID}"
+            event_response = requests.get(event_url)
+            event_content = json.loads(event_response.content)
+            abbr = convert_state_to_abbr(state)
+            parks_url = f"https://developer.nps.gov/api/v1/parks?stateCode={abbr}&limit=5&api_key={NATIONAL_PARKS_API_KEY}"
+            parks_response = requests.get(parks_url)
+            parks_content = json.loads(parks_response.content)
+            composed_response = event_content
+            parks_values = parks_content.get('data')
+            composed_response['parks'] = parks_values
+            return JsonResponse(composed_response, safe=False)
+
    
 
 # 3rd this function gets the city information from get_multiple_locations above
