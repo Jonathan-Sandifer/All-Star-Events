@@ -46,6 +46,7 @@ def save_events(request):
         }
     )
     return JsonResponse(
+        bookmarkedEvent,
         event,
         encoder=EventListEncoder,
         safe=False,
@@ -73,5 +74,3 @@ def show_saved_events(request):
         encoder=BookmarkedEventListEncoder,
         safe=False
     )
-
-

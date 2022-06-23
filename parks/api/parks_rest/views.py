@@ -23,10 +23,3 @@ def protected_view(request):
 
 def public_view(request):
     return JsonResponse({"received": request.method})
-
-
-
-   
-
-
-
