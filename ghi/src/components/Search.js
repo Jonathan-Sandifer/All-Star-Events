@@ -43,7 +43,7 @@ class SearchBar extends React.Component {
                 "lon": this.state.selected_area.lon,
             }
             eventsAndParks['lat_lon'] = selected_lat_lon
-            console.log(eventsAndParks);
+            console.log("events & parks:", eventsAndParks);
             this.props.sSData(eventsAndParks)
             localStorage.setItem('data',JSON.stringify(eventsAndParks))
         } 
@@ -61,7 +61,7 @@ class SearchBar extends React.Component {
         if (response.ok) {
             const five_locations = await response.json();
             this.setState({states:five_locations}, () => {
-                // console.log("this is state", this.state);
+                
             })
         }
     }
