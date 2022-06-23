@@ -21,6 +21,8 @@ ul {
 .welcome {
   background-image: url('./images/img-home.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100vh;
   margin-left: -8px;
   margin-right: -8px;
@@ -42,10 +44,10 @@ ul {
 .user-events-parks {
   background-image: url('./images/img-userEventsParks.jpg');
   background-size: cover;
-  height: 100vh;
+  background-attachment: fixed;
   margin-left: -8px;
   margin-right: -8px;
-
+  margin-bottom: 90px;
 }
 
 .user-card-image {
@@ -109,7 +111,8 @@ ul {
 
 .events-parks {
   background-image: url('./images/img-66.jpg');
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   margin-left: -8px;
   margin-right: -8px;
   margin-bottom: 90px;
@@ -275,7 +278,8 @@ li {
 }
 .sign-up-main {
     background-image: url('./images/img-9.jpg');
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     height: 100vh;
     margin-left: -8px;
     margin-right: -8px;
@@ -284,7 +288,8 @@ li {
 
 .login-main {
   background-image: url('./images/img-4.jpg');
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   height: 100vh;
   margin-left: -8px;
   margin-right: -8px;

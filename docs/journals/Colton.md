@@ -75,3 +75,8 @@ I was able to participate in some of the pair programming today but sadly I am n
 I am back! Feeling about 80% which is enough for me to help again. We have been able to get our weather data to show up and now Shane and I are going to work on formatting that data so that it shows up prettier.
 
 Making serious progress today!! I managed to get the weather to show the weather icon corresponding to the weather in the area. I also fixed our issue where on the events page the last event wasn't showing a description. I just added a margin bottom of 10 % and tested it my changing the size of the page. We also figured out our issue for the home page and why it wouldn't redirect to the events parks page. we changed the size of the button so that it's harder to misclick the button.
+
+## 6/22/22
+
+Today was another bad day. I was able to be present for most of the morning then I had a dr appt followed immediately by my car breaking down. Fortunately I have nothing planned tomorrow so I can help my team filter the parks based on preferences. We pair programed to get the events to filter by the preferences today but we couldn't get anything else done.
+
