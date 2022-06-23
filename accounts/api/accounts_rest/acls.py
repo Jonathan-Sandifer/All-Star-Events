@@ -41,13 +41,16 @@ def filter_preferences_for_events(event_content, preference_list):
 def filter_preferences_for_parks(park_content, preference_list):
     preference_name = []
     parks = []
+    park_ids = set()
     for preference in preference_list:
         preference_name.append(preference.name.lower())
     for park in park_content['data']:
         for activity in park['activities']:
             activity_type = activity['name'].lower()
             if activity_type in preference_name:
-                parks.append(park)
+                if park["id"] not in park_ids:
+                    park_ids.add(park["id"])
+                    parks.append(park)
     return parks
 
  # Include a state parameter
