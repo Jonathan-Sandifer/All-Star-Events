@@ -16,6 +16,13 @@ class EventListEncoder(ModelEncoder):
     model = Event
     properties = ["name", "event_type", "city", "venue_name", "picture_url"]
 
+class BookmarkedEventListEncoder(ModelEncoder):
+    model = BookmarkedEvent
+    properties = ["event"]
+    encoders = {
+        "event":EventListEncoder(),
+    }
+
 # Create your views here.
 @auth.jwt_login_required
 def protected_view(request):
@@ -29,7 +36,6 @@ def public_view(request):
 @auth.jwt_login_required
 @require_http_methods(["POST"])
 def save_events(request):
-    print("ANYTHING!!!!!!!!!!")
     content = json.loads(request.body)
     user_id = request.payload["user"]["id"]
     print(request.payload)
@@ -55,5 +61,17 @@ def get_user_information(request):
         print(err)
         return None
 
+@auth.jwt_login_required
+@require_http_methods(["GET"])
+def show_saved_events(request):
+    user = request.payload["user"]["id"]
+    print("!!!!!!!!", user)
+    events = BookmarkedEvent.objects.filter(user_id=user)
+    print("Events??????????", events)
+    return JsonResponse(
+        events,
+        encoder=BookmarkedEventListEncoder,
+        safe=False
+    )
 
-# def list_events(request):
+

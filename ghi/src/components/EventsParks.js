@@ -8,6 +8,7 @@ function EventsParks(props) {
   const lat = itemData.lat_lon.lat
   const lon = itemData.lat_lon.lon
   const token = props.token 
+  console.log("TOKENNNNNN", token)
   // const [eventID, setEventID] = useState('')
   // const [eventName, setEventName] = useState('')
   // const [eventType, setEventType] = useState('')
