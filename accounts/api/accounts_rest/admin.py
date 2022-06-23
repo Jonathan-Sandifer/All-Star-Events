@@ -3,10 +3,12 @@ from .models import User, Preferences
 
 # Register your models here.
 class UserAdmin(admin.ModelAdmin):
-  pass
+    pass
+
+
 class PreferencesAdmin(admin.ModelAdmin):
-  pass
+    pass
+
 
 admin.site.register(User, UserAdmin)
 admin.site.register(Preferences, PreferencesAdmin)
-

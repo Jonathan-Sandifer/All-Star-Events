@@ -5,6 +5,7 @@ from django.views.decorators.http import require_http_methods
 from common.json import ModelEncoder
 import json
 import djwto.authentication as auth
+
 # Create your views here.
 
 
@@ -12,13 +13,16 @@ class UserEncoder(ModelEncoder):
     model = User
     properties = ["id", "username", "email", "first_name", "last_name"]
 
+
 class UserListEncoder(ModelEncoder):
     model = User
     properties = ["id", "username", "email", "password"]
-   
+
+
 class PreferenceListEncoder(ModelEncoder):
     model = Preferences
     properties = ["name"]
+
 
 class UserDetailEncoder(ModelEncoder):
     model = User
@@ -27,14 +31,15 @@ class UserDetailEncoder(ModelEncoder):
         "preferences": PreferenceListEncoder(),
     }
 
+
 @require_http_methods(["GET", "POST"])
 def api_list_preferences(request):
     if request.method == "GET":
         preferences = Preferences.objects.all()
-        return JsonResponse (
+        return JsonResponse(
             {"preferences": preferences},
             encoder=PreferenceListEncoder,
-            safe=False
+            safe=False,
         )
     else:
         content = json.loads(request.body)
@@ -45,14 +50,13 @@ def api_list_preferences(request):
             safe=False,
         )
 
+
 @require_http_methods(["GET", "POST"])
 def api_list_users(request):
     if request.method == "GET":
         users = User.objects.all()
         return JsonResponse(
-            {"users": users},
-            encoder=UserListEncoder,
-            safe=False
+            {"users": users}, encoder=UserListEncoder, safe=False
         )
     elif request.method == "POST":
         content = json.loads(request.body)
@@ -63,27 +67,25 @@ def api_list_users(request):
             safe=False,
         )
 
+
 @require_http_methods(["GET"])
 def api_user_token(request):
     if "jwt_access_token" in request.COOKIES:
         token = request.COOKIES["jwt_access_token"]
         return JsonResponse(
-            {"token": token,},
+            {
+                "token": token,
+            },
         )
     response = JsonResponse({"detail": "no session"})
     response.status_code = 404
     return response
 
 
-
-@require_http_methods(["GET", 'PUT'])
+@require_http_methods(["GET", "PUT"])
 def api_show_user(request, pk):
     user = User.objects.get(id=pk)
-    return JsonResponse(
-        user,
-        encoder=UserDetailEncoder,
-        safe=False
-    )
+    return JsonResponse(user, encoder=UserDetailEncoder, safe=False)
 
 
 @auth.jwt_login_required
@@ -91,12 +93,12 @@ def api_show_user(request, pk):
 def api_update_user(request):
     if request.method == "PUT":
         content = json.loads(request.body)
-        content = content['preference']
+        content = content["preference"]
         try:
             if "name" in content:
                 preference = Preferences.objects.get(name=content["name"])
-                content["name"] = preference 
-                user = User.objects.get(id=request.payload['user']['id'])
+                content["name"] = preference
+                user = User.objects.get(id=request.payload["user"]["id"])
                 user.preferences.add(preference)
         except Preferences.DoesNotExist:
             return JsonResponse(
@@ -108,4 +110,3 @@ def api_update_user(request):
             encoder=UserDetailEncoder,
             safe=False,
         )
-        
