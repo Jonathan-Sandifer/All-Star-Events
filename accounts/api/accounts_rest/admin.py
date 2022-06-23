@@ -9,4 +9,3 @@ class PreferencesAdmin(admin.ModelAdmin):
 
 admin.site.register(User, UserAdmin)
 admin.site.register(Preferences, PreferencesAdmin)
-

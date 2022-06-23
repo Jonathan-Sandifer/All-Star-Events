@@ -1,4 +1,3 @@
-from webbrowser import get
 from .views import ( 
     api_list_preferences, api_list_users, api_user_token, 
     api_show_user, api_update_user, 

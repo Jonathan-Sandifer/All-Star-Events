@@ -1,4 +1,3 @@
-import email
 import json
 from django.http import JsonResponse
 import requests
@@ -17,13 +16,14 @@ SEAT_GEEK_CLIENT_ID = os.environ["SEAT_GEEK_CLIENT_ID"]
 SEAT_GEEK_SECRET = os.environ["SEAT_GEEK_SECRET"]
 
 # 2nd this function takes in the city information the user typed in on the from end 
+
 def get_multiple_locations(request, city): 
     if request.method == "GET":
        return get_location_details(city)
         # call get location details to get the 5 options 
         # returns a response an array of objects to the front end 
-        
- 
+
+
 def filter_preferences_for_events(event_content, preference_list):
     preference_name = []
     events = []

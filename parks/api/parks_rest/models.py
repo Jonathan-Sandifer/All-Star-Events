@@ -1,6 +1,6 @@
 from django.db import models
 
-# Create your models here.
+
 class Park(models.Model):
     name = models.CharField(max_length=250)
     state = models.CharField(max_length=2, null=True, blank=True)
@@ -9,6 +9,7 @@ class Park(models.Model):
 
     def __str__(self):
       return self.name
+
 
 class BookmarkedPark(models.Model):
   user_id = models.IntegerField(unique=False)

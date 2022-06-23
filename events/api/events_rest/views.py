@@ -1,4 +1,3 @@
-from lib2to3.pgen2 import token
 import djwto.authentication as auth
 from django.views.decorators.http import require_http_methods
 from django.http import JsonResponse
@@ -9,7 +8,6 @@ from common.json import ModelEncoder
 import djwto.tokens as tokens
 from djwto.exceptions import JWTValidationError
 from django.core.exceptions import ImproperlyConfigured
-import jwt 
 
 
 class EventListEncoder(ModelEncoder):
