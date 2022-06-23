@@ -3,10 +3,14 @@ from .models import Event, BookmarkedEvent
 
 # Register your models here.
 
+
 class EventAdmin(admin.ModelAdmin):
-  pass
+    pass
+
+
 class BookmarkedEventAdmin(admin.ModelAdmin):
-  pass
+    pass
+
 
 admin.site.register(Event, EventAdmin)
 admin.site.register(BookmarkedEvent, BookmarkedEventAdmin)

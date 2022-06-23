@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('parks_rest', '0002_bookmarkedpark_delete_user_park_state_and_more'),
+        ("parks_rest", "0002_bookmarkedpark_delete_user_park_state_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='bookmarkedpark',
-            name='user_id',
+            model_name="bookmarkedpark",
+            name="user_id",
             field=models.IntegerField(),
         ),
     ]

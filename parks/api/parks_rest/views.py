@@ -2,14 +2,15 @@
 import djwto.authentication as auth
 from django.views.decorators.http import require_http_methods
 from django.http import JsonResponse
+
 # import json
 # from .models import Event , BookmarkedEvent
-# from common.json import ModelEncoder 
+# from common.json import ModelEncoder
 
 # import djwto.tokens as tokens
 # from djwto.exceptions import JWTValidationError
 # from django.core.exceptions import ImproperlyConfigured
-# import jwt 
+# import jwt
 
 
 # class ParkListEncoder(ModelEncoder):
@@ -30,7 +31,3 @@ def public_view(request):
 @require_http_methods(["POST"])
 def save_parks(request):
     print("ANYTHING!!!!!!!!!!")
-   
-
-
-

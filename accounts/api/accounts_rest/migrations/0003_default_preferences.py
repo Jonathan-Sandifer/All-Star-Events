@@ -2,13 +2,14 @@
 
 from django.db import migrations
 
+
 def delete_preferences(apps, schema):
     Preferences = apps.get_model("accounts_rest.Preferences")
     for preference in Preferences.objects.all():
         preference.delete()
 
 
-def insert_preferences(apps,schema):
+def insert_preferences(apps, schema):
     Preferences = apps.get_model("accounts_rest.Preferences")
     Preferences.objects.get_or_create(name="Parks")
     Preferences.objects.get_or_create(name="Hiking")
@@ -22,15 +23,12 @@ def insert_preferences(apps,schema):
     Preferences.objects.get_or_create(name="Concerts")
     Preferences.objects.get_or_create(name="Water Activities")
     Preferences.objects.get_or_create(name="Trails")
-   
 
 
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('accounts_rest', '0002_alter_preferences_user'),
+        ("accounts_rest", "0002_alter_preferences_user"),
     ]
 
-    operations = [
-        migrations.RunPython(insert_preferences,delete_preferences)
-    ]
+    operations = [migrations.RunPython(insert_preferences, delete_preferences)]
