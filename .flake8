@@ -1,3 +1,3 @@
 [flake8]
-exclude=**/settings.py,**/migrations/**
+exclude=**/settings.py,**/migrations/**,**/acls.py
 ignore=E402,W503
