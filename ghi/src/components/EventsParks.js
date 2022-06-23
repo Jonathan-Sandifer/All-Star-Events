@@ -32,13 +32,6 @@ function EventsParks(props) {
   function saveEvent(e) {
     
     const event = JSON.parse(e.target.value)
-    // setEventID(event.id)
-    // setEventName(event.title)
-    // setEventType(event.type)
-    // setEventCity(event.venue.city)
-    // setEventVenueName(event.venue.name)
-    // setEventPictureUrl(event.performers[0].image)
-
     const eventUrl = 'http://localhost:8080/api/saved_events/';
     const fetchConfig = {
       method: "POST",
