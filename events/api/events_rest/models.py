@@ -1,8 +1,6 @@
 from django.db import models
 
-# from account
 
-# Create your models here.
 class Event(models.Model):
     name = models.CharField(max_length=250)
     event_type = models.CharField(max_length=100)
