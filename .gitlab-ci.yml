@@ -1,0 +1,73 @@
+stages:
+  - test   # Run tests first
+  - build  # Run build after tests
+  - deploy # Run deploy after build
+
+api-unit-test-job:
+  image: python:3-bullseye
+  stage: test
+  script:
+    - cd accounts/api
+    - pip install -r requirements.txt
+    - python manage.py test  # Run unit tests
+    - cd ../../events/api
+    - pip install -r requirements.txt
+    - python manage.py test  # Run unit tests
+    - cd ../../parks/api
+    - pip install -r requirements.txt
+    - python manage.py test  # Run unit tests
+
+lint-test-job:
+  image: python:3-bullseye
+  stage: test
+  script:
+    - pip install flake8
+    # Run flake8 on Python project to check for code quality
+    - flake8 accounts/api events/api parks/api
+
+build-front-end-job:
+  rules:
+    # Only run if the commit is tagged with git tag
+    - if: $CI_COMMIT_BRANCH == "deploy"
+  stage: build
+  image: node:lts-bullseye
+  needs:
+    - api-unit-test-job  # These two jobs must succeed for
+    - lint-test-job      # this build-job to run
+  script:
+    - cd ghi
+    - npm install
+    - npm run build  # Build the React application
+  artifacts:
+    paths:
+      - ghi/build/  # Save all of the files in the build path
+
+build-back-end-job:
+  rules:
+    # Only run if the commit is tagged with git tag
+    - if: $CI_COMMIT_BRANCH == "deploy"
+  stage: build
+  image: docker:20.10.16
+  services:
+    - docker:20.10.16-dind
+  script:
+    - cd accounts/api
+    - docker build -t ${CI_REGISTRY_IMAGE}/accounts:latest .
+    - docker tag ${CI_REGISTRY_IMAGE}/app:latest ${CI_REGISTRY_IMAGE}/accounts:$CI_COMMIT_TAG
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker push ${CI_REGISTRY_IMAGE}/accounts:$CI_COMMIT_TAG
+    - docker push ${CI_REGISTRY_IMAGE}/accounts:latest
+
+    - cd ../events/api
+    - docker build -t ${CI_REGISTRY_IMAGE}/events:latest .
+    - docker tag ${CI_REGISTRY_IMAGE}/app:latest ${CI_REGISTRY_IMAGE}/events:$CI_COMMIT_TAG
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker push ${CI_REGISTRY_IMAGE}/events:$CI_COMMIT_TAG
+    - docker push ${CI_REGISTRY_IMAGE}/events:latest
+
+    - cd ../parks/api
+    - docker build -t ${CI_REGISTRY_IMAGE}/parks:latest .
+    - docker tag ${CI_REGISTRY_IMAGE}/app:latest ${CI_REGISTRY_IMAGE}/parks:$CI_COMMIT_TAG
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
+    - docker push ${CI_REGISTRY_IMAGE}/parks:$CI_COMMIT_TAG
+    - docker push ${CI_REGISTRY_IMAGE}/parks:latest
