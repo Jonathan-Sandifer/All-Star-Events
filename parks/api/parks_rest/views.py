@@ -1,13 +1,14 @@
 import djwto.authentication as auth
 from django.http import JsonResponse
+
 # import json
 # from .models import Event , BookmarkedEvent
-# from common.json import ModelEncoder 
+# from common.json import ModelEncoder
 
 # import djwto.tokens as tokens
 # from djwto.exceptions import JWTValidationError
 # from django.core.exceptions import ImproperlyConfigured
-# import jwt 
+# import jwt
 
 
 # class ParkListEncoder(ModelEncoder):

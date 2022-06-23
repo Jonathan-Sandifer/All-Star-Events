@@ -58,10 +58,8 @@ us_state_to_abbrev = {
     "U.S. Virgin Islands": "VI",
 }
 
+
 def convert_state_to_abbr(full_state_name):
     for k, v in us_state_to_abbrev.items():
         if k == full_state_name:
             return v
-        
-
-

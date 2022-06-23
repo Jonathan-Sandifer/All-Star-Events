@@ -3,10 +3,14 @@ from .models import Park, BookmarkedPark
 
 # Register your models here.
 
+
 class ParkAdmin(admin.ModelAdmin):
-  pass
+    pass
+
+
 class BookmarkedParkAdmin(admin.ModelAdmin):
-  pass
+    pass
+
 
 admin.site.register(Park, ParkAdmin)
 admin.site.register(BookmarkedPark, BookmarkedParkAdmin)
