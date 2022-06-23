@@ -43,7 +43,6 @@ class SearchBar extends React.Component {
                 "lon": this.state.selected_area.lon,
             }
             eventsAndParks['lat_lon'] = selected_lat_lon
-            console.log("events & parks:", eventsAndParks);
             this.props.sSData(eventsAndParks)
             localStorage.setItem('data',JSON.stringify(eventsAndParks))
         } 

@@ -2,23 +2,14 @@ import React,{useState, useEffect} from 'react'
 
 
 function EventsParks(props) {
-  // let searchData = props.sData
   const itemData = JSON.parse(localStorage.getItem('data'));
   const [weather, setWeather] = useState([])
   const lat = itemData.lat_lon.lat
   const lon = itemData.lat_lon.lon
   const token = props.token 
-  console.log("TOKENNNNNN", token)
-  // const [eventID, setEventID] = useState('')
-  // const [eventName, setEventName] = useState('')
-  // const [eventType, setEventType] = useState('')
-  // const [eventCity, setEventCity] = useState('')
-  // const [eventVenueName, setEventVenueName] = useState('')
-  // const [eventPictureUrl, setEventPictureUrl] = useState('')
 
   useEffect(() => {
     const fetchWeather = async () => {
-    
     const url = `http://localhost:8030/api/weather/${lat}/${lon}/`
     const response = await fetch(url)
     if (response.ok){
@@ -118,7 +109,6 @@ function EventsParks(props) {
                     {park.description}
                     {park.states}
                     <br/>
-                    <button className="user-card-info">Save</button>
                     </p>
                   </div>
                 </>
