@@ -48,6 +48,7 @@ def filter_preferences_for_parks(park_content, preference_list):
             activity_type = activity['name'].lower()
             if activity_type in preference_name:
                 parks.append(park)
+    return parks
 
  # Include a state parameter
 def get_events(request, lat, lon, state):
@@ -63,10 +64,10 @@ def get_events(request, lat, lon, state):
         parks_url = f"https://developer.nps.gov/api/v1/parks?stateCode={abbr}&limit=5&api_key={NATIONAL_PARKS_API_KEY}"
         parks_response = requests.get(parks_url)
         parks_content = json.loads(parks_response.content)
-        filter_preferences_for_parks(parks_content, user.preferences.all())
+        filtered_parks = filter_preferences_for_parks(parks_content, user.preferences.all())
         return JsonResponse({
             "events": filtered_events,
-            "parks": parks_content,
+            "parks": filtered_parks,
         }, safe=False)
    
 

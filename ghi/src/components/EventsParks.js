@@ -66,7 +66,7 @@ function EventsParks(props) {
           <br/>
           {weather.main?weather.weather[0].description: <></>}
           <br />
-          <img  src ={`http://openweathermap.org/img/wn/${icon}@2x.png`} />
+          <img  src ={`http://openweathermap.org/img/wn/${icon}@2x.png`} alt='' />
           </div>
         </div>
         <div className="row">
@@ -77,7 +77,7 @@ function EventsParks(props) {
               <div key={event.id}>
               <>
                 <div>
-                  <img className="user-card-image" src={event.performers[0].image}/>
+                  <img className="user-card-image" src={event.performers[0].image} alt=''/>
                   </div>
                   <div className="user-card-content">
                     <p>
@@ -102,12 +102,12 @@ function EventsParks(props) {
             <div className="column">
               <h1>Parks</h1>
 
-              {itemData.parks.data.map(park => {
+              {itemData.parks.map(park => {
             return (
               <div key={park.id}>
               <>
                 <div>
-                  <img className="user-card-image" src={park.images[0].url}/>
+                  <img className="user-card-image" src={park.images[0].url} alt=''/>
                   </div>
                   <div className= "user-card-content">
                     <p>
