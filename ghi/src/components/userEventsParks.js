@@ -30,31 +30,6 @@ function UserEventsParks(props) {
   return (
     
     <div className="user-events-parks">
-<<<<<<< HEAD
-      <div className="user-cards">
-        <div className="user-card">
-          <img
-            className="user-card-image"
-            src="https://fakeimg.pl/400x300/009578/fff/"
-            alt=""
-          />
-          <div className="user-card-content">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
-              ducimus id ab tenetur delectus reiciendis fugit autem qui at.
-            </p>
-            <p>
-              Alias itaque praesentium eum, consequatur ducimus asperiores
-              accusantium velit minima?
-            </p>
-            <div className="user-card-content"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-=======
         <div className="column">
 
         {savedEvent.map(event => {
@@ -83,6 +58,5 @@ function UserEventsParks(props) {
               </div>
               );
   }
->>>>>>> main
 
 export default UserEventsParks;
