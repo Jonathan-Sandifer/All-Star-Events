@@ -7,6 +7,7 @@ function EventsParks(props) {
   const [weather, setWeather] = useState([])
   const lat = itemData.lat_lon.lat
   const lon = itemData.lat_lon.lon
+  const token = props.token 
   // const [eventID, setEventID] = useState('')
   // const [eventName, setEventName] = useState('')
   // const [eventType, setEventType] = useState('')
@@ -29,16 +30,9 @@ function EventsParks(props) {
   },[])
 
  
-  function saveEvent(e) {
-    
+  async function saveEvent(e) {
+  
     const event = JSON.parse(e.target.value)
-    // setEventID(event.id)
-    // setEventName(event.title)
-    // setEventType(event.type)
-    // setEventCity(event.venue.city)
-    // setEventVenueName(event.venue.name)
-    // setEventPictureUrl(event.performers[0].image)
-
     const eventUrl = 'http://localhost:8080/api/saved_events/';
     const fetchConfig = {
       method: "POST",
@@ -50,11 +44,12 @@ function EventsParks(props) {
 	      "picture_url": event.performers[0].image
       }),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'authorization': `Bearer ${token}`
       },
       credentials: "include"
     };
-    const response = fetch(eventUrl, fetchConfig);
+    const response = await fetch(eventUrl, fetchConfig);
     if (response.ok) {
       console.log("SUCCCCESSSSSS")
     }
@@ -62,6 +57,7 @@ function EventsParks(props) {
   
 
   let icon = weather.main?weather.weather[0].icon: <></>
+  
   
     return (
       <div className="events-parks">
@@ -81,7 +77,7 @@ function EventsParks(props) {
               <h1>Events</h1>   
           {itemData.events.map(event => {
             return (
-              <div key={event.id}>
+              <div key={event.id + event.datetime_local}>
               <>
                 <div>
                   <img className="user-card-image" src={event.performers[0].image} alt=''/>
@@ -118,7 +114,6 @@ function EventsParks(props) {
                   </div>
                   <div className= "user-card-content">
                     <p>
-                  
                     {park.fullName}
                     <br/>
                     {park.description}
