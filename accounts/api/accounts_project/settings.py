@@ -29,10 +29,13 @@ SECRET_KEY = (
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", False) == "True"
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    "localhost",
+    "accounts-api",
+    os.environ.get("ALLOWED_HOST", "127.0.0.1"),
+]
 
 # Application definition
 
@@ -131,8 +134,10 @@ AUTH_USER_MODEL = "accounts_rest.User"
 DJWTO_MODE = "TWO-COOKIES"
 DJWTO_CSRF = False
 DJWTO_ACCESS_TOKEN_LIFETIME = timedelta(days=1)
+DJWTO_SAME_SITE = "LAX" if DEBUG else "NONE"
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    os.environ.get("CORS_HOST", "http://localhost:3001"),
 ]
 CORS_ALLOW_CREDENTIALS = True

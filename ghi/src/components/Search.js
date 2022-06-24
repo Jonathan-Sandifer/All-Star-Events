@@ -28,7 +28,7 @@ class SearchBar extends React.Component {
     }
     // selected location includes lat lon state
     await this.setState({ selected_area: selected_state });
-    const url = `http://localhost:8030/api/events/${this.state.selected_area.lat}/${this.state.selected_area.lon}/${this.state.selected_area.state}/`;
+    const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/events/${this.state.selected_area.lat}/${this.state.selected_area.lon}/${this.state.selected_area.state}/`;
     const response = await fetch(url, {
       credentials: "include",
     });
@@ -48,7 +48,7 @@ class SearchBar extends React.Component {
   //1st step someone types in city on front end, goes to get_multiple_locations in acls.py on the backend
   async getMultipleLocations(event) {
     event.preventDefault();
-    const url = `http://localhost:8030/api/events/${this.state.search}/`;
+    const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/events/${this.state.search}/`;
     const response = await fetch(url); //4th step data response from backend sends 5 specific cities
     if (response.ok) {
       const five_locations = await response.json();

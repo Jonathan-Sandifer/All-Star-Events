@@ -20,8 +20,10 @@ function App() {
     setSearchData(data);
   };
 
+  const domain = /https:\/\/[^/]+/;
+  const basename = process.env.PUBLIC_URL.replace(domain, '');
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={basename}>
       <Navbar token={token} />
       <Routes>
         <Route

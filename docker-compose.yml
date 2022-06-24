@@ -15,8 +15,8 @@ services:
       HOST_OS: ${OS}
       NODE_ENV: development
       HOST: "0.0.0.0"
-      REACT_APP_ACCOUNTS_HOST: http://localhost:8030
-      REACT_APP_EVENTS_HOST: http://localhost:8080
+      REACT_APP_ACCOUNTS_HOST: ${process.env.REACT_APP_ACCOUNTS_HOST}
+      REACT_APP_EVENTS_HOST: ${process.env.REACT_APP_EVENTS_HOST}
       GEOCODING_API_KEY: ${GEOCODING_API_KEY}
   database:
     image: postgres:14-bullseye
@@ -39,6 +39,7 @@ services:
     depends_on:
       - database
     environment:
+      DEBUG: "True"
       DATABASE_URL: postgres://events:password@database:5432/events
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
@@ -54,6 +55,7 @@ services:
     depends_on:
       - database
     environment:
+      DEBUG: "True"
       DATABASE_URL: postgres://parks:password@database:5432/parks
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
@@ -68,6 +70,7 @@ services:
     depends_on:
       - database
     environment:
+      DEBUG: "True"
       DATABASE_URL: postgres://parks:password@database:5432/accounts
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
