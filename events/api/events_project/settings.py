@@ -29,7 +29,7 @@ SECRET_KEY = (
 )
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("DEBUG", False) == "True"
 
 ALLOWED_HOSTS = [
     "localhost",
@@ -135,6 +135,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 DJWTO_CSRF = False
 DJWTO_ACCESS_TOKEN_LIFETIME = timedelta(days=1)
+DJWTO_SAME_SITE = "LAX" if DEBUG else "NONE"
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
