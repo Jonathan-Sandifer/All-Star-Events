@@ -39,7 +39,7 @@ services:
     depends_on:
       - database
     environment:
-      DEBUG: True
+      DEBUG: "True"
       DATABASE_URL: postgres://events:password@database:5432/events
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
@@ -55,7 +55,7 @@ services:
     depends_on:
       - database
     environment:
-      DEBUG: True
+      DEBUG: "True"
       DATABASE_URL: postgres://parks:password@database:5432/parks
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
@@ -70,7 +70,7 @@ services:
     depends_on:
       - database
     environment:
-      DEBUG: True
+      DEBUG: "True"
       DATABASE_URL: postgres://parks:password@database:5432/accounts
       WAIT_HOSTS: database:5432
       WAIT_TIMEOUT: 240
