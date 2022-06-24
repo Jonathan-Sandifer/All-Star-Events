@@ -41,7 +41,10 @@ function App() {
           path="/login"
           element={<LoginForm login={login} token={token} />}
         />
-        <Route path="/userEventsParks" element={<UserEventsParks token={token}/>}  />
+        <Route
+          path="/userEventsParks"
+          element={<UserEventsParks token={token} />}
+        />
         <Route
           path="/EventsParks"
           element={<EventsParks sData={searchData} token={token} />}
