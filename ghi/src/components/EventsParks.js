@@ -17,7 +17,7 @@ function EventsParks(props) {
       }
     };
     fetchWeather();
-  }, []);
+  }, [lat, lon]);
 
   async function saveEvent(e) {
     const event = JSON.parse(e.target.value);
