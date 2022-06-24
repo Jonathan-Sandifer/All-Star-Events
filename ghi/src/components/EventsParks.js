@@ -21,7 +21,7 @@ function EventsParks(props) {
 
   async function saveEvent(e) {
     const event = JSON.parse(e.target.value);
-    const eventUrl = "${process.env.REACT_APP_EVENTS_HOST}/api/saved_events/";
+    const eventUrl = `${process.env.REACT_APP_EVENTS_HOST}/api/saved_events/`;
     const fetchConfig = {
       method: "POST",
       body: JSON.stringify({
