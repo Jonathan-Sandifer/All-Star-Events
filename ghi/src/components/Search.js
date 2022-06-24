@@ -88,11 +88,9 @@ class SearchBar extends React.Component {
             })}
           </select>
           <li>
-            <button className="pref-button" to="/EventsParks">
-              <Link className="new" to="/EventsParks">
+              <Link className="pref-button new" to="/EventsParks">
                 GO
               </Link>
-            </button>
           </li>
         </form>
       </>
