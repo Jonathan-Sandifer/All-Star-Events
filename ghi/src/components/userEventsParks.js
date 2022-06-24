@@ -8,7 +8,7 @@ function UserEventsParks(props) {
   useEffect(() => {
     if (token) {
       const fetchSavedEvents = async () => {
-        const url = `http://localhost:8080/api/show_events/`;
+        const url = `${process.env.REACT_APP_EVENTS_HOST}/api/show_events/`;
         const response = await fetch(url, {
           headers: {
             Authorization: `Bearer ${token}`,

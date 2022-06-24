@@ -9,7 +9,7 @@ function EventsParks(props) {
 
   useEffect(() => {
     const fetchWeather = async () => {
-      const url = `http://localhost:8030/api/weather/${lat}/${lon}/`;
+      const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/weather/${lat}/${lon}/`;
       const response = await fetch(url);
       if (response.ok) {
         const weatherData = await response.json();
@@ -21,7 +21,7 @@ function EventsParks(props) {
 
   async function saveEvent(e) {
     const event = JSON.parse(e.target.value);
-    const eventUrl = "http://localhost:8080/api/saved_events/";
+    const eventUrl = "${process.env.REACT_APP_EVENTS_HOST}/api/saved_events/";
     const fetchConfig = {
       method: "POST",
       body: JSON.stringify({

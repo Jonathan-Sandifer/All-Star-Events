@@ -80,3 +80,6 @@ Making serious progress today!! I managed to get the weather to show the weather
 
 Today was another bad day. I was able to be present for most of the morning then I had a dr appt followed immediately by my car breaking down. Fortunately I have nothing planned tomorrow so I can help my team filter the parks based on preferences. We pair programed to get the events to filter by the preferences today but we couldn't get anything else done.
 
+## 6/23/22
+
+Today was much better than yesterday. Today I fixed the background image for our pages so that when you scroll the image doesn't move. We also pair programmed to get our events to be saved in yourevents. All we have left is to deploy.
