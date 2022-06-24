@@ -31,8 +31,11 @@ SECRET_KEY = (
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    "localhost",
+    "accounts-api",
+    os.environ.get("ALLOWED_HOST", "127.0.0.1"),
+]
 
 # Application definition
 
@@ -134,5 +137,6 @@ DJWTO_ACCESS_TOKEN_LIFETIME = timedelta(days=1)
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    os.environ.get("CORS_HOST", "http://localhost:3001"),
 ]
 CORS_ALLOW_CREDENTIALS = True
