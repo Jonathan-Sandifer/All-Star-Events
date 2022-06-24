@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 
 function UserEventsParks(props) {
   const token = props.token;
-  // console.log("TOKEN!!!!@#@#@$", token)
   const [savedEvent, setSavedEvents] = useState([]);
 
   useEffect(() => {
@@ -21,10 +20,8 @@ function UserEventsParks(props) {
       };
       fetchSavedEvents();
     } else {
-      console.log("sucks to suck");
     }
   }, [token]);
-  console.log("!!!!!!!!", savedEvent);
   return (
     <div className="user-events-parks">
       <div className="column">

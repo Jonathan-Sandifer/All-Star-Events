@@ -95,7 +95,6 @@ export function useToken() {
       body: form,
     });
     if (response.ok) {
-      console.log("this is login response", response.body);
       const token = await getToken();
       setToken(token);
     }

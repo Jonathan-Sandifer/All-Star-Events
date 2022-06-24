@@ -39,7 +39,6 @@ function EventsParks(props) {
     };
     const response = await fetch(eventUrl, fetchConfig);
     if (response.ok) {
-      console.log("SUCCCCESSSSSS");
     }
   }
 
