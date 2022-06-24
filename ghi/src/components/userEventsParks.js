@@ -2,13 +2,12 @@ import React, { useState, useEffect } from "react";
 
 function UserEventsParks(props) {
   const token = props.token;
-  // console.log("TOKEN!!!!@#@#@$", token)
   const [savedEvent, setSavedEvents] = useState([]);
 
   useEffect(() => {
     if (token) {
       const fetchSavedEvents = async () => {
-        const url = `http://localhost:8080/api/show_events/`;
+        const url = `${process.env.REACT_APP_EVENTS_HOST}/api/show_events/`;
         const response = await fetch(url, {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -21,10 +20,8 @@ function UserEventsParks(props) {
       };
       fetchSavedEvents();
     } else {
-      console.log("sucks to suck");
     }
   }, [token]);
-  console.log("!!!!!!!!", savedEvent);
   return (
     <div className="user-events-parks">
       <div className="column">

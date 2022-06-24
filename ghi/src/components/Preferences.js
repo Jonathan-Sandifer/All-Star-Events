@@ -31,7 +31,7 @@ class PreferenceSelect extends React.Component {
   }
 
   async setPreferences(preference) {
-    const url = `http://localhost:8030/api/update/`;
+    const url = `${process.env.REACT_APP_ACCOUNTS_HOST}/api/update/`;
     const response = await fetch(url, {
       method: "put",
       credentials: "include",
