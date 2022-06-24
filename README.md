@@ -43,6 +43,7 @@
 * Users can set preferences of activities they enjoy/want to do that stay w/ their profile
 * Users can enter their location information to see what events/activities are in their respective location
 * Users will receive information on events/activities based off their individual profile preferences, current location, and what the weather is for the particular area
+* Users can save specific events they want to attend/keep track of to their own profile 
 
 
 ## Stretch goals

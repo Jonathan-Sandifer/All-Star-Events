@@ -8,26 +8,31 @@ data from third-party sources:
 * Also display nearby hiking and mountain biking trails, campgrounds, ski resorts, ATV trails, and more.
 
 
-
 These are the API"s providing data to the application 
+
 - GEO LOCATION: https://rapidapi.com/natkapral/api/ip-geo-location/
-- TRAIlS/OUTDOORS: https://rapidapi.com/trailapi/api/trailapi/
-- EVENTS: https://rapidapi.com/AndrianaCodes/api/eventbrite-com/
+
+- Weather information: https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&appid={API key} 
+
+- TRAIlS/OUTDOORS: 'https://developer.nps.gov/api/v1/parks?parkCode=acad&api_key=INSERT-API-KEY-HERE'
+
+- EVENTS: https://api.seatgeek.com/2
 
 
 *GEO LOCATION API*
-- RETURN VALUES: State, city, latitude, longitude 
-- DESCRIPTION: We will use this geo location API once the users input their selected state and city. Once selected, we will then display activities that are within and nearby that selected city. This will be the Main api that all of our other api's will center around. We will need to give the other api's city, state, zip, or lat,long parameters.
+- RETURN VALUES: Latitude and Longitude  
+- DESCRIPTION: For our application to work properly we need lat and lon values to inject into our other 3rd party api calls. This api allows us to take the inputted user city and state information then turn that into latitude and longitude values that can be used in our subsequent apis 
 
 
+*Open Weather API*
+- RETURN VALUES: Temperature and Weather Description 
+- DESCRIPTION: Pretty self explanatory one here. We wanted to provide the user with accurate real time weather information for each location they end up searching for events and parks. This api allows us to do just that.  
 
-*TRAILS/Parks API*
-- RETURN VALUES: city, latitude, longitude, difficulty, dogs allowed, 
-- DESCRIPTION: The data retrieved from this api will display the park or trails location, difficulty rating, description, elevation, length. This data will be shown when the user visits their suggestions page, and when they check their saved events page
+*National Parks Service Api*
+- RETURN VALUES: Name of the Park , description of the park, state where it is located 
+- DESCRIPTION: Originally we spent days trying to gain access to trailforks api or all trails, but the only api that we could finds ot fit some of our needs was from the National parks service. Based off the api it listed certain types of outdoor activities that we could filter through to all people to pick activities they like to do and get shown the correct parks that have those activities. 
 
 
-
-
-*EVENTBRITE API*
-- RETURN VALUES: City, Date, Time, description, Name/title
-- DESCRIPTION: The eventbrite api will display indoor and outdoor events in the users selected location. This data will be shown when the user visits their suggestions page, and when they check their saved events page. These events may be ticketed, free, solo, or meant for groups.
+*SeatGeek API*
+- RETURN VALUES: Name, Venue, City, Time , Type of Event 
+- DESCRIPTION: The Seat Geek api is the only event api we were able to find that allows free access. It gives loads of information on events we had to sort and filter through all of it to gain access to the information we needed such as the name of the event, the event venue, the city its in, the time of the event, and what type of event it is. 
