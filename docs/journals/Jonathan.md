@@ -28,6 +28,15 @@ and a funny thing happened, I realized that while Colton had put in the pictures
 backend before I can fully see this page realized.
 
 ## 6/10/2022
-* Ouch it seems I have forgotton to update my journal entries for a few days, I have been working with the rest of my teammates to get a better understanding of how our backend will
-be structured and a bunch of paired programming with the guys to make sure I understand how to make it all work for the portion I have to do. I have had a few hiccups though like 
+* Ouch it seems I have forgotton to update my journal entries for a few days, 
+I have been working with the rest of my teammates to get a better understanding of how our backend will
+be structured and a bunch of paired programming with the guys to make sure I understand how to make it all work for the portion I have to do. 
+I have had a few hiccups though like 
 this past week, being unable to really code effectively as I had technical issues with my internet stopping me from working on anything for about a day, and any extra work I could have been doing after the day was over for the cohort, but today I am back at it and will need to catch up.
+
+## 6/24/2022
+* Today is the last day and im going to fit the last two weeks into today, for starters, I unfortunately got sick a few days after I lost power so just whammies on whammies.
+* This of course impeded my functionality to the team, but I did my best. Pair programming with my teammates when we came to difficult peices of our code, like the saving of events to a seperate page, or the access to the events api so that we can actually get events when we click go on our front page. And myself and Colton took the ownership of the css for the project so making sure it looks pretty and that any data that we are trying to convey to any potential users, is conveyed. Making sure that I add anything that the team needed to make other things work, like the Save button on the event cards that we wanted users to be able to choose what they want to save. And then towards the end helping
+with the formatting of the project and making sure that our code looks clean. And then staying with Keiran to make sure that our project was deployed to heroku.
+* I really appreciate all the work that myself and my teammates have put into this project even with all the obstacles that was being thrown our way, to make
+a project that I am supremely proud of.
