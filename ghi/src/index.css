@@ -212,6 +212,7 @@ li {
 
 .pref-button {
     text-decoration: none;
+    background-color: white;
     color: black;
     appearance: button;
     border: solid transparent;
@@ -242,11 +243,11 @@ li {
     
 }
 
-.new {
+/* .new {
     text-decoration: none;
     color: black;
     
-}
+} */
 
 .form-button {
   appearance: button;
@@ -466,6 +467,11 @@ li {
 .redirect {
   text-decoration: none;
   color: black;
+}
+
+.clear {
+  background-color: transparent;
+  border: none;
 }
 
 .park-background {

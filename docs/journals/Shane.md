@@ -64,3 +64,6 @@ Today was a big struggle for sure but was able to push through with a lot of hel
 ## June 23rd, 2022
 Started the day getting the parks settings ready for the save feature by hooking it up to the urls and settings page so we can be ready to get to that if we can. After that was set up I worked on getting the saved data from yesterday to populate onto the react component for the user events/parks page. I was able to make a list view on the backend. then test it with insomnia with the authorization token to make sure it worked then connected it to the front end with a react hook and mapped the event information to the page!! success 
 
+## June 24th, 2022
+Final project day. The team was able to get a lot of the deployment files squared away with Curtis last night so today was mainly bug fixing. I spent the majority of the time I was working on the project clearing out consoles logs and print statements as well as updating all of our documentation to match the final version of the project at the time of submission. 
+

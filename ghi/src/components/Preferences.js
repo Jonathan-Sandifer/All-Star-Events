@@ -18,7 +18,7 @@ class PreferenceSelect extends React.Component {
         sailing: false,
         kayaking: false,
         hiking: false,
-      },
+      }, 
     };
     this.handleCheckbox = this.handleCheckbox.bind(this);
   }
@@ -202,10 +202,10 @@ class PreferenceSelect extends React.Component {
             <button
               onClick={this.handleSave()}
               type="submit"
-              className="pref-button"
+              className="clear"
             >
               {" "}
-              <Link className="redirect" to="/">
+              <Link className="pref-button" to="/">
                 Save Preferences
               </Link>
             </button>
