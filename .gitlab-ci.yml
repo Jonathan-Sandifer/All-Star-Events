@@ -38,6 +38,7 @@ build-front-end-job:
     - cd ghi
     - npm install
     - npm run build  # Build the React application
+    - cp build/index.html build/404.html
   artifacts:
     paths:
       - ghi/build/  # Save all of the files in the build path
